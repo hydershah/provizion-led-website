@@ -385,42 +385,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   CTA BANNER
-   ════════════════════════════════════════════════════ */
-.vj-cta-banner {
-  padding: 0 1.5rem;
-}
-
-.vj-cta-banner__inner {
-  background: linear-gradient(135deg, var(--vj-teal) 0%, var(--vj-teal-dark) 100%);
-  border-radius: var(--vj-radius-lg);
-  padding: 3rem 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.2);
-}
-
-.vj-cta-banner__text h3 {
-  font-family: var(--vj-font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.4rem;
-}
-
-.vj-cta-banner__text p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-}
-
-.vj-cta-banner--navy .vj-cta-banner__inner {
-  background: linear-gradient(135deg, var(--vj-navy) 0%, #162d4d 100%);
-  box-shadow: 0 12px 40px rgba(31, 58, 95, 0.2);
-}
-
-/* ════════════════════════════════════════════════════
    PROCESS — Glass Cards with Connectors
    ════════════════════════════════════════════════════ */
 .vj-process__grid {
@@ -824,72 +788,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER BAR
-   ════════════════════════════════════════════════════ */
-.vj-footerbar {
-  background: var(--vj-navy);
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.vj-footerbar__brand {
-  font-family: var(--vj-font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-}
-
-.vj-footerbar__brand span {
-  color: var(--vj-teal);
-}
-
-.vj-footerbar p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.vj-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.vj-footerbar__links a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.25s ease;
-}
-
-.vj-footerbar__links a:hover {
-  color: var(--vj-teal);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vj-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vj-floating-cta .vj-btn {
-  box-shadow: 0 8px 32px rgba(8, 145, 178, 0.3),
-              0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.vj-floating-cta .vj-btn:hover {
-  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.4),
-              0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* ════════════════════════════════════════════════════
    FORM OVERRIDES — Glass styling for QuoteForm
    ════════════════════════════════════════════════════ */
 .theme-vj .quote-form input,
@@ -997,12 +895,6 @@
   .vj-contact__inner {
     grid-template-columns: 1fr;
   }
-
-  .vj-cta-banner__inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 2.5rem 2rem;
-  }
 }
 
 /* ════════════════════════════════════════════════════
@@ -1048,14 +940,6 @@
     grid-template-columns: 1fr;
   }
 
-  .vj-cta-banner__inner {
-    padding: 2rem 1.5rem;
-  }
-
-  .vj-cta-banner__text h3 {
-    font-size: 1.25rem;
-  }
-
   .vj-b2b__content {
     padding: 2rem 1.5rem;
   }
@@ -1068,26 +952,7 @@
     padding: 1.5rem;
   }
 
-  .vj-floating-cta {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .vj-floating-cta .vj-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.82rem;
-  }
-
   .vj-heading {
     font-size: clamp(1.75rem, 5vw, 2.5rem);
-  }
-
-  .vj-footerbar {
-    padding: 2rem 1rem;
-  }
-
-  .vj-footerbar__links {
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 }

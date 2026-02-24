@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable react-refresh/only-export-components */
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -96,15 +95,6 @@ const testimonials = [
 /* ──── Component ──── */
 export default function VariantD() {
   useThemeClass('theme-vd');
-  const [showCta, setShowCta] = useState(false);
-
-  const [contactRef, contactInView] = useInView({ threshold: 0.2 });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vd-page">
@@ -337,7 +327,7 @@ export default function VariantD() {
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section className="vd-section" id="contact" ref={contactRef}>
+      <section className="vd-section" id="contact">
         <div className="vd-container">
           <FadeUp>
             <span className="vd-kicker">// contact.init()</span>
@@ -386,32 +376,6 @@ export default function VariantD() {
         </div>
       </section>
 
-      {/* ═══ FOOTER ═══ */}
-      <div className="vd-footer">
-        <div className="vd-container">
-          <div className="vd-footer__brand">ProVizion <span>LED</span></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vd-footer__links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vd-floating-cta"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-        >
-          <a href="#contact" className="vd-btn vd-btn--pink">
-            Get a Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

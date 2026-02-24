@@ -702,65 +702,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════════ */
-.vd-footer {
-  background: var(--vd-surface);
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-top: 1px solid rgba(168, 85, 247, 0.1);
-}
-
-.vd-footer__brand {
-  font-family: var(--vd-font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.vd-footer__brand span {
-  color: var(--vd-neon-pink);
-}
-
-.vd-footer p {
-  font-size: 0.8rem;
-  color: var(--vd-text-muted);
-}
-
-.vd-footer__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.vd-footer__links a {
-  font-size: 0.8rem;
-  color: var(--vd-text-muted);
-  text-decoration: none;
-}
-
-.vd-footer__links a:hover {
-  color: var(--vd-neon-cyan);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vd-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vd-floating-cta .vd-btn {
-  border-radius: 50px;
-  box-shadow: var(--vd-neon-glow-pink), 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-/* ════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -794,9 +735,5 @@
   .vd-hero__actions {
     flex-direction: column;
     align-items: center;
-  }
-  .vd-floating-cta {
-    bottom: 1rem;
-    right: 1rem;
   }
 }

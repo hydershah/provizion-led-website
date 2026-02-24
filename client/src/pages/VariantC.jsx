@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   HiArrowRight,
@@ -452,82 +451,6 @@ export default function VariantC() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <div className="vc-footer" role="contentinfo">
-        <div className="vc-container">
-          <div className="vc-footer-grid">
-            <div className="vc-footer-col">
-              <h4>{COMPANY.name}</h4>
-              <p className="vc-footer-tagline">Illuminating Your Brand&apos;s Potential</p>
-              <p>{COMPANY.address.full}</p>
-              <a href={COMPANY.phoneTel}>{COMPANY.phone}</a>
-              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
-            </div>
-            <div className="vc-footer-col">
-              <h4>Services</h4>
-              <ul>
-                <li><Link to="/led-signs">LED Signs</Link></li>
-                <li><Link to="/digital-signs">Digital Displays</Link></li>
-                <li><Link to="/lighted-signs">Lighted Signs</Link></li>
-                <li><Link to="/electronic-signs">Electronic Signs</Link></li>
-              </ul>
-            </div>
-            <div className="vc-footer-col">
-              <h4>Company</h4>
-              <ul>
-                <li><Link to="/">Design Variants</Link></li>
-                <li><Link to="/contact-us">Contact Us</Link></li>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service">Terms of Service</Link></li>
-              </ul>
-            </div>
-            <div className="vc-footer-col">
-              <h4>Get Started</h4>
-              <p>Quick &amp; Same-Day Quotes</p>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline vc-btn--sm">
-                <HiPhone /> Call Now
-              </a>
-            </div>
-          </div>
-          <div className="vc-footer-bottom">
-            <div className="vc-footer-bottom__line" />
-            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── FLOATING CTA ── */}
-      <FloatingCTA />
     </>
-  );
-}
-
-/* ── Floating CTA ── */
-function FloatingCTA() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const contact = document.getElementById('contact');
-      if (!contact) { setVisible(window.scrollY > 400); return; }
-      const rect = contact.getBoundingClientRect();
-      setVisible(window.scrollY > 400 && rect.top > window.innerHeight);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!visible) return null;
-
-  return (
-    <motion.a
-      href="#contact"
-      className="vc-floating-cta vc-btn vc-btn--gold"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-    >
-      Get Free Quote
-    </motion.a>
   );
 }

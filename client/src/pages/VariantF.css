@@ -669,64 +669,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════════ */
-.vf-footerbar {
-  background: var(--vf-surface);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  border-top: 1px solid rgba(0, 212, 255, 0.06);
-}
-
-.vf-footerbar__brand {
-  font-family: var(--vf-font-display);
-  font-size: 1.2rem;
-  color: var(--vf-white);
-  margin-bottom: 0.4rem;
-}
-
-.vf-footerbar__brand span {
-  color: var(--vf-cyan);
-}
-
-.vf-footerbar p {
-  font-size: 0.75rem;
-  color: var(--vf-text-muted);
-}
-
-.vf-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 0.75rem;
-}
-
-.vf-footerbar__links a {
-  font-size: 0.75rem;
-  color: var(--vf-text-muted);
-  text-decoration: none;
-  font-family: var(--vf-font-mono);
-}
-
-.vf-footerbar__links a:hover {
-  color: var(--vf-cyan);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vf-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vf-floating-cta .vf-btn {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-/* ════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -750,5 +692,4 @@
   .vf-process__flow { flex-direction: column; }
   .vf-process-step { min-width: 100%; border-right: none; }
   .vf-hero__actions { flex-direction: column; align-items: stretch; text-align: center; }
-  .vf-floating-cta { bottom: 1rem; right: 1rem; }
 }

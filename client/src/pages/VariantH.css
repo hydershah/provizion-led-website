@@ -350,21 +350,6 @@
   line-height: 1.65;
 }
 
-/* CTA banner between sections */
-.vh-cta-banner {
-  background: var(--vh-coral);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.vh-cta-banner__text {
-  font-family: var(--vh-font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
 /* ════════════════════════════════════════════════════
    PROCESS — Steps with Icons
    ════════════════════════════════════════════════════ */
@@ -701,64 +686,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER BAR
-   ════════════════════════════════════════════════════ */
-.vh-footerbar {
-  background: var(--vh-navy);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.vh-footerbar__brand {
-  font-family: var(--vh-font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.vh-footerbar__brand em {
-  color: var(--vh-coral);
-  font-style: normal;
-}
-
-.vh-footerbar p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.vh-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 0.75rem;
-}
-
-.vh-footerbar__links a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-}
-
-.vh-footerbar__links a:hover {
-  color: var(--vh-coral);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vh-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vh-floating-cta .vh-btn {
-  box-shadow: 0 8px 32px rgba(232, 101, 74, 0.4);
-}
-
-/* ════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -784,5 +711,4 @@
   .vh-process__steps { grid-template-columns: 1fr; }
   .vh-hero__actions { flex-direction: column; align-items: center; }
   .vh-hero__trust { flex-direction: column; gap: 0.75rem; }
-  .vh-floating-cta { bottom: 1rem; right: 1rem; }
 }

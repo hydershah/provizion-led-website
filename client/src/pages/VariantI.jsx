@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -134,15 +134,6 @@ const TESTIMONIALS = [
    ════════════════════════════════════════════════════ */
 export default function VariantI() {
   useThemeClass('theme-vi');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '-100px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vi-page">
@@ -239,22 +230,6 @@ export default function VariantI() {
               </StaggerChild>
             ))}
           </StaggerWrap>
-        </div>
-      </section>
-
-      {/* ═══ CTA BANNER 1 ═══ */}
-      <section className="vi-cta-banner">
-        <div className="vi-cta-banner__grain" />
-        <div className="vi-container">
-          <FadeUp>
-            <div className="vi-cta-banner__inner">
-              <h2 className="vi-cta-banner__heading">Ready to Light Up Your Business?</h2>
-              <p className="vi-cta-banner__sub">Get a same-day quote from Charlotte&apos;s premier LED sign manufacturer. No obligation.</p>
-              <a href="#vi-contact" className="vi-btn vi-btn--accent">
-                Request a Quote <HiArrowRight />
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </section>
 
@@ -402,29 +377,8 @@ export default function VariantI() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <section className="vi-cta-banner vi-cta-banner--alt">
-        <div className="vi-cta-banner__grain" />
-        <div className="vi-container">
-          <FadeUp>
-            <div className="vi-cta-banner__inner">
-              <h2 className="vi-cta-banner__heading">Your Sign Deserves the Spotlight</h2>
-              <p className="vi-cta-banner__sub">Join 500+ businesses that trust ProVizion LED for signage that demands attention.</p>
-              <div className="vi-cta-banner__actions">
-                <a href="#vi-contact" className="vi-btn vi-btn--accent">
-                  Get Free Quote <HiArrowRight />
-                </a>
-                <a href={COMPANY.phoneTel} className="vi-btn vi-btn--ghost">
-                  <HiPhone /> Call Now
-                </a>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ═══ CONTACT ═══ */}
-      <section className="vi-section vi-section--contact" id="vi-contact" ref={contactRef} aria-labelledby="vi-contact-heading">
+      <section className="vi-section vi-section--contact" id="vi-contact" aria-labelledby="vi-contact-heading">
         <div className="vi-divider" />
         <div className="vi-container">
           <FadeUp>
@@ -478,32 +432,6 @@ export default function VariantI() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vi-footerbar" role="contentinfo">
-        <div className="vi-container">
-          <div className="vi-footerbar__brand">PROVIZION <span>LED</span></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vi-footerbar__links">
-            <Link to="/privacy-policy">Privacy</Link>
-            <Link to="/terms-of-service">Terms</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vi-floating-cta"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.85 }}
-        >
-          <a href="#vi-contact" className="vi-btn vi-btn--accent">
-            Get Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

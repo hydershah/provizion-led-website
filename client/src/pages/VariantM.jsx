@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   HiStar,
   HiPhone,
@@ -120,15 +119,6 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantM() {
   useThemeClass('theme-vm');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '-100px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vm-page">
@@ -222,15 +212,6 @@ export default function VariantM() {
           </StaggerWrap>
         </div>
       </section>
-
-      {/* ═══ CTA BANNER ═══ */}
-      <div className="vm-cta-banner">
-        <p className="vm-cta-banner__text">Ready to Light Up Your Business?</p>
-        <p className="vm-cta-banner__sub">Your Charlotte neighbors are here to help. No pressure, just honest advice.</p>
-        <a href="#vm-contact" className="vm-btn vm-btn--white">
-          Get Your Free Quote <HiArrowRight />
-        </a>
-      </div>
 
       {/* ═══ PROCESS ═══ */}
       <section className="vm-section vm-section--sand">
@@ -365,17 +346,8 @@ export default function VariantM() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <div className="vm-cta-banner vm-cta-banner--amber">
-        <p className="vm-cta-banner__text">Your Sign Is Your First Impression — Make It Count</p>
-        <p className="vm-cta-banner__sub">Charlotte businesses trust their neighbors. Let us build something great together.</p>
-        <a href="#vm-contact" className="vm-btn vm-btn--green">
-          Start Your Project <HiArrowRight />
-        </a>
-      </div>
-
       {/* ═══ CONTACT ═══ */}
-      <section id="vm-contact" className="vm-section vm-section--sand" ref={contactRef}>
+      <section id="vm-contact" className="vm-section vm-section--sand">
         <div className="vm-container">
           <FadeUp>
             <span className="vm-kicker">Get In Touch</span>
@@ -430,31 +402,6 @@ export default function VariantM() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vm-footerbar">
-        <p className="vm-footerbar__brand">
-          Pro<em>Vizion</em> LED
-        </p>
-        <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved. &bull; Charlotte, NC</p>
-        <div className="vm-footerbar__links">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-service">Terms of Service</Link>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vm-floating-cta"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.85 }}
-        >
-          <a href="#vm-contact" className="vm-btn vm-btn--amber">
-            Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

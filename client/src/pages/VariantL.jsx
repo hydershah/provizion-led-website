@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   HiStar,
   HiPhone,
@@ -162,15 +161,6 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantL() {
   useThemeClass('theme-vl');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '-100px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vl-page">
@@ -257,16 +247,6 @@ export default function VariantL() {
           </StaggerWrap>
         </div>
       </section>
-
-      {/* ═══ CTA BANNER ═══ */}
-      <div className="vl-cta-banner">
-        <div className="vl-container">
-          <p className="vl-cta-banner__text">Need help choosing the right sign type? Our specialists will guide you.</p>
-          <a href="#vl-contact" className="vl-btn vl-btn--white">
-            Schedule a Consultation <HiArrowRight />
-          </a>
-        </div>
-      </div>
 
       {/* ═══ PROCESS ═══ */}
       <section className="vl-section vl-section--light">
@@ -398,18 +378,8 @@ export default function VariantL() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <div className="vl-cta-banner">
-        <div className="vl-container">
-          <p className="vl-cta-banner__text">Your sign is your first impression — make it count.</p>
-          <a href="#vl-contact" className="vl-btn vl-btn--white">
-            Start Your Project <HiArrowRight />
-          </a>
-        </div>
-      </div>
-
       {/* ═══ CONTACT ═══ */}
-      <section id="vl-contact" className="vl-section vl-section--light" ref={contactRef}>
+      <section id="vl-contact" className="vl-section vl-section--light">
         <div className="vl-container">
           <FadeUp>
             <span className="vl-kicker">Contact Us</span>
@@ -460,34 +430,6 @@ export default function VariantL() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vl-footerbar">
-        <div className="vl-container">
-          <p className="vl-footerbar__brand">
-            Pro<em>Vizion</em> LED
-          </p>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vl-footerbar__links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vl-floating-cta"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.85 }}
-        >
-          <a href="#vl-contact" className="vl-btn vl-btn--blue">
-            Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

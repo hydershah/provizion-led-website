@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
   HiArrowRight,
@@ -436,80 +436,6 @@ export default function VariantB() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <div className="vb-footer" role="contentinfo">
-        <div className="container">
-          <div className="vb-footer-grid">
-            <div className="vb-footer-col">
-              <h4>{COMPANY.name}</h4>
-              <p>{COMPANY.address.full}</p>
-              <a href={COMPANY.phoneTel}>{COMPANY.phone}</a>
-              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
-            </div>
-            <div className="vb-footer-col">
-              <h4>Services</h4>
-              <ul>
-                <li><Link to="/led-signs">LED Signs</Link></li>
-                <li><Link to="/digital-signs">Digital Displays</Link></li>
-                <li><Link to="/lighted-signs">Lighted Signs</Link></li>
-                <li><Link to="/electronic-signs">Electronic Signs</Link></li>
-              </ul>
-            </div>
-            <div className="vb-footer-col">
-              <h4>Resources</h4>
-              <ul>
-                <li><Link to="/">Design Variants</Link></li>
-                <li><Link to="/contact-us">Contact Us</Link></li>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service">Terms of Service</Link></li>
-              </ul>
-            </div>
-            <div className="vb-footer-col">
-              <h4>Contact</h4>
-              <p>Quick &amp; Same-Day Quotes</p>
-              <a href={COMPANY.phoneTel} className="vb-btn vb-btn--outline vb-btn--sm">
-                <HiPhone /> Call Now
-              </a>
-            </div>
-          </div>
-          <div className="vb-footer-bottom">
-            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* ── FLOATING CTA ── */}
-      <FloatingCTA />
     </>
-  );
-}
-
-/* ── Floating CTA ── */
-function FloatingCTA() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const contact = document.getElementById('contact');
-      if (!contact) { setVisible(window.scrollY > 400); return; }
-      const rect = contact.getBoundingClientRect();
-      setVisible(window.scrollY > 400 && rect.top > window.innerHeight);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!visible) return null;
-
-  return (
-    <motion.a
-      href="#contact"
-      className="vb-floating-cta vb-btn vb-btn--neon"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-    >
-      Get Free Quote
-    </motion.a>
   );
 }

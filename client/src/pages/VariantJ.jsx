@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   HiStar,
   HiPhone,
@@ -102,15 +101,6 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantJ() {
   useThemeClass('theme-vj');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '0px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vj-page">
@@ -193,23 +183,6 @@ export default function VariantJ() {
               </StaggerChild>
             ))}
           </StaggerWrap>
-        </div>
-      </section>
-
-      {/* ═══ CTA BANNER ═══ */}
-      <section className="vj-cta-banner">
-        <div className="vj-container">
-          <FadeUp>
-            <div className="vj-cta-banner__inner">
-              <div className="vj-cta-banner__text">
-                <h3>Ready to make an impact?</h3>
-                <p>Get a custom signage proposal tailored to your property and budget.</p>
-              </div>
-              <a href="#vj-contact" className="vj-btn vj-btn--white">
-                Get Your Free Quote <HiArrowRight />
-              </a>
-            </div>
-          </FadeUp>
         </div>
       </section>
 
@@ -339,25 +312,8 @@ export default function VariantJ() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <section className="vj-cta-banner vj-cta-banner--navy">
-        <div className="vj-container">
-          <FadeUp>
-            <div className="vj-cta-banner__inner">
-              <div className="vj-cta-banner__text">
-                <h3>Let&#39;s build something remarkable.</h3>
-                <p>Schedule a consultation and see how LED signage can transform your property.</p>
-              </div>
-              <a href="#vj-contact" className="vj-btn vj-btn--teal">
-                Schedule Consultation <HiArrowRight />
-              </a>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ═══ CONTACT ═══ */}
-      <section className="vj-section" id="vj-contact" ref={contactRef}>
+      <section className="vj-section" id="vj-contact">
         <div className="vj-container">
           <FadeUp>
             <span className="vj-kicker">Get In Touch</span>
@@ -412,33 +368,6 @@ export default function VariantJ() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vj-footerbar">
-        <div className="vj-container">
-          <div className="vj-footerbar__brand">PROVIZION <span>LED</span></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vj-footerbar__links">
-            <Link to="/privacy-policy">Privacy</Link>
-            <Link to="/terms-of-service">Terms</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vj-floating-cta"
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.9 }}
-          transition={{ duration: 0.3 }}
-        >
-          <a href="#vj-contact" className="vj-btn vj-btn--teal">
-            Request a Proposal <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

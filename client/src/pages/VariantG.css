@@ -644,69 +644,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER
-   ════════════════════════════════════════════════════ */
-.vg-footerbar {
-  background: var(--vg-black);
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-top: 4px solid var(--vg-red);
-}
-
-.vg-footerbar__brand {
-  font-family: var(--vg-font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--vg-white);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
-.vg-footerbar__brand span {
-  color: var(--vg-red);
-}
-
-.vg-footerbar p {
-  font-size: 0.8rem;
-  color: var(--vg-gray);
-}
-
-.vg-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.vg-footerbar__links a {
-  font-size: 0.8rem;
-  color: var(--vg-gray);
-  text-decoration: none;
-  font-family: var(--vg-font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.vg-footerbar__links a:hover {
-  color: var(--vg-red);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vg-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vg-floating-cta .vg-btn {
-  box-shadow: 4px 4px 0 var(--vg-black), 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* ════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -742,5 +679,4 @@
   .vg-why__grid .vg-why-card,
   .vg-process-step { border-right: none; }
   .vg-hero__actions { flex-direction: column; }
-  .vg-floating-cta { bottom: 1rem; right: 1rem; }
 }

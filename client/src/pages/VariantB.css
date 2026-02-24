@@ -856,82 +856,6 @@ a.vb-contact-item:hover {
 }
 
 /* =============================================
-   FOOTER
-   ============================================= */
-.vb-footer {
-  background: #080808;
-  padding: 60px 0 32px;
-  border-top: 1px solid var(--vb-border);
-}
-
-.vb-footer .container {
-  max-width: var(--vb-max-width);
-}
-
-.vb-footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.vb-footer-col h4 {
-  font-family: var(--vb-font-heading);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--vb-text);
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.vb-footer-col p,
-.vb-footer-col a {
-  font-family: var(--vb-font-body);
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.8;
-  text-decoration: none;
-  display: block;
-}
-
-.vb-footer-col a:hover {
-  color: var(--vb-accent);
-}
-
-.vb-footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.vb-footer-col li {
-  margin-bottom: 6px;
-}
-
-.vb-footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  padding-top: 24px;
-  text-align: center;
-}
-
-.vb-footer-bottom p {
-  font-family: var(--vb-font-body);
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.25);
-}
-
-/* =============================================
-   FLOATING CTA
-   ============================================= */
-.vb-floating-cta {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
-}
-
-/* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 1024px) {
@@ -984,10 +908,6 @@ a.vb-contact-item:hover {
     gap: 40px;
   }
 
-  .vb-footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1025,15 +945,4 @@ a.vb-contact-item:hover {
     grid-template-columns: 1fr;
   }
 
-  .vb-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .vb-floating-cta {
-    bottom: 16px;
-    right: 16px;
-    font-size: 0.8125rem;
-    padding: 12px 18px;
-  }
 }

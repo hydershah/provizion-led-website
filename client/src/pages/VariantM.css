@@ -395,33 +395,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   CTA BANNER
-   ════════════════════════════════════════════════════ */
-.vm-cta-banner {
-  background: var(--vm-green);
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.vm-cta-banner--amber {
-  background: var(--vm-amber);
-}
-
-.vm-cta-banner__text {
-  font-family: var(--vm-font-display);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.vm-cta-banner__sub {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1.25rem;
-}
-
-/* ════════════════════════════════════════════════════
    PROCESS — Friendly Numbered Steps
    ════════════════════════════════════════════════════ */
 .vm-process__steps {
@@ -846,70 +819,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER BAR
-   ════════════════════════════════════════════════════ */
-.vm-footerbar {
-  background: var(--vm-green);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.vm-footerbar__brand {
-  font-family: var(--vm-font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.vm-footerbar__brand em {
-  color: var(--vm-amber-light);
-  font-style: normal;
-}
-
-.vm-footerbar p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.vm-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 0.75rem;
-}
-
-.vm-footerbar__links a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.vm-footerbar__links a:hover {
-  color: var(--vm-amber-light);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vm-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vm-floating-cta .vm-btn {
-  box-shadow: 0 8px 32px rgba(217, 119, 6, 0.4);
-  border-radius: var(--vm-radius-pill);
-}
-
-.vm-floating-cta .vm-btn:hover {
-  box-shadow: 0 12px 40px rgba(217, 119, 6, 0.5);
-}
-
-/* ════════════════════════════════════════════════════
    RESPONSIVE — 900px breakpoint
    ════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -1000,24 +909,6 @@
   .vm-hero__trust {
     flex-direction: column;
     gap: 0.75rem;
-  }
-
-  .vm-floating-cta {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .vm-floating-cta .vm-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.85rem;
-  }
-
-  .vm-cta-banner {
-    padding: 2.5rem 1rem;
-  }
-
-  .vm-cta-banner__text {
-    font-size: 1.15rem;
   }
 
   .vm-heading {

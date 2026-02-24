@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   HiStar,
   HiPhone,
@@ -120,15 +119,6 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantH() {
   useThemeClass('theme-vh');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '-100px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vh-page">
@@ -218,14 +208,6 @@ export default function VariantH() {
           </StaggerWrap>
         </div>
       </section>
-
-      {/* ═══ CTA BANNER ═══ */}
-      <div className="vh-cta-banner">
-        <p className="vh-cta-banner__text">Ready to upgrade your signage? Let&apos;s talk — no pressure.</p>
-        <a href="#vh-contact" className="vh-btn vh-btn--white">
-          Get Your Free Quote <HiArrowRight />
-        </a>
-      </div>
 
       {/* ═══ PROCESS ═══ */}
       <section className="vh-section vh-section--warm">
@@ -353,16 +335,8 @@ export default function VariantH() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <div className="vh-cta-banner">
-        <p className="vh-cta-banner__text">Your sign is the first impression — make it count.</p>
-        <a href="#vh-contact" className="vh-btn vh-btn--white">
-          Start Your Project <HiArrowRight />
-        </a>
-      </div>
-
       {/* ═══ CONTACT ═══ */}
-      <section id="vh-contact" className="vh-section vh-section--warm" ref={contactRef}>
+      <section id="vh-contact" className="vh-section vh-section--warm">
         <div className="vh-container">
           <FadeUp>
             <span className="vh-kicker">Contact Us</span>
@@ -406,31 +380,6 @@ export default function VariantH() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vh-footerbar">
-        <p className="vh-footerbar__brand">
-          Pro<em>Vizion</em> LED
-        </p>
-        <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-        <div className="vh-footerbar__links">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-service">Terms of Service</Link>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vh-floating-cta"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.85 }}
-        >
-          <a href="#vh-contact" className="vh-btn vh-btn--coral">
-            Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

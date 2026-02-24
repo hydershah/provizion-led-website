@@ -1,7 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
   HiStar,
   HiPhone,
@@ -120,15 +119,6 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantK() {
   useThemeClass('theme-vk');
-  const [showCta, setShowCta] = useState(false);
-  const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { margin: '-100px' });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 500);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vk-page">
@@ -225,14 +215,6 @@ export default function VariantK() {
         </div>
         <div className="vk-section__divider" />
       </section>
-
-      {/* ═══ CTA BANNER ═══ */}
-      <div className="vk-cta-banner">
-        <p className="vk-cta-banner__text">Ready to commission a sign built with care?</p>
-        <a href="#vk-contact" className="vk-btn vk-btn--cream">
-          Commission Your Sign <HiArrowRight />
-        </a>
-      </div>
 
       {/* ═══ PROCESS ═══ */}
       <section className="vk-section vk-section--warm">
@@ -365,16 +347,8 @@ export default function VariantK() {
         </div>
       </section>
 
-      {/* ═══ CTA BANNER 2 ═══ */}
-      <div className="vk-cta-banner">
-        <p className="vk-cta-banner__text">Your sign is a reflection of your craft. So is ours.</p>
-        <a href="#vk-contact" className="vk-btn vk-btn--cream">
-          Start Your Project <HiArrowRight />
-        </a>
-      </div>
-
       {/* ═══ CONTACT ═══ */}
-      <section id="vk-contact" className="vk-section vk-section--warm" ref={contactRef}>
+      <section id="vk-contact" className="vk-section vk-section--warm">
         <div className="vk-container">
           <FadeUp>
             <span className="vk-kicker">Contact Us</span>
@@ -425,32 +399,6 @@ export default function VariantK() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="vk-footerbar">
-        <p className="vk-footerbar__brand">
-          Pro<em>Vizion</em> LED
-        </p>
-        <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-        <div className="vk-footerbar__links">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-service">Terms of Service</Link>
-          <Link to="/">All Variants</Link>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vk-floating-cta"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.85 }}
-        >
-          <a href="#vk-contact" className="vk-btn vk-btn--terra">
-            Free Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

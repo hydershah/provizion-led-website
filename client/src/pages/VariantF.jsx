@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -93,14 +91,6 @@ const testimonials = [
 /* ──── Component ──── */
 export default function VariantF() {
   useThemeClass('theme-vf');
-  const [showCta, setShowCta] = useState(false);
-  const [contactRef, contactInView] = useInView({ threshold: 0.2 });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vf-page">
@@ -306,7 +296,7 @@ export default function VariantF() {
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section className="vf-section vf-section--alt" id="contact" ref={contactRef}>
+      <section className="vf-section vf-section--alt" id="contact">
         <div className="vf-container">
           <FadeUp>
             <span className="vf-kicker">Submit Request</span>
@@ -355,32 +345,6 @@ export default function VariantF() {
         </div>
       </section>
 
-      {/* ═══ FOOTER ═══ */}
-      <div className="vf-footerbar">
-        <div className="vf-container">
-          <div className="vf-footerbar__brand">ProVizion <span>LED</span></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vf-footerbar__links">
-            <Link to="/privacy-policy">Privacy</Link>
-            <Link to="/terms-of-service">Terms</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vf-floating-cta"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-        >
-          <a href="#contact" className="vf-btn vf-btn--filled">
-            Request Specifications <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

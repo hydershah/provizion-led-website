@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -94,14 +92,6 @@ const testimonials = [
 /* ──── Component ──── */
 export default function VariantE() {
   useThemeClass('theme-ve');
-  const [showCta, setShowCta] = useState(false);
-  const [contactRef, contactInView] = useInView({ threshold: 0.2 });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="ve-page">
@@ -297,7 +287,7 @@ export default function VariantE() {
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section className="ve-section ve-section--cream" id="contact" ref={contactRef}>
+      <section className="ve-section ve-section--cream" id="contact">
         <div className="ve-container">
           <FadeUp>
             <span className="ve-kicker">Get in Touch</span>
@@ -346,32 +336,6 @@ export default function VariantE() {
         </div>
       </section>
 
-      {/* ═══ FOOTER BAR ═══ */}
-      <div className="ve-footerbar">
-        <div className="ve-container">
-          <div className="ve-footerbar__brand">ProVizion <em>LED</em></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="ve-footerbar__links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="ve-floating-cta"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-        >
-          <a href="#contact" className="ve-btn ve-btn--sage">
-            Request a Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -93,14 +91,6 @@ const testimonials = [
 /* ──── Component ──── */
 export default function VariantG() {
   useThemeClass('theme-vg');
-  const [showCta, setShowCta] = useState(false);
-  const [contactRef, contactInView] = useInView({ threshold: 0.2 });
-
-  useEffect(() => {
-    const onScroll = () => setShowCta(window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="vg-page">
@@ -304,7 +294,7 @@ export default function VariantG() {
       </section>
 
       {/* ═══ CONTACT ═══ */}
-      <section className="vg-section" id="contact" ref={contactRef}>
+      <section className="vg-section" id="contact">
         <div className="vg-container">
           <FadeUp>
             <span className="vg-kicker">Contact</span>
@@ -355,32 +345,6 @@ export default function VariantG() {
         </div>
       </section>
 
-      {/* ═══ FOOTER ═══ */}
-      <div className="vg-footerbar">
-        <div className="vg-container">
-          <div className="vg-footerbar__brand">PROVIZION <span>LED</span></div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-          <div className="vg-footerbar__links">
-            <Link to="/privacy-policy">Privacy</Link>
-            <Link to="/terms-of-service">Terms</Link>
-            <Link to="/">All Variants</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ═══ FLOATING CTA ═══ */}
-      {showCta && !contactInView && (
-        <motion.div
-          className="vg-floating-cta"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-        >
-          <a href="#contact" className="vg-btn vg-btn--red">
-            Get a Quote <HiArrowRight />
-          </a>
-        </motion.div>
-      )}
     </div>
   );
 }

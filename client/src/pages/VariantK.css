@@ -393,41 +393,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   CTA BANNER
-   ════════════════════════════════════════════════════ */
-.vk-cta-banner {
-  background: var(--vk-terra);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
-.vk-cta-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.04;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-}
-
-.vk-cta-banner__text {
-  font-family: var(--vk-font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 1.25rem;
-  position: relative;
-  z-index: 2;
-}
-
-.vk-cta-banner .vk-btn {
-  position: relative;
-  z-index: 2;
-}
-
-/* ════════════════════════════════════════════════════
    PROCESS — Workshop Stages
    ════════════════════════════════════════════════════ */
 .vk-process__steps {
@@ -806,70 +771,6 @@
 }
 
 /* ════════════════════════════════════════════════════
-   FOOTER BAR
-   ════════════════════════════════════════════════════ */
-.vk-footerbar {
-  background: var(--vk-surface-dark);
-  padding: 2.5rem 1.5rem;
-  text-align: center;
-}
-
-.vk-footerbar__brand {
-  font-family: var(--vk-font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.vk-footerbar__brand em {
-  color: var(--vk-terra);
-  font-style: normal;
-}
-
-.vk-footerbar p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.vk-footerbar__links {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 0.75rem;
-}
-
-.vk-footerbar__links a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.35);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.vk-footerbar__links a:hover {
-  color: var(--vk-gold);
-}
-
-/* ════════════════════════════════════════════════════
-   FLOATING CTA
-   ════════════════════════════════════════════════════ */
-.vk-floating-cta {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-}
-
-.vk-floating-cta .vk-btn {
-  box-shadow: 0 8px 32px rgba(184, 92, 56, 0.4);
-  border-radius: var(--vk-radius-pill);
-}
-
-.vk-floating-cta .vk-btn:hover {
-  box-shadow: 0 12px 40px rgba(184, 92, 56, 0.55);
-}
-
-/* ════════════════════════════════════════════════════
    PAPER TEXTURE — Subtle Background Overlay
    ════════════════════════════════════════════════════ */
 .vk-section::before {
@@ -989,11 +890,6 @@
     gap: 0.75rem;
   }
 
-  .vk-floating-cta {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
   .vk-hero__title {
     font-size: 2.25rem;
   }
@@ -1012,14 +908,6 @@
 
   .vk-contact__form-wrap {
     padding: 1.25rem;
-  }
-
-  .vk-cta-banner {
-    padding: 2rem 1rem;
-  }
-
-  .vk-cta-banner__text {
-    font-size: 1.15rem;
   }
 
   .vk-service-card {

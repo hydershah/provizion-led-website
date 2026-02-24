@@ -860,80 +860,6 @@ a.va-contact-detail:hover {
 }
 
 /* =============================================
-   FOOTER
-   ============================================= */
-.va-footer {
-  background: var(--va-charcoal);
-  padding: 60px 0 32px;
-}
-
-.va-footer .container {
-  max-width: var(--va-max-width);
-}
-
-.va-footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.va-footer-col h4 {
-  font-family: var(--va-font-heading);
-  font-size: 1rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 16px;
-}
-
-.va-footer-col p,
-.va-footer-col a {
-  font-family: var(--va-font-body);
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.8;
-  text-decoration: none;
-  display: block;
-}
-
-.va-footer-col a:hover {
-  color: var(--va-accent);
-}
-
-.va-footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.va-footer-col li {
-  margin-bottom: 6px;
-}
-
-.va-footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 24px;
-  text-align: center;
-}
-
-.va-footer-bottom p {
-  font-family: var(--va-font-body);
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-/* =============================================
-   FLOATING CTA
-   ============================================= */
-.va-floating-cta {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
-  box-shadow: 0 8px 32px rgba(0, 102, 255, 0.3);
-}
-
-/* =============================================
    LIGHTBOX
    ============================================= */
 .va-lightbox {
@@ -1052,10 +978,6 @@ a.va-contact-detail:hover {
     gap: 40px;
   }
 
-  .va-footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1108,15 +1030,4 @@ a.va-contact-detail:hover {
     grid-row: auto;
   }
 
-  .va-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .va-floating-cta {
-    bottom: 16px;
-    right: 16px;
-    font-size: 0.875rem;
-    padding: 12px 20px;
-  }
 }
