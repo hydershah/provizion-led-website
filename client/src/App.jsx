@@ -15,6 +15,11 @@ const VariantE = lazy(() => import('./pages/VariantE'));
 const VariantF = lazy(() => import('./pages/VariantF'));
 const VariantG = lazy(() => import('./pages/VariantG'));
 const VariantH = lazy(() => import('./pages/VariantH'));
+const VariantI = lazy(() => import('./pages/VariantI'));
+const VariantJ = lazy(() => import('./pages/VariantJ'));
+const VariantK = lazy(() => import('./pages/VariantK'));
+const VariantL = lazy(() => import('./pages/VariantL'));
+const VariantM = lazy(() => import('./pages/VariantM'));
 const LEDSigns = lazy(() => import('./pages/LEDSigns'));
 const DigitalSigns = lazy(() => import('./pages/DigitalSigns'));
 const ElectronicSigns = lazy(() => import('./pages/ElectronicSigns'));
@@ -41,6 +46,11 @@ function App() {
             <Route path="/variant-f" element={<VariantF />} />
             <Route path="/variant-g" element={<VariantG />} />
             <Route path="/variant-h" element={<VariantH />} />
+            <Route path="/variant-i" element={<VariantI />} />
+            <Route path="/variant-j" element={<VariantJ />} />
+            <Route path="/variant-k" element={<VariantK />} />
+            <Route path="/variant-l" element={<VariantL />} />
+            <Route path="/variant-m" element={<VariantM />} />
             <Route path="/led-signs" element={<LEDSigns />} />
             <Route path="/digital-signs" element={<DigitalSigns />} />
             <Route path="/electronic-signs" element={<ElectronicSigns />} />

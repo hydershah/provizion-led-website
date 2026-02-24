@@ -1,0 +1,1093 @@
+/* ===================================================================
+   VARIANT J — GLASS LUXE  (Modern Corporate / Glassmorphism)
+   =================================================================== */
+
+/* ── Tokens ── */
+.theme-vj {
+  --vj-bg: #f0f4f8;
+  --vj-surface: rgba(255, 255, 255, 0.7);
+  --vj-surface-solid: #ffffff;
+  --vj-surface-navy: #1f3a5f;
+  --vj-text: #1a2b42;
+  --vj-text-muted: #6b7f99;
+  --vj-teal: #0891b2;
+  --vj-teal-dark: #0e7490;
+  --vj-teal-light: rgba(8, 145, 178, 0.08);
+  --vj-navy: #1f3a5f;
+  --vj-navy-light: #2a4a72;
+  --vj-glass: rgba(255, 255, 255, 0.45);
+  --vj-glass-border: rgba(255, 255, 255, 0.6);
+  --vj-glass-shadow: 0 8px 32px rgba(31, 58, 95, 0.08);
+  --vj-radius: 16px;
+  --vj-radius-lg: 24px;
+  --vj-radius-pill: 50px;
+  --vj-font-display: 'Outfit', system-ui, sans-serif;
+  --vj-font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Global ── */
+.vj-page {
+  background: var(--vj-bg);
+  color: var(--vj-text);
+  font-family: var(--vj-font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vj-page *::selection {
+  background: var(--vj-teal);
+  color: #fff;
+}
+
+.vj-section {
+  padding: 7rem 1.5rem;
+  position: relative;
+}
+
+.vj-section--light {
+  background: linear-gradient(180deg, #edf2f7 0%, var(--vj-bg) 100%);
+}
+
+.vj-section--navy {
+  background: linear-gradient(135deg, var(--vj-navy) 0%, #162d4d 100%);
+  color: #ffffff;
+}
+
+.vj-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Typography ── */
+.vj-kicker {
+  font-family: var(--vj-font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--vj-teal);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.vj-kicker--light {
+  color: rgba(8, 145, 178, 0.8);
+}
+
+.vj-heading {
+  font-family: var(--vj-font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--vj-text);
+}
+
+.vj-heading--light {
+  color: #ffffff;
+}
+
+.vj-subtitle {
+  color: var(--vj-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── Glass Card Base ── */
+.vj-glass-card {
+  background: var(--vj-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--vj-glass-border);
+  border-radius: var(--vj-radius);
+  box-shadow: var(--vj-glass-shadow);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vj-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(31, 58, 95, 0.12);
+}
+
+.vj-glass-card--navy {
+  background: rgba(42, 74, 114, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.vj-glass-card--navy:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Buttons ── */
+.vj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--vj-font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--vj-radius-pill);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  white-space: nowrap;
+}
+
+.vj-btn svg {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.vj-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.vj-btn--teal {
+  background: var(--vj-teal);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.25);
+}
+
+.vj-btn--teal:hover {
+  background: var(--vj-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(8, 145, 178, 0.35);
+}
+
+.vj-btn--glass {
+  background: var(--vj-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--vj-text);
+  border: 1px solid var(--vj-glass-border);
+  box-shadow: var(--vj-glass-shadow);
+}
+
+.vj-btn--glass:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 58, 95, 0.12);
+}
+
+.vj-btn--white {
+  background: #ffffff;
+  color: var(--vj-teal);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.vj-btn--white:hover {
+  background: #f8fffe;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ════════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════════ */
+.vj-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1.5rem 4rem;
+  position: relative;
+  background: linear-gradient(170deg, #e8eef5 0%, var(--vj-bg) 40%, #edf2f7 100%);
+  overflow: hidden;
+}
+
+.vj-hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vj-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 58, 95, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vj-hero__container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vj-hero__content {
+  max-width: 720px;
+  margin-bottom: 3rem;
+}
+
+.vj-hero__kicker {
+  font-family: var(--vj-font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--vj-teal);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.vj-hero__title {
+  font-family: var(--vj-font-display);
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--vj-navy);
+  margin-bottom: 1.5rem;
+}
+
+.vj-hero__title-accent {
+  color: var(--vj-teal);
+}
+
+.vj-hero__sub {
+  font-size: 1.15rem;
+  color: var(--vj-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vj-hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vj-hero__glass-card {
+  width: 100%;
+  max-width: 680px;
+}
+
+.vj-hero__trust-badges {
+  background: var(--vj-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--vj-glass-border);
+  border-radius: var(--vj-radius-lg);
+  box-shadow: 0 12px 40px rgba(31, 58, 95, 0.1);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.vj-hero__badge {
+  text-align: center;
+}
+
+.vj-hero__badge-value {
+  font-family: var(--vj-font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--vj-navy);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.vj-hero__badge-stars {
+  display: flex;
+  gap: 0.1rem;
+  justify-content: center;
+  color: var(--vj-teal);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.vj-hero__badge-label {
+  font-size: 0.78rem;
+  color: var(--vj-text-muted);
+  font-weight: 500;
+}
+
+.vj-hero__badge-divider {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(180deg, transparent, rgba(31, 58, 95, 0.15), transparent);
+}
+
+/* ════════════════════════════════════════════════════
+   SERVICES — Frosted Glass Cards
+   ════════════════════════════════════════════════════ */
+.vj-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vj-service-card {
+  padding: 2rem;
+}
+
+.vj-service-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--vj-teal-light);
+  color: var(--vj-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.vj-service-card:hover .vj-service-card__icon {
+  background: var(--vj-teal);
+  color: #fff;
+}
+
+.vj-service-card__title {
+  font-family: var(--vj-font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--vj-text);
+}
+
+.vj-service-card__desc {
+  font-size: 0.88rem;
+  color: var(--vj-text-muted);
+  line-height: 1.65;
+}
+
+/* ════════════════════════════════════════════════════
+   CTA BANNER
+   ════════════════════════════════════════════════════ */
+.vj-cta-banner {
+  padding: 0 1.5rem;
+}
+
+.vj-cta-banner__inner {
+  background: linear-gradient(135deg, var(--vj-teal) 0%, var(--vj-teal-dark) 100%);
+  border-radius: var(--vj-radius-lg);
+  padding: 3rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.2);
+}
+
+.vj-cta-banner__text h3 {
+  font-family: var(--vj-font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.vj-cta-banner__text p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.vj-cta-banner--navy .vj-cta-banner__inner {
+  background: linear-gradient(135deg, var(--vj-navy) 0%, #162d4d 100%);
+  box-shadow: 0 12px 40px rgba(31, 58, 95, 0.2);
+}
+
+/* ════════════════════════════════════════════════════
+   PROCESS — Glass Cards with Connectors
+   ════════════════════════════════════════════════════ */
+.vj-process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.vj-process-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.vj-process-card__inner {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  flex: 1;
+}
+
+.vj-process-card__inner:hover {
+  transform: translateY(-4px);
+}
+
+.vj-process-card__step {
+  font-family: var(--vj-font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--vj-teal);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+.vj-process-card__title {
+  font-family: var(--vj-font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--vj-text);
+  margin-bottom: 0.5rem;
+}
+
+.vj-process-card__desc {
+  font-size: 0.85rem;
+  color: var(--vj-text-muted);
+  line-height: 1.6;
+}
+
+.vj-process-card__connector {
+  display: none;
+}
+
+/* Connector line between process cards (desktop) */
+@media (min-width: 901px) {
+  .vj-process__grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--vj-teal), rgba(8, 145, 178, 0.2));
+    z-index: 0;
+    transform: translateY(-50%);
+    border-radius: 1px;
+  }
+
+  .vj-process-card {
+    z-index: 1;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   B2B / ENTERPRISE
+   ════════════════════════════════════════════════════ */
+.vj-b2b__card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+  margin-top: 2.5rem;
+  overflow: hidden;
+  padding: 0;
+}
+
+.vj-b2b__card:hover {
+  transform: none;
+}
+
+.vj-b2b__content {
+  padding: 3rem;
+}
+
+.vj-b2b__intro {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.vj-b2b__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vj-b2b__list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.vj-b2b__check {
+  color: var(--vj-teal);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.vj-b2b__visual {
+  background: rgba(8, 145, 178, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  min-width: 260px;
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vj-b2b__visual-icon {
+  font-size: 3.5rem;
+  color: var(--vj-teal);
+  margin-bottom: 1rem;
+}
+
+.vj-b2b__visual-title {
+  font-family: var(--vj-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.vj-b2b__visual-sub {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ════════════════════════════════════════════════════
+   WHY CHOOSE US
+   ════════════════════════════════════════════════════ */
+.vj-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vj-why-card {
+  padding: 2rem;
+}
+
+.vj-why-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--vj-teal-light);
+  color: var(--vj-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.vj-why-card:hover .vj-why-card__icon {
+  background: var(--vj-teal);
+  color: #fff;
+}
+
+.vj-why-card__title {
+  font-family: var(--vj-font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--vj-text);
+  margin-bottom: 0.4rem;
+}
+
+.vj-why-card__desc {
+  font-size: 0.85rem;
+  color: var(--vj-text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   PORTFOLIO
+   ════════════════════════════════════════════════════ */
+.vj-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vj-portfolio-card {
+  border-radius: var(--vj-radius);
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vj-portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(31, 58, 95, 0.15);
+}
+
+.vj-portfolio-card__visual {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vj-portfolio-card__visual--teal {
+  background: linear-gradient(135deg, var(--vj-teal) 0%, var(--vj-teal-dark) 100%);
+}
+
+.vj-portfolio-card__visual--navy {
+  background: linear-gradient(135deg, var(--vj-navy) 0%, #162d4d 100%);
+}
+
+.vj-portfolio-card__emoji {
+  font-size: 3.5rem;
+  filter: grayscale(0.2) brightness(1.1);
+}
+
+.vj-portfolio-card__overlay {
+  background: var(--vj-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--vj-glass-border);
+}
+
+.vj-portfolio-card__title {
+  font-family: var(--vj-font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vj-text);
+  margin-bottom: 0.2rem;
+}
+
+.vj-portfolio-card__type {
+  font-size: 0.78rem;
+  color: var(--vj-teal);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ════════════════════════════════════════════════════
+   TESTIMONIALS
+   ════════════════════════════════════════════════════ */
+.vj-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vj-testimonial-card {
+  padding: 2rem;
+  position: relative;
+}
+
+.vj-testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vj-teal), rgba(8, 145, 178, 0.3));
+  border-radius: var(--vj-radius) var(--vj-radius) 0 0;
+}
+
+.vj-testimonial-card__stars {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--vj-teal);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.vj-testimonial-card__text {
+  font-size: 0.92rem;
+  color: var(--vj-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.vj-testimonial-card__author {
+  font-family: var(--vj-font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--vj-text);
+  margin-bottom: 0.15rem;
+}
+
+.vj-testimonial-card__role {
+  font-size: 0.78rem;
+  color: var(--vj-text-muted);
+}
+
+/* ════════════════════════════════════════════════════
+   CONTACT
+   ════════════════════════════════════════════════════ */
+.vj-contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.vj-contact__info-card {
+  padding: 2rem;
+  height: 100%;
+}
+
+.vj-contact__info-card:hover {
+  transform: none;
+}
+
+.vj-contact__info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.75rem;
+}
+
+.vj-contact__info-item:last-child {
+  margin-bottom: 0;
+}
+
+.vj-contact__info-icon {
+  color: var(--vj-teal);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.vj-contact__info-item h4 {
+  font-family: var(--vj-font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--vj-text);
+  margin-bottom: 0.2rem;
+}
+
+.vj-contact__info-item p,
+.vj-contact__info-item a {
+  font-size: 0.9rem;
+  color: var(--vj-text-muted);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.vj-contact__info-item a:hover {
+  color: var(--vj-teal);
+}
+
+.vj-contact__form-card {
+  padding: 2.5rem;
+}
+
+.vj-contact__form-card:hover {
+  transform: none;
+}
+
+.vj-contact__tcpa {
+  font-size: 0.7rem;
+  color: var(--vj-text-muted);
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ════════════════════════════════════════════════════
+   FOOTER BAR
+   ════════════════════════════════════════════════════ */
+.vj-footerbar {
+  background: var(--vj-navy);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.vj-footerbar__brand {
+  font-family: var(--vj-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.vj-footerbar__brand span {
+  color: var(--vj-teal);
+}
+
+.vj-footerbar p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.vj-footerbar__links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.vj-footerbar__links a {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.vj-footerbar__links a:hover {
+  color: var(--vj-teal);
+}
+
+/* ════════════════════════════════════════════════════
+   FLOATING CTA
+   ════════════════════════════════════════════════════ */
+.vj-floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.vj-floating-cta .vj-btn {
+  box-shadow: 0 8px 32px rgba(8, 145, 178, 0.3),
+              0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vj-floating-cta .vj-btn:hover {
+  box-shadow: 0 12px 40px rgba(8, 145, 178, 0.4),
+              0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ════════════════════════════════════════════════════
+   FORM OVERRIDES — Glass styling for QuoteForm
+   ════════════════════════════════════════════════════ */
+.theme-vj .quote-form input,
+.theme-vj .quote-form textarea,
+.theme-vj .quote-form select {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(31, 58, 95, 0.12);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-family: var(--vj-font-body);
+  font-size: 0.9rem;
+  color: var(--vj-text);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.theme-vj .quote-form input:focus,
+.theme-vj .quote-form textarea:focus,
+.theme-vj .quote-form select:focus {
+  outline: none;
+  border-color: var(--vj-teal);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.12);
+}
+
+.theme-vj .quote-form input::placeholder,
+.theme-vj .quote-form textarea::placeholder {
+  color: var(--vj-text-muted);
+  opacity: 0.6;
+}
+
+.theme-vj .quote-form button[type="submit"] {
+  background: var(--vj-teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--vj-radius-pill);
+  padding: 0.85rem 2rem;
+  font-family: var(--vj-font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-vj .quote-form button[type="submit"]:hover {
+  background: var(--vj-teal-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(8, 145, 178, 0.25);
+}
+
+.theme-vj .quote-form label {
+  font-family: var(--vj-font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--vj-text);
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — 900px
+   ════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .vj-hero {
+    min-height: auto;
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  .vj-hero__title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+  }
+
+  .vj-hero__trust-badges {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .vj-hero__badge-divider {
+    display: none;
+  }
+
+  .vj-services__grid,
+  .vj-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vj-process__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vj-portfolio__grid,
+  .vj-testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vj-b2b__card {
+    grid-template-columns: 1fr;
+  }
+
+  .vj-b2b__visual {
+    min-width: auto;
+    padding: 2rem;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .vj-contact__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .vj-cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — 600px
+   ════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .vj-section {
+    padding: 4.5rem 1rem;
+  }
+
+  .vj-hero {
+    padding: 6rem 1rem 2.5rem;
+  }
+
+  .vj-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .vj-hero__sub {
+    font-size: 1rem;
+  }
+
+  .vj-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vj-hero__trust-badges {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .vj-hero__badge-value {
+    font-size: 1.5rem;
+  }
+
+  .vj-services__grid,
+  .vj-why__grid,
+  .vj-portfolio__grid,
+  .vj-testimonials__grid,
+  .vj-process__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vj-cta-banner__inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .vj-cta-banner__text h3 {
+    font-size: 1.25rem;
+  }
+
+  .vj-b2b__content {
+    padding: 2rem 1.5rem;
+  }
+
+  .vj-b2b__visual {
+    padding: 1.5rem;
+  }
+
+  .vj-contact__form-card {
+    padding: 1.5rem;
+  }
+
+  .vj-floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .vj-floating-cta .vj-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.82rem;
+  }
+
+  .vj-heading {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .vj-footerbar {
+    padding: 2rem 1rem;
+  }
+
+  .vj-footerbar__links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

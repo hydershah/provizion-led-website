@@ -1,0 +1,1007 @@
+/* ===================================================================
+   VARIANT L — SHOWROOM  (Apple Store / Product Catalog)
+   =================================================================== */
+
+/* ── Tokens ── */
+.theme-vl {
+  --vl-bg: #f7f8fa;
+  --vl-surface: #ffffff;
+  --vl-surface-alt: #f0f2f5;
+  --vl-surface-dark: #1c1c1e;
+  --vl-text: #1c1c1e;
+  --vl-text-muted: #6b7280;
+  --vl-blue: #2563eb;
+  --vl-blue-dark: #1d4ed8;
+  --vl-blue-light: rgba(37, 99, 235, 0.06);
+  --vl-silver: #94a3b8;
+  --vl-border: #e5e7eb;
+  --vl-radius: 12px;
+  --vl-radius-lg: 20px;
+  --vl-radius-pill: 50px;
+  --vl-radius-sm: 6px;
+  --vl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --vl-font-body: 'DM Sans', system-ui, sans-serif;
+  --vl-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --vl-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --vl-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --vl-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 0 0 1px var(--vl-border);
+}
+
+/* ── Global ── */
+.vl-page {
+  background: var(--vl-bg);
+  color: var(--vl-text);
+  font-family: var(--vl-font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.vl-page *::selection {
+  background: var(--vl-blue);
+  color: #fff;
+}
+
+.vl-section {
+  padding: 6rem 1.5rem;
+  position: relative;
+}
+
+.vl-section--light {
+  background: var(--vl-surface);
+}
+
+.vl-section--dark {
+  background: var(--vl-surface-dark);
+  color: #fff;
+}
+
+.vl-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vl-kicker {
+  font-family: var(--vl-font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vl-blue);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.vl-kicker--light {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.vl-heading {
+  font-family: var(--vl-font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  color: var(--vl-text);
+}
+
+.vl-section--dark .vl-heading {
+  color: #fff;
+}
+
+.vl-subtitle {
+  color: var(--vl-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+.vl-section--dark .vl-subtitle {
+  color: var(--vl-silver);
+}
+
+/* ── Buttons ── */
+.vl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  font-family: var(--vl-font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--vl-radius);
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+
+.vl-btn--blue {
+  background: var(--vl-blue);
+  color: #fff;
+}
+
+.vl-btn--blue:hover {
+  background: var(--vl-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+.vl-btn--outline {
+  background: transparent;
+  color: var(--vl-text);
+  border: 1px solid var(--vl-border);
+}
+
+.vl-btn--outline:hover {
+  border-color: var(--vl-blue);
+  color: var(--vl-blue);
+  background: var(--vl-blue-light);
+}
+
+.vl-btn--white {
+  background: #fff;
+  color: var(--vl-blue);
+}
+
+.vl-btn--white:hover {
+  background: var(--vl-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--vl-shadow-lg);
+}
+
+/* ════════════════════════════════════════════════════
+   HERO — Clean Product-Launch Style
+   ════════════════════════════════════════════════════ */
+.vl-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--vl-surface);
+  padding: 8rem 1.5rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.vl-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, var(--vl-blue-light) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(148, 163, 184, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.vl-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vl-hero__badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.vl-hero__badge {
+  font-family: var(--vl-font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vl-blue);
+  background: var(--vl-blue-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--vl-radius-pill);
+  letter-spacing: 0.02em;
+}
+
+.vl-hero__badge-sep {
+  color: var(--vl-silver);
+  font-size: 0.5rem;
+}
+
+.vl-hero__title {
+  font-family: var(--vl-font-display);
+  font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  color: var(--vl-text);
+}
+
+.vl-hero__sub {
+  font-size: 1.15rem;
+  color: var(--vl-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.vl-hero__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Hero Stats Card */
+.vl-hero__stats-card {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--vl-shadow-lg);
+}
+
+.vl-hero__stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--vl-border);
+}
+
+.vl-hero__stat {
+  text-align: center;
+}
+
+.vl-hero__stat-value {
+  font-family: var(--vl-font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--vl-text);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.vl-hero__stat-label {
+  font-size: 0.75rem;
+  color: var(--vl-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.vl-hero__trust-row {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vl-hero__trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--vl-text-muted);
+}
+
+.vl-hero__trust-badge svg {
+  color: var(--vl-blue);
+  font-size: 1rem;
+}
+
+/* ════════════════════════════════════════════════════
+   SERVICES — Product Catalog Cards
+   ════════════════════════════════════════════════════ */
+.vl-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vl-service-card {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.vl-service-card:hover {
+  border-color: var(--vl-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--vl-shadow-md);
+}
+
+.vl-service-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vl-blue-light);
+  color: var(--vl-blue);
+  border-radius: var(--vl-radius);
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.vl-service-card__title {
+  font-family: var(--vl-font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--vl-text);
+  letter-spacing: -0.01em;
+}
+
+.vl-service-card__desc {
+  font-size: 0.88rem;
+  color: var(--vl-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Spec Badges */
+.vl-service-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.vl-spec-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--vl-font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--vl-blue);
+  background: var(--vl-blue-light);
+  border-radius: var(--vl-radius-pill);
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+/* ════════════════════════════════════════════════════
+   CTA BANNER
+   ════════════════════════════════════════════════════ */
+.vl-cta-banner {
+  background: var(--vl-blue);
+  padding: 3rem 1.5rem;
+}
+
+.vl-cta-banner .vl-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.vl-cta-banner__text {
+  font-family: var(--vl-font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  max-width: 500px;
+}
+
+/* ════════════════════════════════════════════════════
+   PROCESS — Horizontal Pipeline
+   ════════════════════════════════════════════════════ */
+.vl-process__track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.vl-process__line {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: var(--vl-border);
+  z-index: 0;
+}
+
+.vl-process-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vl-process-step__num {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-family: var(--vl-font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--vl-blue);
+  border-radius: 50%;
+  border: 4px solid var(--vl-surface);
+  box-shadow: var(--vl-shadow-md);
+}
+
+.vl-process-step__title {
+  font-family: var(--vl-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--vl-text);
+  margin-bottom: 0.4rem;
+}
+
+.vl-process-step__desc {
+  font-size: 0.85rem;
+  color: var(--vl-text-muted);
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════════════════════════
+   B2B — Enterprise Section
+   ════════════════════════════════════════════════════ */
+.vl-b2b__inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.vl-b2b__desc {
+  color: var(--vl-silver);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.vl-b2b__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.vl-b2b__list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.vl-b2b__list-item svg {
+  color: var(--vl-blue);
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.vl-b2b__card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--vl-radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.vl-b2b__card-icon {
+  font-size: 3rem;
+  color: var(--vl-blue);
+  margin-bottom: 1rem;
+}
+
+.vl-b2b__card h3 {
+  font-family: var(--vl-font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.vl-b2b__card p {
+  font-size: 0.9rem;
+  color: var(--vl-silver);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   WHY CHOOSE US
+   ════════════════════════════════════════════════════ */
+.vl-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vl-why-card {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.vl-why-card:hover {
+  border-color: var(--vl-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--vl-shadow-md);
+}
+
+.vl-why-card__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vl-blue-light);
+  color: var(--vl-blue);
+  border-radius: var(--vl-radius-sm);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.vl-why-card h3 {
+  font-family: var(--vl-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--vl-text);
+}
+
+.vl-why-card p {
+  font-size: 0.85rem;
+  color: var(--vl-text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   PORTFOLIO — Product Gallery
+   ════════════════════════════════════════════════════ */
+.vl-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vl-portfolio-card {
+  background: var(--vl-bg);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.vl-portfolio-card:hover {
+  border-color: var(--vl-blue);
+  transform: translateY(-3px);
+  box-shadow: var(--vl-shadow-lg);
+}
+
+.vl-portfolio-card__visual {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vl-portfolio-card__visual--blue {
+  background: var(--vl-blue-light);
+}
+
+.vl-portfolio-card__visual--gray {
+  background: var(--vl-surface-alt);
+}
+
+.vl-portfolio-card__emoji {
+  font-size: 3.5rem;
+}
+
+.vl-portfolio-card__tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-family: var(--vl-font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--vl-blue);
+  background: var(--vl-surface);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--vl-radius-pill);
+  border: 1px solid var(--vl-border);
+}
+
+.vl-portfolio-card__body {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--vl-border);
+  background: var(--vl-surface);
+}
+
+.vl-portfolio-card__body h3 {
+  font-family: var(--vl-font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vl-text);
+  margin-bottom: 0.2rem;
+}
+
+.vl-portfolio-card__type {
+  font-size: 0.78rem;
+  color: var(--vl-text-muted);
+}
+
+/* ════════════════════════════════════════════════════
+   TESTIMONIALS
+   ════════════════════════════════════════════════════ */
+.vl-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.vl-testimonial-card {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.vl-testimonial-card:hover {
+  border-color: var(--vl-blue);
+  box-shadow: var(--vl-shadow-md);
+}
+
+.vl-testimonial-card__stars {
+  display: flex;
+  gap: 0.1rem;
+  color: #f59e0b;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.vl-testimonial-card__text {
+  font-size: 0.92rem;
+  color: var(--vl-text);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.vl-testimonial-card__author {
+  font-family: var(--vl-font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--vl-text);
+  margin-bottom: 0.15rem;
+}
+
+.vl-testimonial-card__role {
+  font-size: 0.78rem;
+  color: var(--vl-text-muted);
+}
+
+/* ════════════════════════════════════════════════════
+   CONTACT
+   ════════════════════════════════════════════════════ */
+.vl-contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.vl-contact__info {
+  background: var(--vl-surface-dark);
+  border-radius: var(--vl-radius-lg);
+  padding: 2.5rem;
+}
+
+.vl-contact__info-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.vl-contact__info-item:last-child {
+  margin-bottom: 0;
+}
+
+.vl-contact__info-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--vl-blue);
+  border-radius: var(--vl-radius-sm);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.vl-contact__info-item h4 {
+  font-family: var(--vl-font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.vl-contact__info-item p,
+.vl-contact__info-item a {
+  font-size: 0.88rem;
+  color: var(--vl-silver);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.vl-contact__info-item a:hover {
+  color: var(--vl-blue);
+}
+
+.vl-contact__form-wrap {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: var(--vl-radius-lg);
+  padding: 2.5rem;
+}
+
+.vl-contact__tcpa {
+  font-size: 0.68rem;
+  color: var(--vl-text-muted);
+  line-height: 1.55;
+  margin-top: 0.75rem;
+}
+
+/* ════════════════════════════════════════════════════
+   FOOTER BAR
+   ════════════════════════════════════════════════════ */
+.vl-footerbar {
+  background: var(--vl-surface-dark);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vl-footerbar .vl-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vl-footerbar__brand {
+  font-family: var(--vl-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.vl-footerbar__brand em {
+  color: var(--vl-blue);
+  font-style: normal;
+}
+
+.vl-footerbar p {
+  font-size: 0.8rem;
+  color: var(--vl-silver);
+}
+
+.vl-footerbar__links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.vl-footerbar__links a {
+  font-size: 0.8rem;
+  color: var(--vl-silver);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vl-footerbar__links a:hover {
+  color: var(--vl-blue);
+}
+
+/* ════════════════════════════════════════════════════
+   FLOATING CTA
+   ════════════════════════════════════════════════════ */
+.vl-floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.vl-floating-cta .vl-btn {
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
+  border-radius: var(--vl-radius-pill);
+  padding: 0.75rem 1.5rem;
+}
+
+.vl-floating-cta .vl-btn:hover {
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.45);
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — 900px
+   ════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .vl-hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .vl-hero__sub {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vl-hero__badge-row {
+    justify-content: center;
+  }
+
+  .vl-hero__actions {
+    justify-content: center;
+  }
+
+  .vl-hero__stats-card {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .vl-services__grid,
+  .vl-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vl-process__track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  .vl-process__line {
+    display: none;
+  }
+
+  .vl-b2b__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-b2b__card {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .vl-portfolio__grid,
+  .vl-testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vl-contact__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-cta-banner .vl-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE — 600px
+   ════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .vl-section {
+    padding: 4rem 1rem;
+  }
+
+  .vl-hero {
+    padding: 7rem 1rem 4rem;
+  }
+
+  .vl-hero__title {
+    font-size: 2.25rem;
+  }
+
+  .vl-hero__badge-row {
+    gap: 0.35rem;
+  }
+
+  .vl-hero__badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .vl-hero__badge-sep {
+    display: none;
+  }
+
+  .vl-hero__stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .vl-hero__stat-value {
+    font-size: 1.5rem;
+  }
+
+  .vl-hero__trust-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .vl-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vl-services__grid,
+  .vl-why__grid,
+  .vl-portfolio__grid,
+  .vl-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-process__track {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vl-cta-banner {
+    padding: 2.5rem 1rem;
+  }
+
+  .vl-floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .vl-floating-cta .vl-btn {
+    font-size: 0.8rem;
+    padding: 0.65rem 1.25rem;
+  }
+
+  .vl-contact__info {
+    padding: 2rem 1.5rem;
+  }
+
+  .vl-contact__form-wrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .vl-b2b__text {
+    text-align: center;
+  }
+
+  .vl-b2b__list {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

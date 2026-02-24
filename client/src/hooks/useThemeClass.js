@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const THEME_CLASSES = ['theme-va', 'theme-vb', 'theme-vc', 'theme-vd', 'theme-ve', 'theme-vf', 'theme-vg', 'theme-vh'];
+const THEME_CLASSES = ['theme-va', 'theme-vb', 'theme-vc', 'theme-vd', 'theme-ve', 'theme-vf', 'theme-vg', 'theme-vh', 'theme-vi', 'theme-vj', 'theme-vk', 'theme-vl', 'theme-vm'];
 
 export default function useThemeClass(themeClass) {
   useEffect(() => {
