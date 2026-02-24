@@ -1,0 +1,90 @@
+body {
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+body.theme-ops {
+  --color-bg-primary: #080c12;
+  --color-bg-secondary: #111722;
+  --color-bg-tertiary: #192231;
+  --color-bg-card: #0f1724;
+  --color-bg-card-hover: #172236;
+
+  --color-accent: #f59e0b;
+  --color-accent-dim: rgba(245, 158, 11, 0.18);
+  --color-accent-glow: rgba(245, 158, 11, 0.35);
+  --color-accent-dark: #d97706;
+
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #9aa5b7;
+  --color-text-inverse: #0f172a;
+
+  --color-border: rgba(148, 163, 184, 0.2);
+  --color-border-accent: rgba(245, 158, 11, 0.35);
+
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  background:
+    radial-gradient(circle at 15% 18%, rgba(245, 158, 11, 0.14), transparent 35%),
+    radial-gradient(circle at 80% 5%, rgba(56, 189, 248, 0.12), transparent 35%),
+    #080c12;
+}
+
+body.theme-retail {
+  --color-bg-primary: #fffaf2;
+  --color-bg-secondary: #1f2937;
+  --color-bg-tertiary: #fff2db;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #fff6e7;
+
+  --color-accent: #dd6b20;
+  --color-accent-dim: rgba(221, 107, 32, 0.14);
+  --color-accent-glow: rgba(221, 107, 32, 0.25);
+  --color-accent-dark: #c05621;
+
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #fffaf2;
+
+  --color-border: rgba(31, 41, 55, 0.14);
+  --color-border-accent: rgba(221, 107, 32, 0.28);
+
+  --font-display: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  background:
+    radial-gradient(circle at 85% 0%, rgba(221, 107, 32, 0.12), transparent 34%),
+    radial-gradient(circle at 15% 20%, rgba(20, 184, 166, 0.1), transparent 38%),
+    #fffaf2;
+}
+
+body.theme-civic {
+  --color-bg-primary: #f6f9fc;
+  --color-bg-secondary: #1f2f44;
+  --color-bg-tertiary: #e8f0f8;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f2f7fd;
+
+  --color-accent: #0f6db8;
+  --color-accent-dim: rgba(15, 109, 184, 0.14);
+  --color-accent-glow: rgba(15, 109, 184, 0.22);
+  --color-accent-dark: #0b4f87;
+
+  --color-text-primary: #12243b;
+  --color-text-secondary: #34485f;
+  --color-text-muted: #556b84;
+  --color-text-inverse: #f8fbff;
+
+  --color-border: rgba(18, 36, 59, 0.14);
+  --color-border-accent: rgba(15, 109, 184, 0.26);
+
+  --font-display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, sans-serif;
+
+  background:
+    radial-gradient(circle at 90% 8%, rgba(15, 109, 184, 0.1), transparent 36%),
+    radial-gradient(circle at 10% 4%, rgba(16, 185, 129, 0.08), transparent 30%),
+    #f6f9fc;
+}

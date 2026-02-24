@@ -1,0 +1,733 @@
+/* ===================================================================
+   VARIANT E — ORGANIC FLOW  (Nature-Inspired / Soft Curves)
+   =================================================================== */
+
+/* ── Tokens ── */
+.theme-ve {
+  --ve-bg: #f7f5f0;
+  --ve-surface: #ffffff;
+  --ve-surface-alt: #eee9df;
+  --ve-text: #2d3a2e;
+  --ve-text-muted: #6b7c6b;
+  --ve-sage: #5b8a5b;
+  --ve-sage-light: #7fb17f;
+  --ve-warm: #c4956a;
+  --ve-cream: #faf8f4;
+  --ve-leaf: #3d6b3d;
+  --ve-radius: 16px;
+  --ve-radius-lg: 24px;
+  --ve-radius-pill: 50px;
+  --ve-font-display: 'DM Serif Display', Georgia, serif;
+  --ve-font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Global ── */
+.ve-page {
+  background: var(--ve-bg);
+  color: var(--ve-text);
+  font-family: var(--ve-font-body);
+  overflow-x: hidden;
+}
+
+.ve-page *::selection {
+  background: var(--ve-sage);
+  color: #fff;
+}
+
+.ve-section {
+  padding: 6rem 1.5rem;
+  position: relative;
+}
+
+.ve-section--cream { background: var(--ve-cream); }
+.ve-section--sage { background: var(--ve-sage); color: #fff; }
+
+.ve-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.ve-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ve-sage);
+  margin-bottom: 0.75rem;
+  display: block;
+  font-weight: 600;
+}
+
+.ve-section--sage .ve-kicker {
+  color: var(--ve-sage-light);
+}
+
+.ve-heading {
+  font-family: var(--ve-font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--ve-text);
+}
+
+.ve-section--sage .ve-heading {
+  color: #fff;
+}
+
+.ve-subtitle {
+  color: var(--ve-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.ve-section--sage .ve-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Buttons ── */
+.ve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--ve-font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ve-btn--sage {
+  background: var(--ve-sage);
+  color: #fff;
+  border-radius: var(--ve-radius-pill);
+}
+
+.ve-btn--sage:hover {
+  background: var(--ve-leaf);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91, 138, 91, 0.3);
+}
+
+.ve-btn--outline {
+  background: transparent;
+  color: var(--ve-sage);
+  border: 2px solid var(--ve-sage);
+  border-radius: var(--ve-radius-pill);
+}
+
+.ve-btn--outline:hover {
+  background: var(--ve-sage);
+  color: #fff;
+}
+
+.ve-btn--white {
+  background: #fff;
+  color: var(--ve-sage);
+  border-radius: var(--ve-radius-pill);
+}
+
+.ve-btn--white:hover {
+  background: var(--ve-cream);
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════════ */
+.ve-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 1.5rem 6rem;
+  background: var(--ve-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.ve-hero__wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  fill: var(--ve-bg);
+}
+
+.ve-hero__organic-bg {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 60%;
+  height: 120%;
+  border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
+  background: linear-gradient(135deg, rgba(91, 138, 91, 0.06), rgba(196, 149, 106, 0.04));
+  animation: ve-morph 20s ease-in-out infinite;
+}
+
+@keyframes ve-morph {
+  0%, 100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+  25% { border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%; }
+  50% { border-radius: 60% 40% 50% 50% / 60% 50% 40% 50%; }
+  75% { border-radius: 45% 55% 55% 45% / 55% 45% 55% 45%; }
+}
+
+.ve-hero__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ve-hero__content {
+  max-width: 520px;
+}
+
+.ve-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ve-sage);
+  background: rgba(91, 138, 91, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: var(--ve-radius-pill);
+  margin-bottom: 1.5rem;
+}
+
+.ve-hero__title {
+  font-family: var(--ve-font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--ve-text);
+  margin-bottom: 1.25rem;
+}
+
+.ve-hero__title em {
+  color: var(--ve-sage);
+  font-style: normal;
+}
+
+.ve-hero__sub {
+  font-size: 1.1rem;
+  color: var(--ve-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.ve-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ve-hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ve-hero__visual-blob {
+  width: 380px;
+  height: 380px;
+  border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+  background: linear-gradient(135deg, var(--ve-sage), var(--ve-sage-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  animation: ve-morph 15s ease-in-out infinite;
+  box-shadow: 0 24px 64px rgba(91, 138, 91, 0.25);
+}
+
+.ve-hero__visual-number {
+  font-family: var(--ve-font-display);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.ve-hero__visual-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ════════════════════════════════════════════════════
+   SERVICES — Rounded Cards
+   ════════════════════════════════════════════════════ */
+.ve-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ve-service-card {
+  background: var(--ve-surface);
+  border-radius: var(--ve-radius-lg);
+  padding: 2rem;
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
+}
+
+.ve-service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ve-sage);
+  box-shadow: 0 16px 40px rgba(91, 138, 91, 0.12);
+}
+
+.ve-service-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(91, 138, 91, 0.1);
+  color: var(--ve-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ve-service-card__title {
+  font-family: var(--ve-font-display);
+  font-size: 1.15rem;
+  color: var(--ve-text);
+  margin-bottom: 0.5rem;
+}
+
+.ve-service-card__desc {
+  font-size: 0.9rem;
+  color: var(--ve-text-muted);
+  line-height: 1.65;
+}
+
+/* ════════════════════════════════════════════════════
+   PROCESS — Winding Path
+   ════════════════════════════════════════════════════ */
+.ve-process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.ve-process-step {
+  text-align: center;
+  position: relative;
+}
+
+.ve-process-step__circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--ve-sage);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ve-font-display);
+  font-size: 1.5rem;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px rgba(91, 138, 91, 0.25);
+}
+
+.ve-process-step h4 {
+  font-family: var(--ve-font-display);
+  font-size: 1.1rem;
+  color: var(--ve-text);
+  margin-bottom: 0.35rem;
+}
+
+.ve-process-step p {
+  font-size: 0.85rem;
+  color: var(--ve-text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   B2B
+   ════════════════════════════════════════════════════ */
+.ve-b2b__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.ve-b2b__text p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.ve-b2b__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.ve-b2b__list-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ve-b2b__list-item svg {
+  color: var(--ve-sage-light);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.ve-b2b__card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--ve-radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ve-b2b__card-icon {
+  font-size: 3rem;
+  color: var(--ve-sage-light);
+  margin-bottom: 1rem;
+}
+
+.ve-b2b__card h3 {
+  font-family: var(--ve-font-display);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.ve-b2b__card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════
+   WHY CHOOSE US
+   ════════════════════════════════════════════════════ */
+.ve-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ve-why-card {
+  background: var(--ve-surface);
+  border-radius: var(--ve-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ve-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(91, 138, 91, 0.1);
+}
+
+.ve-why-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(91, 138, 91, 0.1);
+  color: var(--ve-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 1rem;
+}
+
+.ve-why-card h3 {
+  font-family: var(--ve-font-display);
+  font-size: 1.05rem;
+  color: var(--ve-text);
+  margin-bottom: 0.5rem;
+}
+
+.ve-why-card p {
+  font-size: 0.88rem;
+  color: var(--ve-text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════
+   PORTFOLIO
+   ════════════════════════════════════════════════════ */
+.ve-portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ve-portfolio-card {
+  background: var(--ve-surface);
+  border-radius: var(--ve-radius-lg);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.ve-portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ve-portfolio-card__visual {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.ve-portfolio-card__visual--sage {
+  background: linear-gradient(135deg, rgba(91, 138, 91, 0.12), rgba(127, 177, 127, 0.08));
+  color: var(--ve-sage);
+}
+
+.ve-portfolio-card__visual--warm {
+  background: linear-gradient(135deg, rgba(196, 149, 106, 0.15), rgba(91, 138, 91, 0.05));
+  color: var(--ve-warm);
+}
+
+.ve-portfolio-card__body {
+  padding: 1.25rem;
+}
+
+.ve-portfolio-card__body h3 {
+  font-family: var(--ve-font-display);
+  font-size: 1.05rem;
+  color: var(--ve-text);
+  margin-bottom: 0.25rem;
+}
+
+.ve-portfolio-card__body span {
+  font-size: 0.8rem;
+  color: var(--ve-sage);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════════════════════════════
+   TESTIMONIALS
+   ════════════════════════════════════════════════════ */
+.ve-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ve-testimonial-card {
+  background: var(--ve-surface);
+  border-radius: var(--ve-radius-lg);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.ve-testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.ve-testimonial-card__stars {
+  display: flex;
+  gap: 0.2rem;
+  color: var(--ve-warm);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.ve-testimonial-card__text {
+  font-size: 0.95rem;
+  color: var(--ve-text);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.ve-testimonial-card__author {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ve-text);
+}
+
+.ve-testimonial-card__role {
+  font-size: 0.8rem;
+  color: var(--ve-text-muted);
+}
+
+/* ════════════════════════════════════════════════════
+   CONTACT
+   ════════════════════════════════════════════════════ */
+.ve-contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.ve-contact__info-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.ve-contact__info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(91, 138, 91, 0.1);
+  color: var(--ve-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.ve-contact__info-item h4 {
+  font-family: var(--ve-font-display);
+  font-size: 0.95rem;
+  color: var(--ve-text);
+  margin-bottom: 0.15rem;
+}
+
+.ve-contact__info-item p,
+.ve-contact__info-item a {
+  font-size: 0.88rem;
+  color: var(--ve-text-muted);
+  text-decoration: none;
+}
+
+.ve-contact__info-item a:hover {
+  color: var(--ve-sage);
+}
+
+.ve-contact__form-wrap {
+  background: var(--ve-surface);
+  border-radius: var(--ve-radius-lg);
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.ve-contact__tcpa {
+  font-size: 0.7rem;
+  color: var(--ve-text-muted);
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+/* ════════════════════════════════════════════════════
+   FOOTER BAR
+   ════════════════════════════════════════════════════ */
+.ve-footerbar {
+  background: var(--ve-text);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.ve-footerbar__brand {
+  font-family: var(--ve-font-display);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.ve-footerbar__brand em {
+  color: var(--ve-sage-light);
+  font-style: normal;
+}
+
+.ve-footerbar p {
+  font-size: 0.8rem;
+}
+
+.ve-footerbar__links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.ve-footerbar__links a {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.ve-footerbar__links a:hover {
+  color: var(--ve-sage-light);
+}
+
+/* ════════════════════════════════════════════════════
+   FLOATING CTA
+   ════════════════════════════════════════════════════ */
+.ve-floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.ve-floating-cta .ve-btn {
+  box-shadow: 0 8px 32px rgba(91, 138, 91, 0.35);
+}
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .ve-hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ve-hero__content { max-width: 100%; }
+  .ve-hero__actions { justify-content: center; }
+  .ve-hero__visual-blob { width: 260px; height: 260px; }
+  .ve-hero__visual-number { font-size: 2.5rem; }
+  .ve-services__grid,
+  .ve-why__grid,
+  .ve-portfolio__grid,
+  .ve-testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+  .ve-process__steps { grid-template-columns: repeat(2, 1fr); }
+  .ve-b2b__inner,
+  .ve-contact__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .ve-section { padding: 4rem 1rem; }
+  .ve-services__grid,
+  .ve-why__grid,
+  .ve-portfolio__grid,
+  .ve-testimonials__grid,
+  .ve-process__steps { grid-template-columns: 1fr; }
+  .ve-hero__actions { flex-direction: column; align-items: center; }
+  .ve-floating-cta { bottom: 1rem; right: 1rem; }
+}
