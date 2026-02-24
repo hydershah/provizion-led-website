@@ -99,7 +99,7 @@ export default function DesignVariants() {
         title="Website Variant Studio"
         description="Explore three industry-specific UI/UX homepage directions for ProVizion LED."
         keywords="website variants, UI UX redesign, signage website concepts"
-        path="/design-variants"
+        path="/"
       />
 
       <section className="variant-studio-hero">
@@ -111,8 +111,8 @@ export default function DesignVariants() {
             user journey for a different buyer context and aesthetic.
           </p>
           <div className="variant-studio-hero__actions">
-            <Link to="/" className="btn btn--outline">
-              Back to Current Site
+            <Link to="/home" className="btn btn--outline">
+              View Current Site
             </Link>
           </div>
         </div>

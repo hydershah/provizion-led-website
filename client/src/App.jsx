@@ -31,8 +31,8 @@ function App() {
       <Layout>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/design-variants" element={<DesignVariants />} />
+            <Route path="/" element={<DesignVariants />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/variant-a" element={<VariantA />} />
             <Route path="/variant-b" element={<VariantB />} />
             <Route path="/variant-c" element={<VariantC />} />

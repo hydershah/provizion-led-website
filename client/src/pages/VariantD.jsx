@@ -394,7 +394,7 @@ export default function VariantD() {
           <div className="vd-footer__links">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
-            <Link to="/design-variants">All Variants</Link>
+            <Link to="/">All Variants</Link>
           </div>
         </div>
       </div>

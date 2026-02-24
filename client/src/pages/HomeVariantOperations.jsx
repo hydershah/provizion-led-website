@@ -81,7 +81,7 @@ export default function HomeVariantOperations() {
         <div className="container container--wide">
           <div className="opsx-variant-bar">
             <span>Variant 1 of 3: Operations Command Center</span>
-            <Link to="/design-variants">
+            <Link to="/">
               Compare all variants <HiArrowRight />
             </Link>
           </div>

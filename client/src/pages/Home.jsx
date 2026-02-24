@@ -185,7 +185,7 @@ export default function Home() {
               <a href={COMPANY.phoneTel} className="btn btn--outline btn--lg">
                 <HiPhone /> {COMPANY.phone}
               </a>
-              <Link to="/design-variants" className="btn btn--ghost btn--lg">
+              <Link to="/" className="btn btn--ghost btn--lg">
                 Explore 3 New UI Variants
               </Link>
             </motion.div>

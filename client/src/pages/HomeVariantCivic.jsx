@@ -78,7 +78,7 @@ export default function HomeVariantCivic() {
         <div className="container container--wide">
           <div className="cvx-variant-bar">
             <span>Variant 3 of 3: Civic Wayfinding Blueprint</span>
-            <Link to="/design-variants">
+            <Link to="/">
               Compare all variants <HiArrowRight />
             </Link>
           </div>

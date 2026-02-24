@@ -363,7 +363,7 @@ export default function VariantF() {
           <div className="vf-footerbar__links">
             <Link to="/privacy-policy">Privacy</Link>
             <Link to="/terms-of-service">Terms</Link>
-            <Link to="/design-variants">All Variants</Link>
+            <Link to="/">All Variants</Link>
           </div>
         </div>
       </div>

@@ -95,7 +95,7 @@ export default function HomeVariantRetail() {
         <div className="container container--wide">
           <div className="retx-variant-bar">
             <span>Variant 2 of 3: Retail Campaign Studio</span>
-            <Link to="/design-variants">
+            <Link to="/">
               Compare all variants <HiArrowRight />
             </Link>
           </div>

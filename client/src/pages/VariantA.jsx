@@ -423,7 +423,7 @@ export default function VariantA() {
             <div className="va-footer-col">
               <h4>Resources</h4>
               <ul>
-                <li><Link to="/design-variants">Design Variants</Link></li>
+                <li><Link to="/">Design Variants</Link></li>
                 <li><Link to="/contact-us">Contact Us</Link></li>
                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service">Terms of Service</Link></li>
