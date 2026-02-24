@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -120,6 +120,15 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantH() {
   useThemeClass('theme-vh');
+  const [showCta, setShowCta] = useState(false);
+  const contactRef = useRef(null);
+  const contactInView = useInView(contactRef, { margin: '-100px' });
+
+  useEffect(() => {
+    const onScroll = () => setShowCta(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="vh-page">
@@ -353,7 +362,7 @@ export default function VariantH() {
       </div>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="vh-contact" className="vh-section vh-section--warm">
+      <section id="vh-contact" className="vh-section vh-section--warm" ref={contactRef}>
         <div className="vh-container">
           <FadeUp>
             <span className="vh-kicker">Contact Us</span>
@@ -410,11 +419,18 @@ export default function VariantH() {
       </div>
 
       {/* ═══ FLOATING CTA ═══ */}
-      <div className="vh-floating-cta">
-        <a href="#vh-contact" className="vh-btn vh-btn--coral">
-          Free Quote <HiArrowRight />
-        </a>
-      </div>
+      {showCta && !contactInView && (
+        <motion.div
+          className="vh-floating-cta"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.85 }}
+        >
+          <a href="#vh-contact" className="vh-btn vh-btn--coral">
+            Free Quote <HiArrowRight />
+          </a>
+        </motion.div>
+      )}
     </div>
   );
 }

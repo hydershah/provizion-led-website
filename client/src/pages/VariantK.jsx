@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -120,6 +120,15 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantK() {
   useThemeClass('theme-vk');
+  const [showCta, setShowCta] = useState(false);
+  const contactRef = useRef(null);
+  const contactInView = useInView(contactRef, { margin: '-100px' });
+
+  useEffect(() => {
+    const onScroll = () => setShowCta(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="vk-page">
@@ -365,7 +374,7 @@ export default function VariantK() {
       </div>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="vk-contact" className="vk-section vk-section--warm">
+      <section id="vk-contact" className="vk-section vk-section--warm" ref={contactRef}>
         <div className="vk-container">
           <FadeUp>
             <span className="vk-kicker">Contact Us</span>
@@ -430,11 +439,18 @@ export default function VariantK() {
       </div>
 
       {/* ═══ FLOATING CTA ═══ */}
-      <div className="vk-floating-cta">
-        <a href="#vk-contact" className="vk-btn vk-btn--terra">
-          Free Quote <HiArrowRight />
-        </a>
-      </div>
+      {showCta && !contactInView && (
+        <motion.div
+          className="vk-floating-cta"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.85 }}
+        >
+          <a href="#vk-contact" className="vk-btn vk-btn--terra">
+            Free Quote <HiArrowRight />
+          </a>
+        </motion.div>
+      )}
     </div>
   );
 }

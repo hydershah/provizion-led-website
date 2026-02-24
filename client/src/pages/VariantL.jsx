@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -162,6 +162,15 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantL() {
   useThemeClass('theme-vl');
+  const [showCta, setShowCta] = useState(false);
+  const contactRef = useRef(null);
+  const contactInView = useInView(contactRef, { margin: '-100px' });
+
+  useEffect(() => {
+    const onScroll = () => setShowCta(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="vl-page">
@@ -400,7 +409,7 @@ export default function VariantL() {
       </div>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="vl-contact" className="vl-section vl-section--light">
+      <section id="vl-contact" className="vl-section vl-section--light" ref={contactRef}>
         <div className="vl-container">
           <FadeUp>
             <span className="vl-kicker">Contact Us</span>
@@ -467,11 +476,18 @@ export default function VariantL() {
       </div>
 
       {/* ═══ FLOATING CTA ═══ */}
-      <div className="vl-floating-cta">
-        <a href="#vl-contact" className="vl-btn vl-btn--blue">
-          Free Quote <HiArrowRight />
-        </a>
-      </div>
+      {showCta && !contactInView && (
+        <motion.div
+          className="vl-floating-cta"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.85 }}
+        >
+          <a href="#vl-contact" className="vl-btn vl-btn--blue">
+            Free Quote <HiArrowRight />
+          </a>
+        </motion.div>
+      )}
     </div>
   );
 }

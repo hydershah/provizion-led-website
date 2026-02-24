@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -120,6 +120,15 @@ const TESTIMONIALS = [
 /* ──── Component ──── */
 export default function VariantM() {
   useThemeClass('theme-vm');
+  const [showCta, setShowCta] = useState(false);
+  const contactRef = useRef(null);
+  const contactInView = useInView(contactRef, { margin: '-100px' });
+
+  useEffect(() => {
+    const onScroll = () => setShowCta(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="vm-page">
@@ -366,7 +375,7 @@ export default function VariantM() {
       </div>
 
       {/* ═══ CONTACT ═══ */}
-      <section id="vm-contact" className="vm-section vm-section--sand">
+      <section id="vm-contact" className="vm-section vm-section--sand" ref={contactRef}>
         <div className="vm-container">
           <FadeUp>
             <span className="vm-kicker">Get In Touch</span>
@@ -434,11 +443,18 @@ export default function VariantM() {
       </div>
 
       {/* ═══ FLOATING CTA ═══ */}
-      <div className="vm-floating-cta">
-        <a href="#vm-contact" className="vm-btn vm-btn--amber">
-          Free Quote <HiArrowRight />
-        </a>
-      </div>
+      {showCta && !contactInView && (
+        <motion.div
+          className="vm-floating-cta"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.85 }}
+        >
+          <a href="#vm-contact" className="vm-btn vm-btn--amber">
+            Free Quote <HiArrowRight />
+          </a>
+        </motion.div>
+      )}
     </div>
   );
 }
