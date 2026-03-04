@@ -4,8 +4,20 @@ import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
 import ScrollToTop from './components/ScrollToTop';
 
-// Lazy load pages for code splitting
-const Home = lazy(() => import('./pages/Home'));
+// Lazy load website pages (primary)
+const HomePage = lazy(() => import('./pages/website/HomePage'));
+const LEDSignsPage = lazy(() => import('./pages/website/LEDSignsPage'));
+const DigitalSignsPage = lazy(() => import('./pages/website/DigitalSignsPage'));
+const ElectronicSignsPage = lazy(() => import('./pages/website/ElectronicSignsPage'));
+const LightedSignsPage = lazy(() => import('./pages/website/LightedSignsPage'));
+const ContactPage = lazy(() => import('./pages/website/ContactPage'));
+
+// Lazy load utility pages
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Lazy load design variants (reference)
 const DesignVariants = lazy(() => import('./pages/DesignVariants'));
 const VariantA = lazy(() => import('./pages/VariantA'));
 const VariantB = lazy(() => import('./pages/VariantB'));
@@ -20,14 +32,6 @@ const VariantJ = lazy(() => import('./pages/VariantJ'));
 const VariantK = lazy(() => import('./pages/VariantK'));
 const VariantL = lazy(() => import('./pages/VariantL'));
 const VariantM = lazy(() => import('./pages/VariantM'));
-const LEDSigns = lazy(() => import('./pages/LEDSigns'));
-const DigitalSigns = lazy(() => import('./pages/DigitalSigns'));
-const ElectronicSigns = lazy(() => import('./pages/ElectronicSigns'));
-const LightedSigns = lazy(() => import('./pages/LightedSigns'));
-const ContactUs = lazy(() => import('./pages/ContactUs'));
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./pages/TermsOfService'));
-const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   return (
@@ -36,8 +40,19 @@ function App() {
       <Layout>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
-            <Route path="/" element={<DesignVariants />} />
-            <Route path="/home" element={<Home />} />
+            {/* Primary website pages */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/digital-signs" element={<DigitalSignsPage />} />
+            <Route path="/electronic-signs" element={<ElectronicSignsPage />} />
+            <Route path="/led-signs" element={<LEDSignsPage />} />
+            <Route path="/lighted-signs" element={<LightedSignsPage />} />
+            <Route path="/contact-us" element={<ContactPage />} />
+            <Route path="/contact-us-cm" element={<ContactPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+
+            {/* Design variants (reference) */}
+            <Route path="/design-variants" element={<DesignVariants />} />
             <Route path="/variant-a" element={<VariantA />} />
             <Route path="/variant-b" element={<VariantB />} />
             <Route path="/variant-c" element={<VariantC />} />
@@ -51,14 +66,7 @@ function App() {
             <Route path="/variant-k" element={<VariantK />} />
             <Route path="/variant-l" element={<VariantL />} />
             <Route path="/variant-m" element={<VariantM />} />
-            <Route path="/led-signs" element={<LEDSigns />} />
-            <Route path="/digital-signs" element={<DigitalSigns />} />
-            <Route path="/electronic-signs" element={<ElectronicSigns />} />
-            <Route path="/lighted-signs" element={<LightedSigns />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/contact-us-cm" element={<ContactUs />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

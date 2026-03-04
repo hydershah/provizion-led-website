@@ -17,9 +17,10 @@
   background: var(--color-bg-tertiary);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-16) 0;
+  padding: var(--space-12) 0;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .footer-cta::before {
@@ -35,9 +36,9 @@
 
 .footer-cta__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-8);
+  gap: var(--space-4);
 }
 
 .footer-cta__text h3 {
@@ -48,15 +49,94 @@
   margin-bottom: var(--space-2);
 }
 
-.footer-cta__text p {
-  color: var(--color-text-secondary);
+.footer-cta__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer-cta__phone:hover {
+  color: var(--color-white);
+}
+
+/* ========================================
+   FOOTER QUOTE FORM SECTION
+   ======================================== */
+
+.footer-form-section {
+  background: var(--color-bg-secondary);
+  padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-form__inner {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-form__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-white);
+  margin: var(--space-4) 0 var(--space-6);
+}
+
+.footer-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-6);
+}
+
+.footer-rating__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.footer-rating__label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-rating__stars {
+  display: flex;
+  gap: 2px;
+  color: var(--color-accent);
   font-size: var(--text-lg);
 }
 
-.footer-cta__actions {
-  display: flex;
-  gap: var(--space-4);
-  flex-shrink: 0;
+.footer-rating__text {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.footer-tcpa {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-4);
+  text-align: left;
+  opacity: 0.7;
+}
+
+.footer-tcpa a {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 /* ========================================
@@ -65,12 +145,12 @@
 
 .footer-main {
   background: var(--color-bg-secondary);
-  padding: var(--space-16) 0;
+  padding: var(--space-12) 0;
 }
 
 .footer-main__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1fr 1.5fr 1fr;
   gap: var(--space-10);
 }
 
@@ -84,26 +164,6 @@
   color: var(--color-text-secondary);
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
-  margin-bottom: var(--space-6);
-  max-width: 300px;
-}
-
-.footer-rating {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.footer-rating__stars {
-  display: flex;
-  gap: 2px;
-  color: var(--color-accent);
-  font-size: var(--text-lg);
-}
-
-.footer-rating__text {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
 }
 
 .footer-col__title {
@@ -187,23 +247,10 @@
 .footer-bottom__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-}
-
-.footer-bottom__links {
-  display: flex;
-  gap: var(--space-6);
-}
-
-.footer-bottom__links a {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-}
-
-.footer-bottom__links a:hover {
-  color: var(--color-accent);
+  text-align: center;
 }
 
 /* ========================================
@@ -214,17 +261,6 @@
   .footer-main__grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-10);
-  }
-
-  .footer-cta__inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-cta__actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 360px;
   }
 }
 
@@ -237,6 +273,5 @@
   .footer-bottom__inner {
     flex-direction: column;
     gap: var(--space-3);
-    text-align: center;
   }
 }

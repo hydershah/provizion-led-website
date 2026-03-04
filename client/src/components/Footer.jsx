@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { HiPhone, HiMail, HiLocationMarker } from 'react-icons/hi';
+import { HiPhone, HiLocationMarker } from 'react-icons/hi';
 import { FaStar } from 'react-icons/fa';
-import { COMPANY, NAV_LINKS } from '../utils/constants';
+import { COMPANY } from '../utils/constants';
+import QuoteForm from './QuoteForm';
 import './Footer.css';
 
 export default function Footer() {
@@ -11,21 +12,52 @@ export default function Footer() {
     <section className="footer" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
 
-      {/* CTA Band */}
+      {/* CTA Band with Quote Form */}
       <div className="footer-cta">
         <div className="container footer-cta__inner">
           <div className="footer-cta__text">
             <h3>Ready to get started?</h3>
-            <p>Get your free quote today — same-day response guaranteed.</p>
-          </div>
-          <div className="footer-cta__actions">
-            <Link to="/contact-us" className="btn btn--primary btn--lg">
-              Get A Free Quote
-            </Link>
-            <a href={COMPANY.phoneTel} className="btn btn--outline btn--lg">
+            <a href={COMPANY.phoneTel} className="footer-cta__phone">
               <HiPhone /> {COMPANY.phone}
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* Quote Form Section */}
+      <div className="footer-form-section">
+        <div className="container footer-form__inner">
+          <Link to="/" aria-label="ProVizion LED Home">
+            <img
+              src={COMPANY.logo}
+              alt="ProVizion LED Logo"
+              width="200"
+              height="50"
+              loading="lazy"
+              className="footer-logo"
+            />
+          </Link>
+          <p className="footer-form__heading">Quick &amp; Same-Day Quotes</p>
+          <QuoteForm source="footer" />
+          <div className="footer-rating">
+            <p className="footer-rating__brand">{COMPANY.name}</p>
+            <p className="footer-rating__label">5 STAR RATING</p>
+            <div className="footer-rating__stars">
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} />
+              ))}
+            </div>
+            <span className="footer-rating__text">
+              (Based on {COMPANY.reviewCount} Reviews)
+            </span>
+          </div>
+          <p className="footer-tcpa">
+            By providing my phone number to {COMPANY.name}, I agree and acknowledge that {COMPANY.name} may
+            send text messages to my wireless phone number for any purpose. Message frequency will vary, and
+            Message and data rates may apply. If you need further assistance, please reply &quot;HELP&quot;.
+            You can also opt out by replying &quot;STOP.&quot; For more information on how your data will be
+            handled, please visit our <Link to="/privacy-policy">privacy policy</Link>.
+          </p>
         </div>
       </div>
 
@@ -45,44 +77,8 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-brand__desc">
-              LED & Digital Sign Manufacturer specializing in custom sign design,
-              fabrication, and installation in Charlotte, NC.
+              &copy; {currentYear} {COMPANY.name}
             </p>
-            <div className="footer-rating">
-              <div className="footer-rating__stars">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
-              </div>
-              <span className="footer-rating__text">
-                5 Star Rating (Based on {COMPANY.reviewCount} Reviews)
-              </span>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="footer-col">
-            <h4 className="footer-col__title">Quick Links</h4>
-            <ul className="footer-links">
-              {NAV_LINKS.map((link) => (
-                <li key={link.path}>
-                  <Link to={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="footer-col">
-            <h4 className="footer-col__title">Services</h4>
-            <ul className="footer-links">
-              <li><Link to="/led-signs">LED Signs</Link></li>
-              <li><Link to="/digital-signs">Digital Signs</Link></li>
-              <li><Link to="/">Electronic Signs</Link></li>
-              <li><Link to="/">Lighted Signs</Link></li>
-              <li><Link to="/">Sign Installation</Link></li>
-              <li><Link to="/">Sign Maintenance</Link></li>
-            </ul>
           </div>
 
           {/* Contact Info */}
@@ -99,6 +95,19 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Quick Links */}
+          <div className="footer-col">
+            <h4 className="footer-col__title">Quick Links</h4>
+            <ul className="footer-links">
+              <li><Link to="/">Sign Manufacturer</Link></li>
+              <li><Link to="/led-signs">Led Signs</Link></li>
+              <li><Link to="/digital-signs">Digital Signs</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service">Terms Of Service</Link></li>
+              <li><Link to="/contact-us">Contact Us</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -106,10 +115,6 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom__inner">
           <p>&copy; {currentYear} All Rights Reserved | {COMPANY.name}</p>
-          <div className="footer-bottom__links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms Of Service</Link>
-          </div>
         </div>
       </div>
     </section>

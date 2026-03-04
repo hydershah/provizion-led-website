@@ -98,8 +98,6 @@ export default function VariantD() {
 
   return (
     <div className="vd-page">
-      <div className="vd-scanline-overlay" />
-
       <SEO
         title="Neon Pulse | ProVizion LED"
         description="Cyberpunk-inspired LED signage solutions from ProVizion LED. Custom LED signs, digital displays, and electronic message centers in Charlotte, NC."

@@ -34,6 +34,24 @@
 .theme-vc {
   background: var(--vc-white);
   color: var(--vc-charcoal);
+
+  /* ── Override global tokens for shared components (QuoteForm, buttons) ── */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F0;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #C8991F;
+  --color-text-muted: #9CA3AF;
+  --color-accent: #C8991F;
+  --color-accent-dim: rgba(200, 153, 31, 0.12);
+  --color-accent-glow: rgba(200, 153, 31, 0.3);
+  --color-accent-dark: #B8890F;
+  --color-border: rgba(26, 26, 26, 0.12);
+  --color-border-accent: rgba(200, 153, 31, 0.35);
+  --color-white: #FFFFFF;
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --shadow-glow: 0 0 20px rgba(200, 153, 31, 0.25);
+  --shadow-glow-lg: 0 0 30px rgba(200, 153, 31, 0.35);
 }
 
 .theme-vc main {
@@ -210,43 +228,26 @@
 .vc-hero__visual-inner {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
-.vc-hero__visual-placeholder {
+.vc-hero__img {
   width: 100%;
   height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  display: block;
 }
 
-.vc-hero__visual-gradient {
+.vc-hero__visual-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--vc-navy), var(--vc-navy-light), #1A3260);
-}
-
-.vc-hero__visual-text {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.vc-hero__visual-text svg {
-  font-size: 3rem;
-  opacity: 0.5;
-}
-
-.vc-hero__visual-text span {
-  font-family: var(--vc-font-accent);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 22, 40, 0.3) 0%,
+    rgba(10, 22, 40, 0.1) 50%,
+    rgba(10, 22, 40, 0.25) 100%
+  );
+  pointer-events: none;
 }
 
 /* =============================================
@@ -329,22 +330,16 @@
   overflow: hidden;
 }
 
-.vc-service-placeholder {
+.vc-service-img {
   width: 100%;
   height: 100%;
   min-height: 200px;
-  background: linear-gradient(135deg, #EEF0F5, #E5E8EE);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--vc-navy);
-  font-size: 2.5rem;
-  opacity: 0.2;
-  transition: all 400ms ease;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
 }
 
-.vc-service-editorial:hover .vc-service-placeholder {
-  background: linear-gradient(135deg, #E5E8F0, #D8DCE5);
+.vc-service-editorial:hover .vc-service-img {
   transform: scale(1.05);
 }
 
@@ -667,35 +662,16 @@
   grid-row: span 2;
 }
 
-.vc-portfolio-item__bg {
+.vc-portfolio-item__img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #EEF0F5, #E0E3EB);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--vc-navy);
-  transition: all 400ms ease;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
 }
 
-.vc-portfolio-item__bg svg {
-  font-size: 2rem;
-  opacity: 0.3;
-}
-
-.vc-portfolio-item__bg span {
-  font-family: var(--vc-font-accent);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.4;
-}
-
-.vc-portfolio-item:hover .vc-portfolio-item__bg {
-  background: linear-gradient(135deg, #E0E3ED, #D4D8E5);
-  transform: scale(1.05);
+.vc-portfolio-item:hover .vc-portfolio-item__img {
+  transform: scale(1.08);
 }
 
 .vc-portfolio-item__overlay {
@@ -704,13 +680,15 @@
   left: 0;
   right: 0;
   padding: 24px;
-  background: linear-gradient(transparent, rgba(10, 22, 40, 0.9));
-  transform: translateY(100%);
-  transition: transform 400ms ease;
+  background: linear-gradient(transparent 0%, rgba(10, 22, 40, 0.85) 100%);
+  transform: translateY(30%);
+  opacity: 0;
+  transition: transform 400ms ease, opacity 400ms ease;
 }
 
 .vc-portfolio-item:hover .vc-portfolio-item__overlay {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .vc-portfolio-item__tag {
@@ -925,7 +903,7 @@ a.vc-contact-detail:hover {
   }
 
   .vc-hero__visual-side {
-    height: 300px;
+    height: 400px;
   }
 
   .vc-service-editorial {
@@ -989,7 +967,7 @@ a.vc-contact-detail:hover {
   }
 
   .vc-hero__visual-side {
-    height: 200px;
+    height: 260px;
   }
 
   .vc-process-grid {
@@ -1002,6 +980,7 @@ a.vc-contact-detail:hover {
 
   .vc-portfolio-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
   }
 
 }

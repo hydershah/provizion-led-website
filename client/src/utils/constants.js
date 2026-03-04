@@ -22,8 +22,7 @@ export const COMPANY = {
 };
 
 export const NAV_LINKS = [
-  { label: 'Design Variants', path: '/' },
-  { label: 'Sign Manufacturer', path: '/home' },
+  { label: 'Sign Manufacturer', path: '/' },
   { label: 'Digital Signs', path: '/digital-signs' },
   { label: 'Electronic Signs', path: '/electronic-signs' },
   { label: 'LED Signs', path: '/led-signs' },

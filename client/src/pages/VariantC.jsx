@@ -10,13 +10,10 @@ import {
   HiCube,
   HiTruck,
   HiCog,
-  HiChevronRight,
   HiCheckCircle,
   HiLocationMarker,
   HiMail,
   HiClock,
-  HiAcademicCap,
-  HiGlobe,
   HiBadgeCheck,
 } from 'react-icons/hi';
 import SEO from '../components/SEO';
@@ -102,12 +99,12 @@ function AnimatedStars({ count = 5 }) {
 
 /* ──── Data ──── */
 const services = [
-  { title: 'LED Signs', desc: 'State-of-the-art LED technology with advanced heat management systems. Custom-designed to maximize visibility and brand impact day and night.', img: null },
-  { title: 'Digital Sign Displays', desc: 'Cutting-edge digital displays for dynamic content delivery. Update messaging remotely with vibrant, high-resolution screens.', img: null },
-  { title: 'Lighted Signs', desc: 'Precision-crafted illuminated signage that combines artistry with engineering. Channel letters, cabinet signs, and more.', img: null },
-  { title: 'LED Monument Signs', desc: 'Grand, landmark-style signage that establishes a commanding presence for entrances and high-visibility locations.', img: null },
-  { title: 'LED Message Boards', desc: 'Dynamic, programmable messaging solutions for real-time communication. Perfect for promotions, events, and community updates.', img: null },
-  { title: 'Electronic Message Centers', desc: 'Sophisticated electronic displays with full-color capabilities. Enterprise-grade digital signage for maximum audience engagement.', img: null },
+  { title: 'LED Signs', desc: 'State-of-the-art LED technology with advanced heat management systems. Custom-designed to maximize visibility and brand impact day and night.', img: '/images/electronic-signs-1.jpg' },
+  { title: 'Digital Sign Displays', desc: 'Cutting-edge digital displays for dynamic content delivery. Update messaging remotely with vibrant, high-resolution screens.', img: '/images/electronic-digital-message-displays-signs-3.jpg' },
+  { title: 'Lighted Signs', desc: 'Precision-crafted illuminated signage that combines artistry with engineering. Channel letters, cabinet signs, and more.', img: '/images/lighted-and-illuminated-signs-2.jpeg' },
+  { title: 'LED Monument Signs', desc: 'Grand, landmark-style signage that establishes a commanding presence for entrances and high-visibility locations.', img: '/images/programmable-led-message-centers-3.jpg' },
+  { title: 'LED Message Boards', desc: 'Dynamic, programmable messaging solutions for real-time communication. Perfect for promotions, events, and community updates.', img: '/images/indoor-led-message-board-sign-2.jpg' },
+  { title: 'Electronic Message Centers', desc: 'Sophisticated electronic displays with full-color capabilities. Enterprise-grade digital signage for maximum audience engagement.', img: '/images/electronic-message-centers-digital-signage-display-1.jpg' },
 ];
 
 const processSteps = [
@@ -146,12 +143,12 @@ const certifications = [
 ];
 
 const portfolio = [
-  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters' },
-  { title: 'LED Monument — Financial District', category: 'Monument Signs' },
-  { title: 'Digital Display — Convention Center', category: 'Digital Displays' },
-  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs' },
-  { title: 'EMC — Corporate Headquarters', category: 'Message Centers' },
-  { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs' },
+  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/led-signs-channel-letters-lit-at-night-1.jpg' },
+  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-color-led-electronic-sign-4.jpg' },
+  { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.jpeg' },
+  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/michaels-raw-bar.jpg' },
+  { title: 'EMC — Corporate Headquarters', category: 'Message Centers', img: '/images/pexels-photo-1058275.jpeg' },
+  { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs', img: '/images/traditional-led-signs-2.png' },
 ];
 
 /* ====================================
@@ -163,9 +160,9 @@ export default function VariantC() {
   return (
     <>
       <SEO
-        title="Executive Premium | Design Variant C"
-        description="Premium LED sign manufacturer offering design, fabrication & installation. Same-day quotes available. Serving North Carolina businesses."
-        keywords="LED signs, custom signage, sign manufacturer, Charlotte NC, LED installation, enterprise signage"
+        title="Custom LED Signs & Digital Signage Manufacturer"
+        description="ProVizion LED — full-service LED sign manufacturer in North Carolina. Custom LED signs, digital displays, channel letters & monument signs. Same-day quotes. Call (984) 217-6527."
+        keywords="LED signs, custom LED signage, digital signs, sign manufacturer, North Carolina, Charlotte NC, LED installation, channel letters, monument signs, electronic message centers"
         path="/variant-c"
       />
 
@@ -214,13 +211,14 @@ export default function VariantC() {
 
         <div className="vc-hero__visual-side">
           <div className="vc-hero__visual-inner">
-            <div className="vc-hero__visual-placeholder">
-              <div className="vc-hero__visual-gradient" />
-              <div className="vc-hero__visual-text">
-                <HiLightBulb />
-                <span>Sign Manufacturing</span>
-              </div>
-            </div>
+            <img
+              src="/images/full-service-electronic-sign-company-6.jpg"
+              alt="Custom LED sign installation by ProVizion LED"
+              className="vc-hero__img"
+              loading="eager"
+              decoding="async"
+            />
+            <div className="vc-hero__visual-overlay" />
           </div>
         </div>
       </section>
@@ -238,9 +236,13 @@ export default function VariantC() {
             {services.map((svc, i) => (
               <FadeUp key={svc.title} delay={i * 0.08} className={`vc-service-editorial ${i % 2 === 0 ? '' : 'vc-service-editorial--alt'}`}>
                 <div className="vc-service-editorial__img">
-                  <div className="vc-service-placeholder">
-                    <HiLightBulb />
-                  </div>
+                  <img
+                    src={svc.img}
+                    alt={svc.title}
+                    className="vc-service-img"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="vc-service-editorial__content">
                   <h3>{svc.title}</h3>
@@ -363,10 +365,13 @@ export default function VariantC() {
           <StaggerWrap className="vc-portfolio-grid">
             {portfolio.map((item, i) => (
               <StaggerChild key={item.title} className={`vc-portfolio-item ${i === 0 ? 'vc-portfolio-item--large' : ''}`}>
-                <div className="vc-portfolio-item__bg">
-                  <HiLightBulb />
-                  <span>{item.category}</span>
-                </div>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="vc-portfolio-item__img"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="vc-portfolio-item__overlay">
                   <span className="vc-portfolio-item__tag">{item.category}</span>
                   <h4>{item.title}</h4>
