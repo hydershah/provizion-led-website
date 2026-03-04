@@ -28,10 +28,10 @@ const services = [
 ];
 
 const processSteps = [
-  { step: '01', title: 'Tailored Design Solutions', desc: 'Every brand has a unique story, and we start by listening to yours. Our team of seasoned designers dives deep to grasp your vision, creating designs that align with your brand\'s identity and engage your target audience. Using cutting-edge design software and tools, we transform your ideas into visuals that make a lasting impact.', icon: <HiLightBulb /> },
-  { step: '02', title: 'Precision in Fabrication', desc: 'Crafting a sign requires a perfect blend of artistry and technical expertise. Our fabrication process, driven by premium materials and advanced machinery, guarantees that every sign is a masterpiece — robust, elegant, and a true reflection of your brand.', icon: <HiCube /> },
-  { step: '03', title: 'Digital Sign Installation', desc: 'Installation goes beyond mere sign placement. It\'s about maximizing visibility and impact. Our expert team considers crucial factors — like location, lighting, and angle — to securely position your digital signs, ensuring they command the attention they deserve.', icon: <HiTruck /> },
-  { step: '04', title: 'Maintenance for Longevity', desc: 'A sign\'s job isn\'t over once it\'s up; it needs regular care to maintain its glow and functionality. From routine check-ups to addressing wear and tear, our maintenance services ensure that your signs remain as vibrant and effective as they were on day one.', icon: <HiCog /> },
+  { step: '01', title: 'Tailored Design', desc: 'We listen to your vision and craft designs that align with your brand\'s identity using cutting-edge tools.', icon: <HiLightBulb /> },
+  { step: '02', title: 'Precision Fabrication', desc: 'Premium materials and advanced machinery guarantee every sign is robust, elegant, and built to last.', icon: <HiCube /> },
+  { step: '03', title: 'Expert Installation', desc: 'Our team considers location, lighting, and angle to position your signs for maximum visibility and impact.', icon: <HiTruck /> },
+  { step: '04', title: 'Ongoing Maintenance', desc: 'Routine check-ups and repairs keep your signs as vibrant and effective as the day they were installed.', icon: <HiCog /> },
 ];
 
 const whyChoose = [
@@ -272,15 +272,35 @@ export default function HomePage() {
             ))}
           </StaggerWrap>
 
-          <FadeUp className="vc-content-block" style={{ marginTop: '40px' }}>
-            <h3 style={{ color: '#FFFFFF', marginBottom: '12px' }}>Custom Digital Displays &amp; Electronic Signage</h3>
-            <p>
-              In today&apos;s digital era, signs have transformed into dynamic, interactive displays. Our custom digital displays are crafted to deliver maximum engagement, boasting interactive touchpoints, lively animations, and real-time updates. Our electronic signage solutions are versatile and ideal for diverse settings, from vibrant trade shows to tranquil office lobbies.
-            </p>
-            <p>
-              At ProVizion LED, our commitment to excellence spans the entire lifecycle of a sign. We believe that a sign is not just a tool for communication; it&apos;s an ambassador for your brand, and we ensure it always represents you in the best light.
-            </p>
-          </FadeUp>
+        </div>
+      </section>
+
+      {/* -- DIGITAL DISPLAYS HIGHLIGHT -- */}
+      <section className="vc-section">
+        <div className="vc-container">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <NeonText className="vc-section-label">Digital Solutions</NeonText>
+              <h2 className="vc-section-title">Custom Digital Displays &amp; Electronic Signage</h2>
+              <p>
+                In today&apos;s digital era, signs have transformed into dynamic, interactive displays. Our custom digital displays deliver maximum engagement with interactive touchpoints, lively animations, and real-time updates.
+              </p>
+              <p>
+                From vibrant trade shows to corporate lobbies, our electronic signage solutions adapt to any setting — because your sign isn&apos;t just a tool, it&apos;s an ambassador for your brand.
+              </p>
+              <Link to="/digital-signs" className="vc-btn vc-btn--accent vc-btn--sm">
+                Explore Digital Signs <HiArrowRight />
+              </Link>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img
+                src="/images/electronic-digital-message-displays-signs-3.jpg"
+                alt="Custom digital display by ProVizion LED"
+                loading="lazy"
+                decoding="async"
+              />
+            </FadeUp>
+          </div>
         </div>
       </section>
 
