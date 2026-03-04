@@ -75,50 +75,22 @@ export default function LightedSignsPage() {
       {/* ── The Brilliance of Illuminated Signs ── */}
       <section className="vc-section vc-section--alt">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Brilliance</span>
-            <h2 className="vc-section-title">The Brilliance of Illuminated Signs</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp delay={0.1} className="vc-split-layout__img">
+              <img src="/images/lighted-and-illuminated-signs-2.jpeg" alt="Illuminated business sign at night" loading="lazy" decoding="async" />
+            </FadeUp>
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Brilliance</span>
+              <h2 className="vc-section-title">The Brilliance of Illuminated Signs</h2>
               <p>
-                As dusk falls, a transformation begins. The muted colors of daytime facades give way to a glowing dance of lights.
+                As dusk falls, a transformation begins. Lighted signs transform the night into a canvas for visibility. From the warm allure of neon signs to the sleek glow of LED lighted signs, ProVizion LED crafts each piece with the promise of quality and impact.
               </p>
               <p>
-                This is the power of lighted signs — they transform the night into a canvas for visibility. From the warm allure of neon signs to the sleek glow of LED lighted signs, ProVizion LED crafts each piece with the promise of quality and impact.
+                Whether it&apos;s sleek channel letters that spell sophistication or a backlit sign that radiates allure, lighted signs are beacons guiding customers to your doorstep — ensuring your business stands out day or night.
               </p>
-              <p>
-                Our team of skilled artists and designers work meticulously to create illuminated signs that not only enhance your brand&apos;s visibility but also add an enchanting ambiance to your business. We understand that the right lighting can evoke emotions and leave a lasting impression, and that&apos;s precisely what our illuminated signs aim to achieve.
-              </p>
-              <p>
-                Whether it&apos;s a classic neon sign that exudes nostalgia or an LED display that demands attention, our illuminated signs are designed to captivate and inspire.
-              </p>
-            </div>
-          </FadeUp>
-
-          <FadeUp className="vc-phone-cta">
-            <p>Call ProVizion LED at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> For Your Free Consultation With A Lighted Signs Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ── Why Opt for Lighted Signage ── */}
-      <section className="vc-section">
-        <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Advantages</span>
-            <h2 className="vc-section-title">Why Opt for Lighted Signage?</h2>
-            <div className="vc-content-block">
-              <p>
-                Picture this: A potential customer strolls through the streets, their eyes inadvertently drawn to a radiant display — your business, lit by a custom-lighted sign that tells your story even from afar.
-              </p>
-              <p>
-                Whether it&apos;s sleek channel letters that spell sophistication or a backlit sign that radiates allure, lighted signs are like beacons in the night, guiding customers to your doorstep.
-              </p>
-              <p>
-                With ProVizion LED&apos;s expertly crafted lighted signs, you&apos;re not just illuminating your brand; you&apos;re illuminating the path to success, ensuring your business stands out in the crowded landscape, day or night.
-              </p>
-            </div>
-          </FadeUp>
+              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
@@ -181,63 +153,46 @@ export default function LightedSignsPage() {
       {/* ── From Design to Glow ── */}
       <section className="vc-section">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Process</span>
-            <h2 className="vc-section-title">From Design to Glow: Our Process</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Process</span>
+              <h2 className="vc-section-title">From Design to Glow</h2>
               <p>
-                Every sign&apos;s journey at ProVizion LED begins with a vision — your vision. Our design maestros, armed with the latest in sign lighting technology and a penchant for perfection, translate your brand into a lighted masterpiece.
+                Every sign&apos;s journey begins with your vision. Our design maestros translate your brand into a lighted masterpiece using the latest sign lighting technology. We ensure every bulb, every LED, and every neon tube is a testament to durability and excellence.
               </p>
               <p>
-                With meticulous lighted sign installation, we ensure that every bulb, every LED, and every neon tube is a testament to durability and excellence. Our goal is not just to create a sign; it&apos;s to craft an enduring beacon that represents your brand with brilliance and longevity.
+                Whether it&apos;s exterior signs that demand attention or indoor backlit signs that speak volumes in hushed tones, we craft enduring beacons that represent your brand with brilliance.
               </p>
-            </div>
-          </FadeUp>
+              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img src="/images/custom-electronic-sign-company-4.jpeg" alt="Custom sign fabrication" loading="lazy" decoding="async" />
+            </FadeUp>
+          </div>
         </div>
       </section>
 
-      {/* ── Light Up the Path ── */}
+      {/* ── Your Local Sign Partner ── */}
       <section className="vc-section vc-section--alt">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Exterior &amp; Interior</span>
-            <h2 className="vc-section-title">Light Up the Path to Your Doorstep</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp delay={0.1} className="vc-split-layout__img">
+              <img src="/images/michaels-raw-bar.jpg" alt="Illuminated business storefront sign" loading="lazy" decoding="async" />
+            </FadeUp>
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Near You</span>
+              <h2 className="vc-section-title">Your Local Sign Partner</h2>
               <p>
-                Why settle for ordinary when your sign can be a landmark? Illuminate your business with exterior lighted signs that demand attention, or craft an indoor ambiance with backlit signs that speak volumes in hushed tones.
+                ProVizion LED is your local luminary — your partner in highlighting what makes your brand stand out. Whether it&apos;s the subtle warmth of a backlit sign or the vibrant allure of an LED display, we bring your ideas to life through stunning illumination.
               </p>
               <p>
-                At ProVizion LED, we&apos;re not just about signs; we&apos;re about spotlights. Our exterior lighted signs are more than just markers; they&apos;re beacons that guide customers to your doorstep. With a range of options, from attention-grabbing LED signs to the classic charm of neon, we can help you choose the perfect outdoor lighted sign that suits your brand&apos;s personality and ensures your business stands out, day and night.
+                Let your next bright idea come to life and watch as your business becomes a beacon in your community.
               </p>
-            </div>
-          </FadeUp>
-
-          <FadeUp className="vc-services-cta">
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ── Your Next Bright Idea ── */}
-      <section className="vc-section">
-        <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Near You</span>
-            <h2 className="vc-section-title">Your Next Bright Idea Awaits</h2>
-            <div className="vc-content-block">
-              <p>
-                Are you searching for the best illuminated signs near your cozy city corner? Look no further. ProVizion LED is your local luminary, your partner in highlighting what makes your brand stand out. With a keen eye for design and an unwavering commitment to quality, we bring your ideas to life through stunning illumination.
-              </p>
-              <p>
-                Our team of experts understands the nuances of illumination, whether it&apos;s the subtle warmth of a backlit sign or the vibrant allure of an LED display. We&apos;re not just in the business of creating signs; we&apos;re in the business of making your brand shine. Let your next bright idea come to life with ProVizion LED, and watch as your business becomes a beacon in your community.
-              </p>
-            </div>
-          </FadeUp>
-
-          <FadeUp className="vc-phone-cta">
-            <p>Call ProVizion LED at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> For Your Free Consultation With A Lighted Signage Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
-          </FadeUp>
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm">
+                <HiPhone /> Free Consultation
+              </a>
+            </FadeUp>
+          </div>
         </div>
       </section>
 

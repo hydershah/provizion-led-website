@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-import { HiPhone, HiLocationMarker } from 'react-icons/hi';
+import { HiPhone } from 'react-icons/hi';
 import SEO from '../../components/SEO';
-import QuoteForm from '../../components/QuoteForm';
 import useThemeClass from '../../hooks/useThemeClass';
 import { COMPANY } from '../../utils/constants';
 import { FadeUp, AnimatedStars } from './animations';
@@ -21,20 +19,12 @@ export default function ContactPage() {
       {/* -- CONTACT SECTION -- */}
       <section className="vc-section vc-contact-section" id="contact" style={{ paddingTop: '120px' }} aria-labelledby="vc-contact-heading">
         <div className="vc-container">
-          <div className="vc-contact-layout">
-            {/* Left: Quote Form */}
-            <FadeUp className="vc-contact-form-side">
-              <span className="vc-section-label">Get In Touch</span>
-              <h1 id="vc-contact-heading" className="vc-section-title">Quick &amp; Same-Day Quotes</h1>
+          <FadeUp>
+            <h1 id="vc-contact-heading" className="vc-section-title" style={{ textAlign: 'center', marginBottom: '48px' }}>Contact Us</h1>
+          </FadeUp>
 
-              <QuoteForm source="contact-page" />
-              <p className="vc-tcpa-text">
-                By providing my phone number to {COMPANY.name}, I agree and acknowledge that {COMPANY.name} may send text messages to my wireless phone number for any purpose. Message and data rates may apply. Message frequency varies. Reply STOP to opt out.{' '}
-                <Link to="/privacy-policy">Privacy Policy</Link>
-              </p>
-            </FadeUp>
-
-            {/* Right: Rating + Contact Details */}
+          <div className="vc-contact-layout" style={{ justifyContent: 'center' }}>
+            {/* Rating + Contact Details */}
             <FadeUp delay={0.15} className="vc-contact-map-side">
               {/* Rating Card */}
               <div className="vc-hero__trust-row" style={{ marginBottom: '24px' }}>

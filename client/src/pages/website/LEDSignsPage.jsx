@@ -183,24 +183,22 @@ export default function LEDSignsPage() {
       {/* ── Why Partner with ProVizion LED ── */}
       <section className="vc-section vc-section--alt">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Why Us</span>
-            <h2 className="vc-section-title">Why Partner with ProVizion LED for Your LED Needs?</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp delay={0.1} className="vc-split-layout__img">
+              <img src="/images/full-service-electronic-sign-company-6.jpg" alt="ProVizion LED sign installation" loading="lazy" decoding="async" />
+            </FadeUp>
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Why Us</span>
+              <h2 className="vc-section-title">Why Partner with ProVizion LED?</h2>
               <p>
-                There&apos;s no shortage of LED display manufacturers &ldquo;near me,&rdquo; but ProVizion LED stands apart as a true LED sign specialist.
+                ProVizion LED stands apart as a true LED sign specialist. Our solutions range from affordable LED signs for small businesses to intricate display systems for large enterprises.
               </p>
               <p>
-                Our suite of LED signage solutions ranges from affordable LED signs for small businesses to intricate LED display advertising systems for large enterprises. We take pride in our ability to design, manufacture, and install LED displays that not only meet but exceed our clients&apos; expectations.
+                With years of industry experience, our team remains at the forefront of LED technology trends. When you partner with us, you&apos;re getting a comprehensive signage solution tailored to your unique needs, backed by our unwavering commitment to excellence.
               </p>
-              <p>
-                With years of industry experience, we have honed the art of creating impactful LED solutions. Our team of experts remains at the forefront of LED technology trends, ensuring that our clients have access to the latest advancements in visual communication. Whether you require attention-grabbing LED signs for your storefront, captivating displays for a trade show, or expansive LED video walls for an immersive brand experience, ProVizion LED possesses the expertise and resources to bring your vision to life.
-              </p>
-              <p>
-                When you partner with us, you&apos;re not just getting a product; you&apos;re getting a comprehensive LED signage solution tailored to your unique needs, backed by our unwavering commitment to excellence.
-              </p>
-            </div>
-          </FadeUp>
+              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+            </FadeUp>
+          </div>
         </div>
       </section>
 

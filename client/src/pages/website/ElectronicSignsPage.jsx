@@ -72,50 +72,25 @@ export default function ElectronicSignsPage() {
         </div>
       </section>
 
-      {/* ── The Electrifying World ── */}
+      {/* ── Why Electronic Signs ── */}
       <section className="vc-section vc-section--alt">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Benefits</span>
-            <h2 className="vc-section-title">The Electrifying World of Electronic Signage</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp delay={0.1} className="vc-split-layout__img">
+              <img src="/images/programmable-led-message-centers-3.jpg" alt="Electronic message center display" loading="lazy" decoding="async" />
+            </FadeUp>
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Benefits</span>
+              <h2 className="vc-section-title">Why Electronic Signs?</h2>
               <p>
-                In today&apos;s competitive landscape, electronic signs elevate your brand, ensuring it stands out amid the clutter. These signs are more than just tools; they serve as your brand&apos;s megaphone, broadcasting your message with clarity and style.
+                Electronic signs elevate your brand, ensuring it stands out amid the clutter. They serve as your brand&apos;s megaphone, broadcasting your message with clarity and style — whether it&apos;s a commanding outdoor display or a subtle indoor sign.
               </p>
               <p>
-                Whether it&apos;s a commanding outdoor display or a subtle indoor sign that guides and informs, each sign offers an opportunity to showcase your brand&apos;s identity and captivate your audience.
+                Customizable to match your brand&apos;s identity, electronic signage reigns supreme in personalization. Indoors or outdoors, they offer unparalleled versatility, effortlessly adapting to your space, needs, and message.
               </p>
-              <p>
-                With the power to deliver dynamic content, engage customers interactively, and adapt to diverse spaces and messages, electronic signs are a versatile and essential asset in modern branding and marketing strategies. They enable you to establish a strong presence, communicate effectively, and shine in a visually saturated world, making your brand memorable and influential in your industry.
-              </p>
-            </div>
-          </FadeUp>
-
-          <FadeUp className="vc-phone-cta">
-            <p>Call ProVizion LED at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> For Your Free Consultation With A Custom Electronic Signage Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ── Why Electronic Signs ── */}
-      <section className="vc-section">
-        <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Advantages</span>
-            <h2 className="vc-section-title">Why Should Electronic Signs Be Your Go-To?</h2>
-            <div className="vc-content-block">
-              <p>
-                When it comes to charming your audience and leaving a lasting impression, electronic signs take center stage.
-              </p>
-              <p>
-                These dynamic displays spark conversations, transforming your message into an interactive and engaging experience. Customizable to match your brand&apos;s identity, electronic signage reigns supreme in personalization, guaranteeing your distinct presence stands out.
-              </p>
-              <p>
-                Indoors or outdoors, handheld or building-spanning, electronic displays offer unparalleled versatility, effortlessly adapting to your space, needs, and message. Enhance your brand&apos;s communication with the power of electronic signs today.
-              </p>
-            </div>
-          </FadeUp>
+              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
@@ -167,25 +142,24 @@ export default function ElectronicSignsPage() {
       {/* ── Paint Your Brand's Digital Canvas ── */}
       <section className="vc-section">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Your Canvas</span>
-            <h2 className="vc-section-title">Paint Your Brand&apos;s Digital Canvas with ProVizion LED</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Your Canvas</span>
+              <h2 className="vc-section-title">Your Brand Deserves to Be Seen &amp; Heard</h2>
               <p>
-                Visualize your brand story unfolding across an electronic message board, or imagine your campaign on an LED sign, bold and bright against the night sky.
+                Visualize your brand story unfolding across an electronic message board, bold and bright against the night sky. With our cutting-edge technology, we transform your concepts into stunning electronic displays that captivate your audience.
               </p>
               <p>
-                This isn&apos;t just a dream; it&apos;s what we do at ProVizion LED. With our cutting-edge technology and expertise, we transform your concepts into stunning electronic displays that captivate your audience. Whether you&apos;re looking to share real-time information, promote products, or simply make a memorable statement, our electronic signs are the canvases upon which your brand&apos;s most compelling narratives come to life.
+                Electronic advertising signs give your brand a powerful voice — through vivid visuals, real-time updates, and interactive experiences. Elevate your visibility and make a statement that resonates.
               </p>
-              <h3>Your Brand Deserves to Be Seen and Heard</h3>
-              <p>
-                Don&apos;t let your brand whisper when it could resonate. Electronic advertising signs and commercial electronic displays are your ticket to the big leagues of brand communication. In a world where attention spans are fleeting and competition is fierce, it&apos;s crucial to make your brand stand out. Electronic signs give your brand a powerful voice that can be seen and heard, capturing the attention of your target audience and leaving a lasting impression.
-              </p>
-              <p>
-                With the dynamic capabilities of electronic signs, you can convey your brand message with flair and impact. Whether it&apos;s through vivid visuals, real-time updates, or interactive experiences, electronic displays offer a versatile platform to engage and connect with your audience. Elevate your brand&apos;s visibility, reinforce your identity, and make a statement that resonates with customers. Choose electronic signs and displays to ensure your brand is not just seen but heard in a crowded marketplace.
-              </p>
-            </div>
-          </FadeUp>
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm">
+                <HiPhone /> Free Consultation
+              </a>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img src="/images/indoor-led-message-board-sign-2.jpg" alt="Indoor electronic message board" loading="lazy" decoding="async" />
+            </FadeUp>
+          </div>
         </div>
       </section>
 

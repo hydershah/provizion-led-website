@@ -81,25 +81,12 @@ export default function DigitalSignsPage() {
       </section>
 
       {/* ── Rise of Digital Signage ── */}
-      <section className="vc-section vc-section--alt">
+      <section className="vc-section vc-section--alt vc-section--centered">
         <div className="vc-container">
           <FadeUp>
             <span className="vc-section-label">The Future</span>
             <h2 className="vc-section-title">The Rise of Digital Signage</h2>
-            <div className="vc-content-block">
-              <p>
-                Digital signs have redefined the advertising landscape by providing businesses with a versatile and attention-grabbing platform. Unlike traditional static signs, digital displays allow for real-time updates and dynamic content, making it easier to adapt to changing marketing strategies and promotions.
-              </p>
-              <p>
-                Moreover, interactivity adds a new dimension to audience engagement, enabling customers to interact with the signage, such as browsing through products, accessing additional information, or even playing games, enhancing the overall brand experience.
-              </p>
-              <p>
-                The ability to deliver targeted messages to specific demographics or locations further enhances the effectiveness of digital signs. By harnessing data-driven insights, businesses can tailor content to match the preferences and behaviors of their audience, ensuring a higher return on investment and increased brand visibility.
-              </p>
-              <p>
-                As technology continues to advance, digital signs will likely become even more integrated into our daily lives, delivering personalized, immersive, and memorable experiences that leave a lasting impact on consumers.
-              </p>
-            </div>
+            <p className="vc-section-subtitle">Digital signs have redefined the advertising landscape. Unlike static signs, digital displays allow real-time updates, interactivity, and targeted messaging — delivering higher ROI and increased brand visibility.</p>
           </FadeUp>
 
           <StaggerWrap className="vc-features-grid">
@@ -237,18 +224,22 @@ export default function DigitalSignsPage() {
       {/* ── Your Digital Signage Journey ── */}
       <section className="vc-section">
         <div className="vc-container">
-          <FadeUp>
-            <span className="vc-section-label">Your Journey</span>
-            <h2 className="vc-section-title">Your Digital Signage Journey Begins Here</h2>
-            <div className="vc-content-block">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Your Journey</span>
+              <h2 className="vc-section-title">Your Digital Signage Journey Begins Here</h2>
               <p>
-                Navigating the world of digital signs and displays can seem daunting, but with ProVizion LED, it becomes an exciting journey. We&apos;re not just a service provider; we&apos;re your partners in crafting digital stories that resonate.
+                Navigating the world of digital signs can seem daunting, but with ProVizion LED, it becomes an exciting journey. We&apos;re your partners in crafting digital stories that resonate.
               </p>
               <p>
-                With our expertise, cutting-edge technology, and commitment to innovation, we ensure your digital signage strategy evolves with the times. We&apos;re here to guide you, whether you&apos;re enhancing customer experiences, increasing brand visibility, or simply exploring the boundless possibilities of digital signage. Your success is our goal, and we&apos;re eager to embark on this journey together.
+                With our expertise and commitment to innovation, we ensure your digital signage strategy evolves with the times. Your success is our goal.
               </p>
-            </div>
-          </FadeUp>
+              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Journey <HiArrowRight /></a>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img src="/images/custom-electronic-sign-company-4.jpeg" alt="Custom digital signage solution" loading="lazy" decoding="async" />
+            </FadeUp>
+          </div>
         </div>
       </section>
 
