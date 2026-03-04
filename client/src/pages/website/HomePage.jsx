@@ -384,12 +384,6 @@ export default function HomePage() {
             ))}
           </StaggerWrap>
 
-          <FadeUp className="vc-content-block" style={{ marginTop: '40px' }}>
-            <p>
-              In the vast sea of signage providers, ProVizion LED stands out as a beacon of reliability, innovation, and quality. When you partner with us, you&apos;re not just investing in a sign; you&apos;re investing in your brand&apos;s future.
-            </p>
-          </FadeUp>
-
           <FadeUp className="vc-services-cta">
             <a href="#contact" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
