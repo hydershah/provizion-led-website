@@ -14,7 +14,7 @@ import {
 import SEO from '../../components/SEO';
 import useThemeClass from '../../hooks/useThemeClass';
 import { COMPANY } from '../../utils/constants';
-import { FadeUp, StaggerWrap, StaggerChild, AnimatedStars, LEDGrid, NeonText, ScanLine, FloatingParticles, NeonBorder, GlowDot } from './animations';
+import { FadeUp, StaggerWrap, StaggerChild, LEDGrid, NeonText, ScanLine, FloatingParticles, NeonBorder } from './animations';
 import './shared.css';
 
 /* ──── Data ──── */
@@ -94,12 +94,7 @@ export default function HomePage() {
           <LEDGrid />
           <div className="vc-hero__content-inner">
             <FadeUp>
-              <div className="vc-hero__trust-row">
-                <AnimatedStars count={5} />
-                <span className="vc-hero__review-count">{COMPANY.reviewCount} Reviews</span>
-                <span className="vc-hero__badge"><GlowDot size={6} delay={0} /> BBB Accredited</span>
-                <span className="vc-hero__badge"><GlowDot size={6} delay={0.5} /> Licensed &amp; Insured</span>
-              </div>
+              <span className="vc-hero__eyebrow">Charlotte, NC &mdash; LED Sign Manufacturer</span>
             </FadeUp>
 
             <FadeUp delay={0.1}>
@@ -109,14 +104,12 @@ export default function HomePage() {
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <div className="vc-hero__services-row">
-                <span>Design</span>
-                <span>Production</span>
-                <span>Installation</span>
-              </div>
+              <p className="vc-hero__subhead">
+                Full-service sign manufacturer specializing in custom LED signs, digital displays, and illuminated signage. Design, production, and expert installation &mdash; all in-house.
+              </p>
             </FadeUp>
 
-            <FadeUp delay={0.3}>
+            <FadeUp delay={0.2}>
               <div className="vc-hero__actions">
                 <Link to="/contact-us" className="vc-btn vc-btn--accent">
                   Contact Us <HiArrowRight />
@@ -127,8 +120,21 @@ export default function HomePage() {
               </div>
             </FadeUp>
 
-            <FadeUp delay={0.4}>
-              <p className="vc-hero__micro">Quick &amp; Same-Day Quotes · No Obligation</p>
+            <FadeUp delay={0.3}>
+              <div className="vc-hero__trust-bar">
+                <div className="vc-hero__trust-item">
+                  <span className="vc-hero__stars-static">
+                    <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
+                  </span>
+                  <span>{COMPANY.reviewCount} Reviews</span>
+                </div>
+                <div className="vc-hero__trust-item">
+                  <HiShieldCheck /> BBB Accredited
+                </div>
+                <div className="vc-hero__trust-item">
+                  <HiShieldCheck /> Licensed &amp; Insured
+                </div>
+              </div>
             </FadeUp>
           </div>
         </div>
@@ -233,16 +239,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <FadeUp className="vc-content-block" style={{ marginTop: '40px' }}>
-            <p>
-              Our custom sign solutions go beyond commercial needs. We also excel in creating specialized signs such as ADA signs, ensuring Americans with Disabilities Act compliance without compromising on design. Need your brand to stand tall and get noticed? Our pylon signs and channel letters make a bold statement. And if you&apos;re looking for business signs that marry innovation with elegance, our illuminated signs are sure to impress.
-            </p>
-            <p>
-              Dive into the world of ProVizion LED&apos;s unparalleled signage excellence. Our key offerings are not just products but a promise — a promise of quality, durability, and an unwavering commitment to your brand&apos;s success.
-            </p>
-          </FadeUp>
-
-          <FadeUp className="vc-phone-cta">
+          <FadeUp className="vc-phone-cta" style={{ marginTop: '40px' }}>
             <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> for your free talk with an LED &amp; Digital Sign Expert!</p>
             <a href="#contact" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />

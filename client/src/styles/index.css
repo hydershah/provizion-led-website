@@ -3,17 +3,17 @@
    ======================================== */
 
 :root {
-  /* --- Colors --- */
-  --color-bg-primary: #0a0e17;
-  --color-bg-secondary: #111827;
-  --color-bg-tertiary: #1a2235;
-  --color-bg-card: #151d2e;
-  --color-bg-card-hover: #1c2640;
+  /* --- Colors (Brand Guidelines) --- */
+  --color-bg-primary: #181D42;
+  --color-bg-secondary: #434866;
+  --color-bg-tertiary: #1e2350;
+  --color-bg-card: #1f2555;
+  --color-bg-card-hover: #262d60;
 
-  --color-accent: #00d4ff;
-  --color-accent-dim: rgba(0, 212, 255, 0.15);
-  --color-accent-glow: rgba(0, 212, 255, 0.3);
-  --color-accent-dark: #0099cc;
+  --color-accent: #65AED8;
+  --color-accent-dim: rgba(101, 174, 216, 0.15);
+  --color-accent-glow: rgba(101, 174, 216, 0.3);
+  --color-accent-dark: #4483C3;
 
   --color-text-primary: #f1f5f9;
   --color-text-secondary: #94a3b8;
@@ -21,15 +21,16 @@
   --color-text-inverse: #0a0e17;
 
   --color-border: rgba(148, 163, 184, 0.12);
-  --color-border-accent: rgba(0, 212, 255, 0.25);
+  --color-border-accent: rgba(68, 131, 195, 0.25);
 
   --color-white: #ffffff;
   --color-success: #10b981;
   --color-error: #ef4444;
 
-  /* --- Typography --- */
-  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  /* --- Typography (Brand Guidelines: League Spartan H1 / DM Sans H2-H3 / Lato Body) --- */
+  --font-display: 'League Spartan', system-ui, -apple-system, sans-serif;
+  --font-heading: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Lato', system-ui, -apple-system, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -79,9 +80,9 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.15);
-  --shadow-glow-lg: 0 0 40px rgba(0, 212, 255, 0.2);
-  --shadow-glow-intense: 0 0 60px rgba(0, 212, 255, 0.3);
+  --shadow-glow: 0 0 20px rgba(101, 174, 216, 0.15);
+  --shadow-glow-lg: 0 0 40px rgba(101, 174, 216, 0.2);
+  --shadow-glow-intense: 0 0 60px rgba(101, 174, 216, 0.3);
 
   /* --- Transitions --- */
   --transition-fast: 150ms ease;
@@ -144,6 +145,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: var(--leading-tight);
   font-weight: 700;
+}
+
+/* Brand Guidelines: H1 = League Spartan, H2/H3 = DM Sans */
+h1 {
+  font-family: var(--font-display);
+}
+
+h2, h3 {
+  font-family: var(--font-heading);
 }
 
 ul, ol {

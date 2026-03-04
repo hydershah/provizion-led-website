@@ -17,8 +17,28 @@ export const COMPANY = {
   url: 'https://www.provizionledsigns.com',
   rating: 5,
   reviewCount: 62,
-  logo: 'https://lirp.cdn-website.com/417bd98b/dms3rep/multi/opt/provizion_logo_white-476w.webp',
-  logoFull: 'https://lirp.cdn-website.com/417bd98b/dms3rep/multi/opt/provizionled_logo-1920w.webp',
+  logo: '/images/provizion-logo-white.webp',
+  logoFull: '/images/provizion-logo-full.webp',
+  logoSquare: '/images/provizion-logo-square.jpg',
+  logoSquareDark: '/images/provizion-logo-dark-square.jpg',
+  logoSquareBlue: '/images/provizion-logo-blue-square.jpg',
+  ogImage: '/images/provizion-og-image.jpg',
+};
+
+/* Brand Guideline Colors */
+export const BRAND_COLORS = {
+  navyDark: '#181D42',
+  bluePrimary: '#4483C3',
+  blueLight: '#65AED8',
+  slateDark: '#434866',
+  skyLight: '#A5CAEB',
+};
+
+/* Brand Guideline Fonts */
+export const BRAND_FONTS = {
+  h1: 'League Spartan',
+  h2h3: 'DM Sans',
+  body: 'Lato',
 };
 
 export const NAV_LINKS = [
