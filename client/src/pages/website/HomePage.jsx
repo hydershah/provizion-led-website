@@ -167,7 +167,7 @@ export default function HomePage() {
 
           <FadeUp delay={0.1}>
             <h1 className="vc-hero__heading">
-              Custom LED &amp;&nbsp;Digital&nbsp;Signs
+              Custom LED &amp; Digital Signs
               <span className="vc-hero__heading-accent">Built in Charlotte, NC</span>
             </h1>
           </FadeUp>

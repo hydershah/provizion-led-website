@@ -274,4 +274,24 @@
     flex-direction: column;
     gap: var(--space-3);
   }
+
+  .footer-cta {
+    padding: var(--space-8) 0;
+  }
+
+  .footer-cta__text h3 {
+    font-size: var(--text-2xl);
+  }
+
+  .footer-cta__phone {
+    font-size: var(--text-xl);
+  }
+
+  .footer-form-section {
+    padding: var(--space-8) 0;
+  }
+
+  .footer-main {
+    padding: var(--space-8) 0;
+  }
 }

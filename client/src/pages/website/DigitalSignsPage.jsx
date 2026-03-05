@@ -40,7 +40,7 @@ export default function DigitalSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/electronic-digital-message-displays-signs-3.jpg" alt="Digital Signs and Displays" loading="eager" decoding="async" />
+          <img src="/images/digital-signage-urban.jpg" alt="Digital Signs and Displays" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">

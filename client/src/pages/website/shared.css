@@ -83,6 +83,7 @@
   transition: all 300ms ease;
   text-decoration: none;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .vc-btn--accent {
@@ -186,7 +187,7 @@
   justify-content: center;
   min-height: 100svh;
   padding-top: 100px;
-  padding-bottom: 60px;
+  padding-bottom: 120px;
 }
 
 /* Hero Eyebrow */
@@ -1629,9 +1630,17 @@ a.vc-contact-detail:hover {
   }
 
   .vc-hero__content {
-    padding-top: 110px;
+    padding-top: 100px;
     padding-bottom: 48px;
-    min-height: auto;
+    max-width: 100%;
+  }
+
+  .vc-hero__heading {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+  }
+
+  .vc-hero__subhead {
+    max-width: 520px;
   }
 
   .vc-page-hero {
@@ -1649,6 +1658,10 @@ a.vc-contact-detail:hover {
 
   .vc-service-editorial__img {
     min-height: 160px;
+  }
+
+  .vc-service-editorial__content {
+    padding: 28px 24px;
   }
 
   .vc-process-grid {
@@ -1688,67 +1701,176 @@ a.vc-contact-detail:hover {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .vc-section {
+    padding: 60px 0;
+  }
 }
 
 @media (max-width: 640px) {
+  .vc-container {
+    padding: 0 16px;
+  }
+
+  .vc-section {
+    padding: 48px 0;
+  }
+
+  .vc-hero {
+    min-height: 100svh;
+    min-height: 100vh; /* fallback */
+  }
+
   .vc-hero__content {
-    padding-top: 96px;
-    padding-bottom: 40px;
-    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 28px;
+    min-height: 100svh;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .vc-hero__eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .vc-hero__eyebrow::before {
+    width: 14px;
   }
 
   .vc-hero__heading {
-    font-size: clamp(2rem, 8vw, 2.75rem);
+    font-size: clamp(1.875rem, 7.5vw, 2.5rem);
+    letter-spacing: -0.02em;
   }
 
   .vc-hero__heading-accent {
-    font-size: 0.68em;
+    font-size: 0.6em;
+    margin-top: 6px;
+  }
+
+  .vc-hero__line {
+    width: 40px;
+    margin: 16px 0;
   }
 
   .vc-hero__bg-overlay {
     background:
       linear-gradient(
         to bottom,
-        rgba(8, 16, 30, 0.85) 0%,
-        rgba(8, 16, 30, 0.65) 40%,
-        rgba(8, 16, 30, 0.75) 100%
+        rgba(8, 16, 30, 0.92) 0%,
+        rgba(8, 16, 30, 0.78) 35%,
+        rgba(8, 16, 30, 0.68) 65%,
+        rgba(8, 16, 30, 0.88) 100%
       );
   }
 
   .vc-hero .vc-hero__services-row {
-    gap: 16px;
+    gap: 10px 16px;
+    margin-bottom: 16px;
   }
 
   .vc-hero .vc-hero__services-row span {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    padding-left: 14px;
+  }
+
+  .vc-hero .vc-hero__services-row span::before {
+    width: 5px;
+    height: 5px;
   }
 
   .vc-hero__subhead {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    max-width: 100%;
   }
 
-  .vc-hero__actions,
+  .vc-hero__actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .vc-hero__actions .vc-btn {
+    font-size: 0.8125rem;
+    padding: 12px 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
   .vc-page-hero__actions {
     flex-direction: column;
   }
 
+  .vc-page-hero__actions .vc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .vc-hero__trust-bar {
-    gap: 8px;
+    gap: 6px;
   }
 
   .vc-hero__trust-pill {
-    font-size: 0.625rem;
+    font-size: 0.5625rem;
     padding: 5px 10px;
+    gap: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .vc-hero__trust-pill svg {
+    font-size: 0.75rem;
+  }
+
+  .vc-hero__stars-static {
+    font-size: 0.6875rem;
   }
 
   .vc-page-hero {
     min-height: 280px;
   }
 
+  .vc-page-hero__content {
+    padding: 100px 16px 40px;
+  }
+
+  .vc-service-editorial__content {
+    padding: 24px 16px;
+  }
+
+  .vc-service-editorial__content h3 {
+    font-size: 1.125rem;
+  }
+
+  .vc-service-editorial__content p {
+    font-size: 0.875rem;
+  }
+
   .vc-process-grid,
   .vc-why-grid,
   .vc-features-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vc-process-card {
+    padding: 24px 20px;
+  }
+
+  .vc-why-card {
+    padding: 24px 20px;
+  }
+
+  .vc-feature-card {
+    padding: 24px 20px;
+  }
+
+  .vc-testimonial-card {
+    padding: 24px 20px;
   }
 
   .vc-portfolio-grid {
@@ -1758,6 +1880,109 @@ a.vc-contact-detail:hover {
 
   .vc-products-grid {
     grid-template-columns: 1fr;
+  }
+
+  .vc-b2b-quote {
+    padding: 24px 20px;
+  }
+
+  .vc-b2b-quote blockquote {
+    font-size: 1rem;
+  }
+
+  .vc-section-title {
+    font-size: clamp(1.375rem, 5vw, 1.75rem);
+  }
+
+  .vc-section-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 32px;
+  }
+
+  .vc-split-layout {
+    gap: 24px;
+  }
+
+  .vc-split-layout__text p {
+    font-size: 0.875rem;
+  }
+
+  .vc-content-block {
+    padding: 16px 16px 16px 20px;
+  }
+
+  .vc-content-block p {
+    font-size: 0.875rem;
+  }
+
+  .vc-phone-cta {
+    padding: 24px 16px;
+  }
+
+  .vc-phone-cta p {
+    font-size: 0.9375rem;
+  }
+
+  .vc-neon-border {
+    padding: 20px;
+  }
+
+  .vc-testimonials-cta,
+  .vc-services-cta {
+    margin-top: 32px;
+  }
+
+  .vc-contact-layout {
+    gap: 32px;
+  }
+
+  .vc-map-embed,
+  .vc-map-placeholder {
+    height: 220px;
+  }
+}
+
+/* Extra small phones (< 380px) */
+@media (max-width: 380px) {
+  .vc-container {
+    padding: 0 12px;
+  }
+
+  .vc-hero__heading {
+    font-size: 1.625rem;
+  }
+
+  .vc-hero__heading-accent {
+    font-size: 0.55em;
+  }
+
+  .vc-hero__trust-bar {
+    justify-content: center;
+  }
+
+  .vc-hero__trust-pill {
+    font-size: 0.5rem;
+    padding: 4px 8px;
+  }
+
+  .vc-section-title {
+    font-size: 1.25rem;
+  }
+
+  .vc-section {
+    padding: 36px 0;
+  }
+
+  .vc-process-card,
+  .vc-why-card,
+  .vc-feature-card,
+  .vc-testimonial-card {
+    padding: 20px 16px;
+  }
+
+  .vc-btn {
+    font-size: 0.8125rem;
+    padding: 11px 18px;
   }
 }
 
@@ -1902,4 +2127,21 @@ a.vc-contact-detail:hover {
   border-radius: 50%;
   background: var(--vc-accent);
   box-shadow: 0 0 8px rgba(101, 174, 216, 0.6);
+}
+
+@media (max-width: 640px) {
+  .vc-hero__services-row {
+    gap: 10px 16px;
+    margin-bottom: 20px;
+  }
+
+  .vc-hero__services-row span {
+    font-size: 0.75rem;
+    padding-left: 14px;
+  }
+
+  .vc-hero__services-row span::before {
+    width: 5px;
+    height: 5px;
+  }
 }
