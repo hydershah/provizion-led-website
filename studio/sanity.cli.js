@@ -5,4 +5,8 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'YOUR_PROJECT_ID',
     dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   },
+  vite: (config) => ({
+    ...config,
+    base: '/studio/',
+  }),
 });

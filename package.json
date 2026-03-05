@@ -10,7 +10,7 @@
     "studio": "cd studio && npm run dev",
     "studio:build": "cd studio && npm run build",
     "seed": "cd studio && node seed.mjs",
-    "build": "cd client && npm install && npm run build && cd ../studio && npm install && npx sanity build --yes && cp -r dist ../client/dist/studio",
+    "build": "cd client && npm install && npm run build && cd ../studio && npm install && npx sanity build --yes && sed -i '' 's|\"/static/|\"/studio/static/|g' dist/index.html && cp -r dist ../client/dist/studio",
     "start": "cd server && npm start",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install && cd ../studio && npm install"
   },
