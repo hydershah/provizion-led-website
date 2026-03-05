@@ -27,7 +27,14 @@ export function SanityProvider({ children }) {
       }
       if (siteResult.status === 'fulfilled' && siteResult.value) {
         const s = siteResult.value;
-        if (s.navLinks?.length) setNavLinks(s.navLinks);
+        if (s.navLinks?.length) {
+          // Merge Sanity nav links with any hardcoded links not already present
+          const sanityPaths = new Set(s.navLinks.map((l) => l.path));
+          const extra = NAV_LINKS.filter((l) => !sanityPaths.has(l.path));
+          // Insert extras before the last item (Contact Us)
+          const merged = [...s.navLinks.slice(0, -1), ...extra, ...s.navLinks.slice(-1)];
+          setNavLinks(merged);
+        }
         if (s.brandColors) setBrandColors((prev) => ({ ...prev, ...s.brandColors }));
         if (s.brandFonts) setBrandFonts((prev) => ({ ...prev, ...s.brandFonts }));
       }
