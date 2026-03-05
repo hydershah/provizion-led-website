@@ -14,7 +14,7 @@
   --vg-surface: #111;
   --vg-surface-light: #f5f5f5;
   --vg-radius: 0;
-  --vg-font-display: 'Space Grotesk', 'Helvetica Neue', Helvetica, sans-serif;
+  --vg-font-display: 'League Spartan', system-ui, sans-serif;
   --vg-font-body: 'Inter', system-ui, sans-serif;
   --vg-font-mono: 'JetBrains Mono', monospace;
 }

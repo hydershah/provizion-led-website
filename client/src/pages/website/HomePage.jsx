@@ -13,58 +13,62 @@ import {
 } from 'react-icons/hi';
 import SEO from '../../components/SEO';
 import useThemeClass from '../../hooks/useThemeClass';
-import { COMPANY } from '../../utils/constants';
-import { FadeUp, StaggerWrap, StaggerChild, LEDGrid, NeonText, ScanLine, FloatingParticles, NeonBorder } from './animations';
+import { useSanityContext } from '../../context/SanityContext';
+import useSanityQuery from '../../hooks/useSanityQuery';
+import { homePageQuery } from '../../lib/queries';
+import { urlFor } from '../../lib/sanity';
+import { getIcon } from '../../lib/iconMap';
+import { FadeUp, StaggerWrap, StaggerChild, NeonText, ScanLine, FloatingParticles, NeonBorder } from './animations';
 import './shared.css';
 
-/* ──── Data ──── */
-const services = [
-  { title: 'LED Signs', desc: 'Experience the brilliance of our state-of-the-art LED signs. With vibrant colors and unmatched clarity, these signs are perfect for businesses wanting to make a bold and energy-efficient statement. Our cutting edge heat management process ensures that your LED signs are long lasting and less prone to dimming due to heat.', img: '/images/electronic-signs-1.jpg', link: '/led-signs' },
-  { title: 'Digital Sign Displays', desc: 'Elevate your brand with our cutting-edge digital sign displays. Whether it\'s showcasing promotional content or sharing real-time information, our displays offer unparalleled versatility and visual appeal.', img: '/images/electronic-digital-message-displays-signs-3.jpg', link: '/digital-signs' },
-  { title: 'Lighted Signs', desc: 'Illuminate your brand\'s presence, day and night with our precision-crafted lighted signs. We guarantee consistent brightness and a commanding presence that boosts visibility.', img: '/images/lighted-and-illuminated-signs-2.jpeg', link: '/lighted-signs' },
-  { title: 'LED Monument Signs', desc: 'A perfect blend of grandeur and technology, our LED monument signs are a testament to our commitment to excellence. These signs are not only visually striking but also serve as landmarks that cement your brand\'s position in the landscape.', img: '/images/programmable-led-message-centers-3.jpg', link: '/contact-us' },
-  { title: 'LED Message Boards', desc: 'Share dynamic content with the world using our LED message boards. Ideal for businesses wanting to communicate ever-changing messages or promotions, these boards are easy to update and always capture attention.', img: '/images/indoor-led-message-board-sign-2.jpg', link: '/contact-us' },
-  { title: 'Electronic Message Centers', desc: 'Combining sophisticated technology with user-friendly interfaces, our electronic message boards allow for seamless content updates. Whether it\'s for schools, businesses, or public facilities, they are a reliable way to keep audiences informed and engaged.', img: '/images/electronic-message-centers-digital-signage-display-1.jpg', link: '/electronic-signs' },
+/* ──── Fallback Data ──── */
+const defaultServices = [
+  { title: 'Custom LED Signs', desc: 'Our custom LED signs deliver vibrant colors, unmatched clarity, and energy-efficient performance for businesses across Charlotte, NC and North Carolina. Our advanced heat management process ensures your LED signage stays bright and lasts longer — no dimming, no downtime.', img: '/images/electronic-signs-1.jpg', link: '/led-signs' },
+  { title: 'Digital Sign Displays', desc: 'Elevate your storefront or facility with our digital sign displays. Perfect for showcasing promotions, real-time updates, or branded content, our digital signage solutions offer unmatched versatility for businesses in Charlotte and beyond.', img: '/images/electronic-digital-message-displays-signs-3.jpg', link: '/digital-signs' },
+  { title: 'Illuminated & Lighted Signs', desc: 'Make your brand visible around the clock with our illuminated signs and lighted channel letters. Manufactured in-house and built for durability, our lighted signs deliver consistent brightness and a commanding outdoor presence.', img: '/images/lighted-and-illuminated-signs-2.jpeg', link: '/lighted-signs' },
+  { title: 'LED Monument Signs', desc: 'Our LED monument signs combine architectural presence with cutting-edge LED technology. Ideal for corporate campuses, churches, and retail centers, these custom monument signs serve as permanent landmarks for your brand in the Charlotte, NC area.', img: '/images/programmable-led-message-centers-3.jpg', link: '/contact-us' },
+  { title: 'LED Message Boards', desc: 'Keep your audience engaged with programmable LED message boards. Easy to update remotely, our outdoor LED message boards are ideal for schools, churches, and businesses that need to communicate changing promotions, events, and announcements.', img: '/images/indoor-led-message-board-sign-2.jpg', link: '/contact-us' },
+  { title: 'Electronic Message Centers', desc: 'Our electronic message centers (EMCs) combine reliable digital signage technology with intuitive content management. Built for schools, government buildings, and commercial properties across North Carolina, they keep your audience informed 24/7.', img: '/images/electronic-message-centers-digital-signage-display-1.jpg', link: '/electronic-signs' },
 ];
 
-const processSteps = [
-  { step: '01', title: 'Tailored Design', desc: 'We listen to your vision and craft designs that align with your brand\'s identity using cutting-edge tools.', icon: <HiLightBulb /> },
-  { step: '02', title: 'Precision Fabrication', desc: 'Premium materials and advanced machinery guarantee every sign is robust, elegant, and built to last.', icon: <HiCube /> },
-  { step: '03', title: 'Expert Installation', desc: 'Our team considers location, lighting, and angle to position your signs for maximum visibility and impact.', icon: <HiTruck /> },
-  { step: '04', title: 'Ongoing Maintenance', desc: 'Routine check-ups and repairs keep your signs as vibrant and effective as the day they were installed.', icon: <HiCog /> },
+const defaultProcessSteps = [
+  { step: '01', title: 'Custom Sign Design', desc: 'Our sign designers work directly with you to create LED sign concepts that reflect your brand — from channel letters to full-color digital displays.', icon: <HiLightBulb /> },
+  { step: '02', title: 'In-House Sign Fabrication', desc: 'Every sign is manufactured in our North Carolina facility using premium materials and advanced LED technology for long-lasting performance.', icon: <HiCube /> },
+  { step: '03', title: 'Professional Sign Installation', desc: 'Our licensed sign installation crews handle permits, electrical, and placement — ensuring your outdoor signs are positioned for maximum visibility.', icon: <HiTruck /> },
+  { step: '04', title: 'Sign Maintenance & Support', desc: 'Scheduled maintenance and rapid repairs keep your LED signs, digital displays, and electronic message centers performing at their best.', icon: <HiCog /> },
 ];
 
-const whyChoose = [
-  { title: 'Unparalleled Expertise', desc: 'With years of experience in the industry, our team possesses the knowledge and skills to bring any vision to life. From conceptualization to installation, we navigate every step with precision and passion.' },
-  { title: 'Customized Solutions', desc: 'We understand that every brand is unique. Our approach is centered on listening to your needs and creating customized solutions. Whether it\'s a digital display for a tech start-up or a classic illuminated sign for a boutique, we have the flexibility to meet various demands.' },
-  { title: 'State-of-the-Art Technology', desc: 'We keep up with the latest trends and technological advancements in the signage industry, ensuring our clients receive innovative, durable, and efficient products.' },
-  { title: 'Sustainability Focus', desc: 'In an age where sustainability is key, we take pride in using eco-friendly materials and processes. Our LED solutions, in particular, are energy-efficient, reducing both your carbon footprint and electricity costs.' },
-  { title: 'Comprehensive After-Sales Support', desc: 'Our relationship with clients extends beyond the sale. We offer robust maintenance and support services, ensuring your signs remain in optimal condition and continue to serve your brand effectively.' },
-  { title: 'Local Insights', desc: 'As a local signage company, we have an innate understanding of the community, its preferences, and the competitive landscape. This knowledge allows us to create signs that resonate, connect, and engage at a grassroots level.' },
+const defaultWhyChoose = [
+  { title: 'Experienced LED Sign Manufacturer', desc: 'With over a decade manufacturing LED signs and digital displays, our team brings deep expertise to every project — from sign design and fabrication to permitting and installation.' },
+  { title: 'Custom Signage Solutions', desc: 'Every business is different. Whether you need a full-color digital sign display for a car dealership, illuminated channel letters for a restaurant, or an LED monument sign for a church, we build exactly what your brand requires.' },
+  { title: 'Latest LED & Digital Technology', desc: 'We invest in state-of-the-art LED technology and digital signage platforms, delivering brighter, more durable, and more energy-efficient sign products than the competition.' },
+  { title: 'Energy-Efficient LED Signage', desc: 'Our LED signs and electronic message centers use significantly less power than traditional signage. Lower energy costs and a smaller carbon footprint — without sacrificing brightness or visibility.' },
+  { title: 'Full-Service Sign Support', desc: 'We don\'t just manufacture and install your sign — we maintain it. Our ongoing sign maintenance programs keep your LED signs, digital displays, and lighted signs performing at peak brightness.' },
+  { title: 'Local Charlotte, NC Sign Company', desc: 'Based in Charlotte, North Carolina, we understand the local market and permitting landscape. As your neighborhood LED sign company, we deliver faster turnaround and hands-on service.' },
 ];
 
-const testimonials = [
+const defaultTestimonials = [
   { name: 'James Mitchell', business: 'Mitchell Auto Group', rating: 5, text: 'ProVizion LED transformed our dealership presence. The LED monument sign they designed draws customers from the highway — our foot traffic increased 40% in the first month.' },
   { name: 'Sarah Chen', business: 'Brightside Medical Center', rating: 5, text: 'Professional from start to finish. They handled all the permits and installed our channel letters in one day. The quality of the illumination is exceptional.' },
   { name: 'David Ramirez', business: 'Ramirez Restaurant Group', rating: 5, text: 'We needed digital menu boards and exterior signage for three locations. ProVizion delivered on time, on budget, and the results are stunning.' },
 ];
 
-const b2bFeatures = [
-  { title: 'Wholesale & Contract Sign Installation', desc: 'Reliable, high-quality installations for national brands, regional franchises, and local businesses.' },
-  { title: 'Full-Service Sign Production', desc: 'Custom fabrication and finishing, handled in-house for complete quality control.' },
-  { title: 'B2B & Third-Party Installations', desc: 'Seamless support for design firms, marketing agencies, and sign brokers.' },
-  { title: 'White-Label Installers for Sign Companies', desc: 'Your trusted, discreet partner for subcontracted installation work — always on time and on brand.' },
-  { title: 'Trade & Reseller Installation Solutions', desc: 'Expert service for resellers and trade partners looking for dependable execution without the overhead.' },
+const defaultB2bFeatures = [
+  { title: 'Wholesale & Contract Sign Installation', desc: 'Professional sign installation services for national brands, regional franchises, and multi-location businesses across North Carolina.' },
+  { title: 'In-House Sign Manufacturing', desc: 'LED sign fabrication, channel letter production, and cabinet sign assembly — all handled in our facility for complete quality control.' },
+  { title: 'B2B & Third-Party Sign Installation', desc: 'Seamless subcontracted sign installation for design firms, marketing agencies, and sign brokers throughout the Southeast.' },
+  { title: 'White-Label Sign Installation', desc: 'Your trusted, discreet partner for outsourced LED sign and digital display installation — always on time and on brand.' },
+  { title: 'Trade & Reseller Sign Solutions', desc: 'Wholesale LED signs and electronic message centers for resellers and trade partners looking for reliable sign manufacturing without the overhead.' },
 ];
 
-const certifications = [
+const defaultCertifications = [
   'BBB Accredited',
   'Licensed & Insured',
   'UL Listed',
   'Energy Star Partner',
 ];
 
-const portfolio = [
+const defaultPortfolio = [
   { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/led-signs-channel-letters-lit-at-night-1.jpg' },
   { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-color-led-electronic-sign-4.jpg' },
   { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.jpeg' },
@@ -76,8 +80,63 @@ const portfolio = [
 /* ====================================
    HOME PAGE — Production Website
    ==================================== */
+const defaultFallback = {
+  services: defaultServices,
+  processSteps: defaultProcessSteps,
+  whyChoose: defaultWhyChoose,
+  testimonials: defaultTestimonials,
+  b2bFeatures: defaultB2bFeatures,
+  portfolio: defaultPortfolio,
+  certifications: defaultCertifications,
+};
+
 export default function HomePage() {
   useThemeClass('theme-site');
+  const { company: COMPANY } = useSanityContext();
+  const { data } = useSanityQuery(homePageQuery, {}, defaultFallback);
+
+  // Normalize Sanity data to match the shape our template expects.
+  // Handles both Sanity fields (description, image) and fallback fields (desc, img).
+  const services = data.services?.length
+    ? data.services.map((s) => ({
+        title: s.title,
+        desc: s.description || s.desc,
+        img: s.image?.asset ? urlFor(s.image).width(800).url() : (s.img || ''),
+        link: s.link,
+      }))
+    : defaultServices;
+
+  const processSteps = data.processSteps?.length
+    ? data.processSteps.map((p) => {
+        if (p.icon) return p; // already in fallback shape
+        const Icon = getIcon(p.iconName);
+        return { step: p.step, title: p.title, desc: p.description, icon: Icon ? <Icon /> : null };
+      })
+    : defaultProcessSteps;
+
+  const whyChoose = data.whyChoose?.length
+    ? data.whyChoose.map((w) => ({ title: w.title, desc: w.description || w.desc }))
+    : defaultWhyChoose;
+
+  const testimonials = data.testimonials?.length
+    ? data.testimonials.map((t) => ({ name: t.name, business: t.business, rating: t.rating, text: t.text }))
+    : defaultTestimonials;
+
+  const b2bFeatures = data.b2bFeatures?.length
+    ? data.b2bFeatures.map((b) => ({ title: b.title, desc: b.description || b.desc }))
+    : defaultB2bFeatures;
+
+  const portfolio = data.portfolio?.length
+    ? data.portfolio.map((p) => ({
+        title: p.title,
+        category: p.category,
+        img: p.image?.asset ? urlFor(p.image).width(800).url() : (p.img || ''),
+      }))
+    : defaultPortfolio;
+
+  const certifications = data.certifications?.length
+    ? data.certifications.map((c) => c.name || c)
+    : defaultCertifications;
 
   return (
     <>
@@ -88,68 +147,76 @@ export default function HomePage() {
         path="/"
       />
 
-      {/* -- HERO (Split Screen) -- */}
+      {/* -- HERO (Full-Screen Image) -- */}
       <section className="vc-hero" id="hero">
-        <div className="vc-hero__content-side">
-          <LEDGrid />
-          <div className="vc-hero__content-inner">
-            <FadeUp>
-              <span className="vc-hero__eyebrow">Charlotte, NC &mdash; LED Sign Manufacturer</span>
-            </FadeUp>
-
-            <FadeUp delay={0.1}>
-              <h1 className="vc-hero__heading">
-                LED &amp; Digital Sign Manufacturer
-              </h1>
-            </FadeUp>
-
-            <FadeUp delay={0.15}>
-              <p className="vc-hero__subhead">
-                Full-service sign manufacturer specializing in custom LED signs, digital displays, and illuminated signage. Design, production, and expert installation &mdash; all in-house.
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.2}>
-              <div className="vc-hero__actions">
-                <Link to="/contact-us" className="vc-btn vc-btn--accent">
-                  Contact Us <HiArrowRight />
-                </Link>
-                <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline">
-                  <HiPhone /> {COMPANY.phone}
-                </a>
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.3}>
-              <div className="vc-hero__trust-bar">
-                <div className="vc-hero__trust-item">
-                  <span className="vc-hero__stars-static">
-                    <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
-                  </span>
-                  <span>{COMPANY.reviewCount} Reviews</span>
-                </div>
-                <div className="vc-hero__trust-item">
-                  <HiShieldCheck /> BBB Accredited
-                </div>
-                <div className="vc-hero__trust-item">
-                  <HiShieldCheck /> Licensed &amp; Insured
-                </div>
-              </div>
-            </FadeUp>
-          </div>
+        <div className="vc-hero__bg">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/6414039ac4366d2cbc083afe/c007ac6c-e430-4fbf-9023-9d8918784bff/unsplash-image-YlpfE9uCakE.jpg"
+            alt="Custom LED sign installation by ProVizion LED in Charlotte, NC"
+            className="vc-hero__bg-img"
+            loading="eager"
+            decoding="async"
+          />
+          <div className="vc-hero__bg-overlay" />
         </div>
 
-        <div className="vc-hero__visual-side">
-          <div className="vc-hero__visual-inner">
-            <img
-              src="/images/full-service-electronic-sign-company-6.jpg"
-              alt="Custom LED sign installation by ProVizion LED"
-              className="vc-hero__img"
-              loading="eager"
-              decoding="async"
-            />
-            <div className="vc-hero__visual-overlay" />
-          </div>
+        <div className="vc-container vc-hero__content">
+          <FadeUp>
+            <span className="vc-hero__eyebrow">Charlotte, NC &mdash; LED Sign Manufacturer</span>
+          </FadeUp>
+
+          <FadeUp delay={0.1}>
+            <h1 className="vc-hero__heading">
+              Custom LED &amp;&nbsp;Digital&nbsp;Signs
+              <span className="vc-hero__heading-accent">Built in Charlotte, NC</span>
+            </h1>
+          </FadeUp>
+
+          <FadeUp delay={0.15}>
+            <div className="vc-hero__line" />
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
+            <div className="vc-hero__services-row">
+              <span>Design</span>
+              <span>Fabrication</span>
+              <span>Installation</span>
+            </div>
+          </FadeUp>
+
+          <FadeUp delay={0.25}>
+            <p className="vc-hero__subhead">
+              Leading LED sign manufacturer &mdash; specializing in custom LED signage, commercial lighted signs, programmable digital displays, and electronic message centers.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.3}>
+            <div className="vc-hero__actions">
+              <Link to="/contact-us" className="vc-btn vc-btn--accent">
+                Get A Free Quote <HiArrowRight />
+              </Link>
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline-light">
+                <HiPhone /> {COMPANY.phone}
+              </a>
+            </div>
+          </FadeUp>
+
+          <FadeUp delay={0.4}>
+            <div className="vc-hero__trust-bar">
+              <div className="vc-hero__trust-pill">
+                <span className="vc-hero__stars-static">
+                  <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
+                </span>
+                {COMPANY.reviewCount}+ Reviews
+              </div>
+              <div className="vc-hero__trust-pill">
+                <HiShieldCheck /> BBB Accredited
+              </div>
+              <div className="vc-hero__trust-pill">
+                <HiShieldCheck /> Licensed &amp; Insured
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -161,12 +228,12 @@ export default function HomePage() {
           <div className="vc-split-layout">
             <FadeUp className="vc-split-layout__text">
               <NeonText className="vc-section-label">About Us</NeonText>
-              <h2 id="vc-intro-heading" className="vc-section-title">LED &amp; Digital Sign Manufacturer</h2>
+              <h2 id="vc-intro-heading" className="vc-section-title">Charlotte&apos;s Trusted LED Sign Manufacturer</h2>
               <p>
-                At ProVizion LED, we pride ourselves on being a leading local sign company that specializes in a vast array of sign solutions. From dazzling LED displays and digital signs to elegant lighted signs and dynamic LED message boards, our passion is bringing your vision to light.
+                ProVizion LED is a full-service LED sign manufacturer based in Charlotte, NC. We specialize in custom LED signs, digital sign displays, illuminated channel letters, electronic message centers, and LED monument signs — designed, fabricated, and installed by our in-house team.
               </p>
               <p>
-                When it comes to sign design and sign fabrication, our expertise is unmatched. As a renowned sign manufacturer, we understand the importance of blending aesthetics with functionality. Whether you need outdoor signs for a grand opening or wayfinding signs to enhance navigation in a complex facility, ProVizion LED has got you covered.
+                From durable outdoor business signs to high-resolution indoor digital signage, our LED sign manufacturing process combines precision fabrication with the latest technology. Whether you need a single lighted storefront sign, programmable electronic message centers, or a multi-location rollout across North Carolina, ProVizion LED delivers on time and on budget.
               </p>
               <Link to="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">
                 Get A Free Quote <HiArrowRight />
@@ -212,8 +279,8 @@ export default function HomePage() {
         <div className="vc-container">
           <FadeUp>
             <NeonText className="vc-section-label">Our Expertise</NeonText>
-            <h2 id="vc-services-heading" className="vc-section-title">Signage Excellence: Our Key Offerings</h2>
-            <p className="vc-section-subtitle">In a world that&apos;s constantly evolving, it&apos;s vital to make a statement that stands out. At ProVizion LED, we specialize in crafting signage solutions that command attention and effectively communicate your brand&apos;s essence with clarity and style.</p>
+            <h2 id="vc-services-heading" className="vc-section-title">Custom LED Signs &amp; Digital Signage Solutions</h2>
+            <p className="vc-section-subtitle">From LED signs and digital displays to illuminated channel letters and electronic message centers — we manufacture, fabricate, and install every type of commercial sign your business needs.</p>
           </FadeUp>
 
           <div className="vc-services-editorial">
@@ -254,8 +321,8 @@ export default function HomePage() {
         <div className="vc-container" style={{ position: 'relative', zIndex: 1 }}>
           <FadeUp>
             <NeonText className="vc-section-label">The Journey</NeonText>
-            <h2 id="vc-process-heading" className="vc-section-title">Complete Sign Manufacturing: From Design to Maintenance</h2>
-            <p className="vc-section-subtitle">The sign&apos;s journey is a remarkable evolution, from a concept to a powerful brand statement. At ProVizion LED, we&apos;ve mastered this process, offering a comprehensive suite of services to guide every aspect of sign creation and maintenance.</p>
+            <h2 id="vc-process-heading" className="vc-section-title">Our Sign Manufacturing Process</h2>
+            <p className="vc-section-subtitle">From initial sign design to final installation, every LED sign and digital display we produce goes through our proven four-step process — ensuring quality, durability, and on-time delivery for businesses across Charlotte and North Carolina.</p>
           </FadeUp>
 
           <StaggerWrap className="vc-process-grid">
@@ -278,12 +345,12 @@ export default function HomePage() {
           <div className="vc-split-layout">
             <FadeUp className="vc-split-layout__text">
               <NeonText className="vc-section-label">Digital Solutions</NeonText>
-              <h2 className="vc-section-title">Custom Digital Displays &amp; Electronic Signage</h2>
+              <h2 className="vc-section-title">Digital Displays &amp; Electronic Message Centers</h2>
               <p>
-                In today&apos;s digital era, signs have transformed into dynamic, interactive displays. Our custom digital displays deliver maximum engagement with interactive touchpoints, lively animations, and real-time updates.
+                Our custom digital sign displays and electronic message centers bring your content to life with full-color LED technology, real-time updates, and remote content management. Perfect for retail stores, corporate lobbies, schools, and churches.
               </p>
               <p>
-                From vibrant trade shows to corporate lobbies, our electronic signage solutions adapt to any setting — because your sign isn&apos;t just a tool, it&apos;s an ambassador for your brand.
+                Whether you need an indoor digital signage display or a high-brightness outdoor electronic message center, ProVizion LED manufactures and installs digital sign solutions built for the Charlotte, NC climate and beyond.
               </p>
               <Link to="/digital-signs" className="vc-btn vc-btn--accent vc-btn--sm">
                 Explore Digital Signs <HiArrowRight />
@@ -306,10 +373,10 @@ export default function HomePage() {
         <div className="vc-container">
           <FadeUp>
             <NeonText className="vc-section-label">Enterprise Partnership</NeonText>
-            <h2 id="vc-b2b-heading" className="vc-section-title">Professional Sign Installation</h2>
+            <h2 id="vc-b2b-heading" className="vc-section-title">Professional Sign Installation &amp; B2B Services</h2>
             <div className="vc-content-block">
               <p>
-                At ProVizion LED, we don&apos;t just create signs — we manage the entire process from concept to completion, including expert installation. Our skilled crews serve as your trusted behind-the-scenes partner, ensuring every sign is installed with precision, speed, and professionalism — so you can focus on what you do best.
+                ProVizion LED provides full-service sign installation for LED signs, digital displays, channel letters, monument signs, and electronic message centers. Our licensed installation crews handle everything — permits, electrical, and structural mounting — serving sign companies, agencies, and businesses across North Carolina and the Southeast.
               </p>
             </div>
           </FadeUp>
@@ -367,8 +434,8 @@ export default function HomePage() {
         <div className="vc-container" style={{ position: 'relative', zIndex: 1 }}>
           <FadeUp>
             <NeonText className="vc-section-label">The ProVizion Difference</NeonText>
-            <h2 id="vc-why-heading" className="vc-section-title">Why Partner with Our Signage Company?</h2>
-            <p className="vc-section-subtitle">Choosing the perfect signage partner is crucial to ensuring your brand&apos;s message reaches your audience effectively. At ProVizion LED, we provide more than just signs — we deliver a partnership grounded in trust, expertise, and unwavering commitment to excellence.</p>
+            <h2 id="vc-why-heading" className="vc-section-title">Why Choose ProVizion LED as Your Sign Company?</h2>
+            <p className="vc-section-subtitle">When you need a reliable LED sign manufacturer in Charlotte, NC, ProVizion LED delivers the expertise, technology, and local service that makes the difference. Here&apos;s why businesses choose us for their LED signs, digital displays, and custom signage.</p>
           </FadeUp>
 
           <StaggerWrap className="vc-why-grid">
@@ -395,7 +462,7 @@ export default function HomePage() {
           <FadeUp>
             <NeonText className="vc-section-label">Selected Work</NeonText>
             <h2 id="vc-portfolio-heading" className="vc-section-title">Project Gallery</h2>
-            <p className="vc-section-subtitle">A curated selection of custom LED signage installations for discerning clients.</p>
+            <p className="vc-section-subtitle">Custom LED signs, digital displays, channel letters, and monument signs — manufactured and installed by ProVizion LED.</p>
           </FadeUp>
 
           <StaggerWrap className="vc-portfolio-grid">
@@ -461,16 +528,13 @@ export default function HomePage() {
         <div className="vc-container">
           <FadeUp>
             <NeonText className="vc-section-label">Get Started</NeonText>
-            <h2 id="vc-final-cta-heading" className="vc-section-title">Looking for the Best Sign Solutions Near Me? Look No Further!</h2>
+            <h2 id="vc-final-cta-heading" className="vc-section-title">Looking for an LED Sign Company Near Me in Charlotte, NC?</h2>
             <div className="vc-content-block">
               <p>
-                Every brand has a unique story waiting to be told. Let&apos;s illuminate yours in the best light possible. Whether you&apos;re looking to captivate, inform, or inspire, our team at ProVizion LED is ready to bring your vision to life.
+                Whether you need custom LED signs, digital sign displays, illuminated channel letters, or electronic message centers — ProVizion LED is your local sign manufacturer in Charlotte, North Carolina. We handle everything from sign design and fabrication to professional installation and ongoing maintenance.
               </p>
               <p>
-                Don&apos;t let another moment pass without maximizing your brand&apos;s impact.
-              </p>
-              <p>
-                Choose ProVizion LED — where sign manufacturing meets excellence. Connect with our signage company today and explore the myriad possibilities that await your brand.
+                Get a free, same-day quote on LED signs, monument signs, digital displays, and more. Call us today or fill out our contact form to speak with an LED signage expert.
               </p>
             </div>
           </FadeUp>

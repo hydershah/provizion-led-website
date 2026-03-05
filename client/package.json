@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@sanity/client": "^7.16.0",
+    "@sanity/image-url": "^2.0.3",
     "axios": "^1.7.9",
     "framer-motion": "^11.15.0",
     "react": "^18.3.1",

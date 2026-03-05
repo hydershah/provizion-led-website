@@ -4,20 +4,20 @@
 
 /* ── Tokens ── */
 .theme-vd {
-  --vd-bg: #08080f;
-  --vd-surface: #111122;
-  --vd-surface-alt: #181830;
+  --vd-bg: #181D42;
+  --vd-surface: #1e2350;
+  --vd-surface-alt: #262d60;
   --vd-text: #e0e0f0;
   --vd-text-muted: #8888aa;
-  --vd-neon-pink: #ff2d8a;
-  --vd-neon-purple: #a855f7;
-  --vd-neon-cyan: #22d3ee;
+  --vd-neon-pink: #65AED8;
+  --vd-neon-purple: #4483C3;
+  --vd-neon-cyan: #A5CAEB;
   --vd-neon-glow-pink: 0 0 20px rgba(255, 45, 138, 0.4), 0 0 60px rgba(255, 45, 138, 0.15);
   --vd-neon-glow-purple: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 60px rgba(168, 85, 247, 0.15);
   --vd-neon-glow-cyan: 0 0 20px rgba(34, 211, 238, 0.4), 0 0 60px rgba(34, 211, 238, 0.15);
   --vd-radius: 4px;
   --vd-radius-lg: 8px;
-  --vd-font-display: 'Space Grotesk', 'Courier New', monospace;
+  --vd-font-display: 'League Spartan', system-ui, sans-serif;
   --vd-font-body: 'Inter', system-ui, sans-serif;
   --vd-font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 }

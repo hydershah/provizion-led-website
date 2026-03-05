@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX, HiPhone } from 'react-icons/hi';
-import { COMPANY, NAV_LINKS } from '../utils/constants';
+import { useSanityContext } from '../context/SanityContext';
+import { urlFor } from '../lib/sanity';
 import './Navbar.css';
 
 export default function Navbar() {
+  const { company: COMPANY, navLinks: NAV_LINKS } = useSanityContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
@@ -43,7 +45,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="navbar__logo" aria-label="ProVizion LED Home">
             <img
-              src={COMPANY.logo}
+              src={COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(360).url() : (COMPANY.logo || '/images/provizion-logo-white.webp')}
               alt="ProVizion LED Logo"
               width="180"
               height="45"

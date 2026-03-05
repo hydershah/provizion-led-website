@@ -5,13 +5,13 @@
 
 /* ── Token Overrides ── */
 .theme-vb {
-  --vb-bg: #0F0F0F;
-  --vb-bg-card: #181818;
-  --vb-bg-alt: #121218;
-  --vb-primary: #0066FF;
+  --vb-bg: #181D42;
+  --vb-bg-card: #1e2350;
+  --vb-bg-alt: #181D42;
+  --vb-primary: #4483C3;
   --vb-primary-dim: rgba(0, 102, 255, 0.12);
   --vb-primary-glow: rgba(0, 102, 255, 0.25);
-  --vb-accent: #FFB800;
+  --vb-accent: #65AED8;
   --vb-accent-dim: rgba(255, 184, 0, 0.1);
   --vb-accent-glow: rgba(255, 184, 0, 0.35);
   --vb-text: #F0F0F0;
@@ -21,8 +21,8 @@
   --vb-radius: 8px;
   --vb-radius-lg: 16px;
   --vb-font-heading: 'Montserrat', 'Inter', system-ui, sans-serif;
-  --vb-font-body: 'Source Sans Pro', 'Open Sans', system-ui, sans-serif;
-  --vb-font-accent: 'Space Grotesk', 'Montserrat', system-ui, sans-serif;
+  --vb-font-body: 'Lato', system-ui, sans-serif;
+  --vb-font-accent: 'League Spartan', system-ui, sans-serif;
   --vb-max-width: 1200px;
   --vb-section-pad: 80px;
 }
@@ -641,7 +641,7 @@
 .vb-portfolio-card__bg {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1A1A2E, #16162A);
+  background: linear-gradient(135deg, #181D42, #1e2350);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -665,7 +665,7 @@
 }
 
 .vb-portfolio-card:hover .vb-portfolio-card__bg {
-  background: linear-gradient(135deg, #1F1F3A, #1A1A35);
+  background: linear-gradient(135deg, #262d60, #1e2350);
   transform: scale(1.05);
 }
 

@@ -1,12 +1,13 @@
 import { HiPhone } from 'react-icons/hi';
 import SEO from '../../components/SEO';
 import useThemeClass from '../../hooks/useThemeClass';
-import { COMPANY } from '../../utils/constants';
+import { useSanityContext } from '../../context/SanityContext';
 import { FadeUp, AnimatedStars } from './animations';
 import './shared.css';
 
 export default function ContactPage() {
   useThemeClass('theme-site');
+  const { company: COMPANY } = useSanityContext();
 
   return (
     <>

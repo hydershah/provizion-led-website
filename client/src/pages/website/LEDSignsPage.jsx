@@ -12,12 +12,19 @@ import {
 } from 'react-icons/hi';
 import SEO from '../../components/SEO';
 import useThemeClass from '../../hooks/useThemeClass';
-import { COMPANY } from '../../utils/constants';
+import { useSanityContext } from '../../context/SanityContext';
+import useSanityQuery from '../../hooks/useSanityQuery';
+import { pageBySlugQuery } from '../../lib/queries';
+import { urlFor } from '../../lib/sanity';
+import { getIcon } from '../../lib/iconMap';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
 import './shared.css';
 
 export default function LEDSignsPage() {
   useThemeClass('theme-site');
+  const { company: COMPANY } = useSanityContext();
+  const { data: page } = useSanityQuery(pageBySlugQuery, { slug: 'led-signs' }, null);
+  const logoSrc = COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(400).url() : (COMPANY.logo || '/images/provizion-logo-white.webp');
 
   return (
     <>
@@ -207,7 +214,7 @@ export default function LEDSignsPage() {
         <div className="vc-container">
           <FadeUp>
             <img
-              src={COMPANY.logo}
+              src={logoSrc}
               alt="ProVizion LED Logo"
               width="200"
               height="50"

@@ -1,0 +1,23 @@
+{
+  "name": "provizion-led-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.27.2",
+    "@sanity/icons": "^3.5.3",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.72.1",
+    "sanity": "^3.72.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.14"
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^4.0.0"
+  }
+}

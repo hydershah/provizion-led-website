@@ -5,14 +5,14 @@
 
 /* ── Token Overrides ── */
 .theme-va {
-  --va-primary: #0066FF;
+  --va-primary: #4483C3;
   --va-primary-light: rgba(0, 102, 255, 0.1);
   --va-primary-glow: rgba(0, 102, 255, 0.25);
   --va-white: #FAFAFA;
-  --va-accent: #FFB800;
+  --va-accent: #65AED8;
   --va-accent-light: rgba(255, 184, 0, 0.12);
-  --va-charcoal: #1A1A1A;
-  --va-slate: #4A5568;
+  --va-charcoal: #181D42;
+  --va-slate: #434866;
   --va-light-gray: #F7FAFC;
   --va-border: rgba(0, 102, 255, 0.08);
   --va-border-hover: rgba(0, 102, 255, 0.2);
@@ -22,8 +22,8 @@
   --va-radius: 8px;
   --va-radius-lg: 16px;
   --va-font-heading: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
-  --va-font-body: 'Source Sans Pro', 'Open Sans', system-ui, sans-serif;
-  --va-font-accent: 'Space Grotesk', 'Montserrat', system-ui, sans-serif;
+  --va-font-body: 'Lato', system-ui, sans-serif;
+  --va-font-accent: 'League Spartan', system-ui, sans-serif;
   --va-max-width: 1200px;
   --va-section-pad: 80px;
 }
@@ -63,7 +63,7 @@
 }
 
 .va-btn--primary:hover {
-  background: #0052CC;
+  background: #345f94;
   color: #FFFFFF;
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
@@ -270,7 +270,7 @@
 .va-hero__sign-placeholder {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, var(--va-primary), #0052CC);
+  background: linear-gradient(135deg, var(--va-primary), #345f94);
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -644,7 +644,7 @@
 .va-portfolio-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #E8EEFF, #F0F4FF);
+  background: linear-gradient(135deg, #e0ecf7, #eaf2fa);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -668,7 +668,7 @@
 }
 
 .va-portfolio-item:hover .va-portfolio-placeholder {
-  background: linear-gradient(135deg, #D4DEFF, #C7D4FF);
+  background: linear-gradient(135deg, #c5d8f0, #A5CAEB);
   transform: scale(1.05);
 }
 

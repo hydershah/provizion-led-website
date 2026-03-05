@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import { HiPhone, HiLocationMarker } from 'react-icons/hi';
 import { FaStar } from 'react-icons/fa';
-import { COMPANY } from '../utils/constants';
+import { useSanityContext } from '../context/SanityContext';
+import { urlFor } from '../lib/sanity';
 import QuoteForm from './QuoteForm';
 import './Footer.css';
 
 export default function Footer() {
+  const { company: COMPANY } = useSanityContext();
   const currentYear = new Date().getFullYear();
+  const logoSrc = COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(400).url() : (COMPANY.logo || '/images/provizion-logo-white.webp');
 
   return (
     <section className="footer" aria-labelledby="footer-heading">
@@ -29,7 +32,7 @@ export default function Footer() {
         <div className="container footer-form__inner">
           <Link to="/" aria-label="ProVizion LED Home">
             <img
-              src={COMPANY.logo}
+              src={logoSrc}
               alt="ProVizion LED Logo"
               width="200"
               height="50"
@@ -68,7 +71,7 @@ export default function Footer() {
           <div className="footer-col footer-col--brand">
             <Link to="/" aria-label="ProVizion LED Home">
               <img
-                src={COMPANY.logo}
+                src={logoSrc}
                 alt="ProVizion LED Logo"
                 width="200"
                 height="50"

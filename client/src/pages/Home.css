@@ -144,21 +144,21 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: #1a1a2e;
+  color: #181D42;
   text-align: center;
   margin-bottom: var(--space-5);
 }
 
 /* Override QuoteForm colors inside hero card */
 .hero__form-card .quote-form__field label {
-  color: #555;
+  color: #434866;
 }
 
 .hero__form-card .quote-form__field input,
 .hero__form-card .quote-form__field textarea {
-  background: #f5f5f7;
-  border-color: #d1d5db;
-  color: #1a1a2e;
+  background: #e0ecf7;
+  border-color: #A5CAEB;
+  color: #181D42;
 }
 
 .hero__form-card .quote-form__field input:focus,
@@ -169,7 +169,7 @@
 
 .hero__form-card .quote-form__field input::placeholder,
 .hero__form-card .quote-form__field textarea::placeholder {
-  color: #9ca3af;
+  color: #8a9ec0;
 }
 
 .hero__form-card .quote-form__submit {
@@ -178,15 +178,15 @@
 }
 
 .hero__form-card .quote-form__submit:hover {
-  background: #0099cc;
+  background: #4483C3;
 }
 
 .hero__form-card .quote-form__success h3 {
-  color: #1a1a2e;
+  color: #181D42;
 }
 
 .hero__form-card .quote-form__success p {
-  color: #555;
+  color: #434866;
 }
 
 .hero__form-card .quote-form__form {
@@ -201,14 +201,14 @@
   gap: 2px;
   margin-top: var(--space-5);
   padding-top: var(--space-4);
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #A5CAEB;
 }
 
 .hero__form-rating-brand {
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: #dc2626;
+  color: #c44040;
   font-style: italic;
 }
 
@@ -216,33 +216,33 @@
   font-family: var(--font-display);
   font-size: var(--text-sm);
   font-weight: 800;
-  color: #1a1a2e;
+  color: #181D42;
   letter-spacing: 0.08em;
 }
 
 .hero__form-stars {
   display: flex;
   gap: 2px;
-  color: #f59e0b;
+  color: #65AED8;
   font-size: 1.25rem;
 }
 
 .hero__form-rating-count {
   font-size: var(--text-xs);
-  color: #6b7280;
+  color: #434866;
 }
 
 /* Disclaimer */
 .hero__form-disclaimer {
   font-size: 10px;
   line-height: 1.4;
-  color: #9ca3af;
+  color: #8a9ec0;
   text-align: center;
   margin-top: var(--space-3);
 }
 
 .hero__form-disclaimer a {
-  color: #6b7280;
+  color: #434866;
   text-decoration: underline;
 }
 

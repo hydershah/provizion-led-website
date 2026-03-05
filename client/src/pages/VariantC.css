@@ -5,15 +5,15 @@
 
 /* ── Token Overrides ── */
 .theme-vc {
-  --vc-navy: #0A1628;
-  --vc-navy-light: #132240;
+  --vc-navy: #181D42;
+  --vc-navy-light: #1e2350;
   --vc-white: #FFFFFF;
   --vc-off-white: #FAFAFA;
   --vc-cream: #F5F5F0;
-  --vc-gold: #C8991F;
+  --vc-gold: #A5CAEB;
   --vc-gold-light: rgba(200, 153, 31, 0.1);
   --vc-gold-border: rgba(200, 153, 31, 0.25);
-  --vc-primary: #0066FF;
+  --vc-primary: #4483C3;
   --vc-charcoal: #1A1A1A;
   --vc-slate: #4A5568;
   --vc-text-light: #6B7280;
@@ -25,8 +25,8 @@
   --vc-radius-lg: 16px;
   --vc-font-serif: 'Playfair Display', 'Georgia', serif;
   --vc-font-heading: 'Inter', 'Montserrat', system-ui, sans-serif;
-  --vc-font-body: 'Source Sans Pro', 'Open Sans', system-ui, sans-serif;
-  --vc-font-accent: 'Space Grotesk', system-ui, sans-serif;
+  --vc-font-body: 'Lato', system-ui, sans-serif;
+  --vc-font-accent: 'League Spartan', system-ui, sans-serif;
   --vc-max-width: 1200px;
   --vc-section-pad: 80px;
 }
@@ -39,9 +39,9 @@
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #F5F5F0;
   --color-text-primary: #1A1A1A;
-  --color-text-secondary: #C8991F;
+  --color-text-secondary: #A5CAEB;
   --color-text-muted: #9CA3AF;
-  --color-accent: #C8991F;
+  --color-accent: #A5CAEB;
   --color-accent-dim: rgba(200, 153, 31, 0.12);
   --color-accent-glow: rgba(200, 153, 31, 0.3);
   --color-accent-dark: #B8890F;

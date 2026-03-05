@@ -19,7 +19,7 @@
   --vk-radius-lg: 12px;
   --vk-radius-pill: 50px;
   --vk-font-display: 'DM Serif Display', Georgia, serif;
-  --vk-font-body: 'Source Sans 3', system-ui, sans-serif;
+  --vk-font-body: 'Lato', system-ui, sans-serif;
   --vk-shadow-warm: 0 4px 20px rgba(139, 90, 43, 0.08);
   --vk-shadow-warm-lg: 0 12px 40px rgba(139, 90, 43, 0.12);
 }
