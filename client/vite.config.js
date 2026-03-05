@@ -10,6 +10,10 @@ export default defineConfig({
         target: 'http://localhost:5001',
         changeOrigin: true,
       },
+      '/studio': {
+        target: 'http://localhost:3333',
+        changeOrigin: true,
+      },
     },
   },
   build: {

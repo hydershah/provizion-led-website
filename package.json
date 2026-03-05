@@ -4,7 +4,7 @@
   "description": "ProVizion LED Signs - LED & Digital Sign Manufacturer",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run studio\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm run dev",
     "studio": "cd studio && npm run dev",
