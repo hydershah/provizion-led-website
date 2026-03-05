@@ -47,6 +47,7 @@ export const NAV_LINKS = [
   { label: 'Electronic Signs', path: '/electronic-signs' },
   { label: 'LED Signs', path: '/led-signs' },
   { label: 'Lighted Signs', path: '/lighted-signs' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact Us', path: '/contact-us' },
 ];
 

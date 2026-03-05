@@ -3,6 +3,7 @@
   "outputDirectory": "client/dist",
   "framework": null,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/studio/(.*)", "destination": "/studio/index.html" },
+    { "source": "/((?!studio).*)", "destination": "/index.html" }
   ]
 }

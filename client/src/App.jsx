@@ -11,6 +11,8 @@ const DigitalSignsPage = lazy(() => import('./pages/website/DigitalSignsPage'));
 const ElectronicSignsPage = lazy(() => import('./pages/website/ElectronicSignsPage'));
 const LightedSignsPage = lazy(() => import('./pages/website/LightedSignsPage'));
 const ContactPage = lazy(() => import('./pages/website/ContactPage'));
+const BlogPage = lazy(() => import('./pages/website/BlogPage'));
+const BlogPostPage = lazy(() => import('./pages/website/BlogPostPage'));
 
 // Lazy load utility pages
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -48,6 +50,8 @@ function App() {
             <Route path="/lighted-signs" element={<LightedSignsPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
             <Route path="/contact-us-cm" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
 

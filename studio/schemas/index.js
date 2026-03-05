@@ -7,6 +7,8 @@ import testimonial from './testimonial';
 import b2bFeature from './b2bFeature';
 import portfolioItem from './portfolioItem';
 import certification from './certification';
+import blogCategory from './blogCategory';
+import blogPost from './blogPost';
 import page from './page';
 import featureCard from './objects/featureCard';
 import productCard from './objects/productCard';
@@ -19,6 +21,8 @@ export const schemaTypes = [
   siteSettings,
   // Documents
   page,
+  blogCategory,
+  blogPost,
   service,
   processStep,
   whyChooseItem,

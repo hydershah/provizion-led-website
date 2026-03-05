@@ -15,6 +15,22 @@ export const deskStructure = (S) =>
         .title('Pages')
         .child(S.documentTypeList('page').title('Pages')),
       S.divider(),
+      // Blog
+      S.listItem()
+        .title('Blog')
+        .child(
+          S.list()
+            .title('Blog')
+            .items([
+              S.listItem()
+                .title('Posts')
+                .child(S.documentTypeList('blogPost').title('Blog Posts')),
+              S.listItem()
+                .title('Categories')
+                .child(S.documentTypeList('blogCategory').title('Blog Categories')),
+            ])
+        ),
+      S.divider(),
       // Content types
       S.listItem()
         .title('Services')

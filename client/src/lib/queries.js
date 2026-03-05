@@ -48,6 +48,26 @@ export const homePageQuery = `{
   "certifications": ${certificationsQuery}
 }`;
 
+/* ─── Blog ─── */
+
+export const blogPostsQuery = `*[_type == "blogPost"] | order(publishedAt desc){
+  _id, title, slug, author, excerpt, featuredImage, publishedAt,
+  category->{ title, slug }
+}`;
+
+export const blogPostBySlugQuery = `*[_type == "blogPost" && slug.current == $slug][0]{
+  _id, title, slug, author, excerpt, featuredImage, publishedAt,
+  body[]{ ..., _type == "image" => { ..., asset-> } },
+  category->{ title, slug },
+  metaTitle, metaDescription
+}`;
+
+export const blogCategoriesQuery = `*[_type == "blogCategory"] | order(title asc){
+  _id, title, slug, description
+}`;
+
+/* ─── Pages ─── */
+
 export const pageBySlugQuery = `*[_type == "page" && slug.current == $slug][0]{
   title, slug, pageType,
   metaTitle, metaDescription, metaKeywords,

@@ -9,6 +9,7 @@ export default defineConfig({
   title: 'ProVizion LED',
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'YOUR_PROJECT_ID',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  basePath: '/studio',
   plugins: [
     structureTool({ structure: deskStructure }),
     visionTool(),
