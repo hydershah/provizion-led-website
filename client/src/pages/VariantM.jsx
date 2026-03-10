@@ -111,9 +111,9 @@ const PORTFOLIO = [
 ];
 
 const TESTIMONIALS = [
-  { text: 'ProVizion is the real deal. They came out, understood exactly what we needed, and delivered a sign that has brought us so many new customers. Best money we ever spent.', author: 'Maria S.', role: 'Owner, South End Bakery', location: 'South End, Charlotte' },
-  { text: 'As a local business owner, I wanted to work with a local sign company. ProVizion made it easy from start to finish. Our monument sign looks incredible and they handled all the permitting.', author: 'James T.', role: 'Property Manager', location: 'Ballantyne, Charlotte' },
-  { text: 'The team at ProVizion feels like family. They were on time, on budget, and the quality of our channel letters is outstanding. I recommend them to every business owner I know.', author: 'Lisa K.', role: 'Franchise Owner', location: 'University City, Charlotte' },
+  { text: "We couldn't be happier with our new ProVizion LED sign! The image quality is incredible and the installation team was on point. They paid attention to every little detail and made sure we were completely satisfied. Great warranty and even better service!", author: 'Kamel Lamraoui', role: 'Google Review', location: 'Charlotte, NC' },
+  { text: 'If you want high-quality digital signage, go with ProVizion LED. The process was easy, communication was great, and their installers were some of the best I\'ve ever worked with. The attention to detail and excellent warranty make them stand out above the rest!', author: 'JNK Productionz', role: 'Google Review', location: 'Charlotte, NC' },
+  { text: 'Fantastic experience! ProVizion LED delivers premium digital signs that perform flawlessly. Great company to work with and excellent collaboration with locals.', author: 'Tory Thorpe', role: 'Google Review', location: 'Charlotte, NC' },
 ];
 
 /* ──── Component ──── */

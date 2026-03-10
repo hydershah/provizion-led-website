@@ -111,9 +111,9 @@ const PORTFOLIO = [
 ];
 
 const TESTIMONIALS = [
-  { text: "ProVizion transformed our storefront with gorgeous LED letters. We've seen a noticeable jump in foot traffic since the install. Could not be happier.", author: 'Rachel M.', role: 'Owner, Bloom Boutique' },
-  { text: 'The team was professional, timely, and the quality of our monument sign exceeded expectations. They handled permits seamlessly which saved us weeks.', author: 'David K.', role: 'Property Manager' },
-  { text: "Honestly the best investment we've made for our business. Our pylon sign is visible from the highway and has driven real, measurable results.", author: 'Marcus T.', role: 'Franchise Owner' },
+  { text: "We couldn't be happier with our new ProVizion LED sign! The image quality is incredible and the installation team was on point. They paid attention to every little detail and made sure we were completely satisfied. Great warranty and even better service!", author: 'Kamel Lamraoui', role: 'Google Review' },
+  { text: 'If you want high-quality digital signage, go with ProVizion LED. The process was easy, communication was great, and their installers were some of the best I\'ve ever worked with. The attention to detail and excellent warranty make them stand out above the rest!', author: 'JNK Productionz', role: 'Google Review' },
+  { text: 'Fantastic experience! ProVizion LED delivers premium digital signs that perform flawlessly. Great company to work with and excellent collaboration with locals.', author: 'Tory Thorpe', role: 'Google Review' },
 ];
 
 /* ──── Component ──── */
