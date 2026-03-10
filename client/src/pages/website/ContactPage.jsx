@@ -9,7 +9,7 @@ import { trackPhoneClick } from '../../utils/analytics';
 import './shared.css';
 
 const MAPS_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.5!2d-80.7562!3d35.3095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDE4JzM0LjIiTiA4MMKwNDUnMjIuMyJX!5e0!3m2!1sen!2sus!4v1';
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.5!2d-80.7438306!3d35.2635447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfbe5566da43fa07a!2sProVizion+LED+Signs!5e0!3m2!1sen!2sus!4v1';
 
 const SERVICE_AREAS = [
   'Charlotte, NC',
