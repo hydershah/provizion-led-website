@@ -2,6 +2,15 @@
   "buildCommand": "npm run build",
   "outputDirectory": "client/dist",
   "framework": null,
+  "redirects": [
+    { "source": "/contact-us-cm", "destination": "/contact-us", "statusCode": 301 },
+    { "source": "/electronic-message-centers", "destination": "/electronic-signs", "statusCode": 301 },
+    { "source": "/the-difference-between-channel-letters-lightboxes-and-monument-signs", "destination": "/blog/the-difference-between-channel-letters-lightboxes-and-monument-signs", "statusCode": 301 },
+    { "source": "/how-to-choose-the-right-font-and-colors-for-your-business-sign", "destination": "/blog/how-to-choose-the-right-font-and-colors-for-your-business-sign", "statusCode": 301 },
+    { "source": "/from-banners-to-monuments-sign-styles-that-drive-foot-traffic-in-columbia-sc", "destination": "/blog", "statusCode": 301 },
+    { "source": "/the-ultimate-guide-to-eye-catching-storefront-signs-in-columbia-sc", "destination": "/blog", "statusCode": 301 },
+    { "source": "/must-have-signage-types-every-columbia-sc-business-should-know", "destination": "/blog", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/studio/(.*)", "destination": "/studio/index.html" },
     { "source": "/((?!studio).*)", "destination": "/index.html" }

@@ -25,7 +25,7 @@ export default function LightedSignsPage() {
     <>
       <SEO
         title="Lighted & Illuminated Signs"
-        description="ProVizion LED creates stunning lighted and illuminated signs including LED channel letters, backlit signs, neon alternatives, and custom illuminated displays."
+        description="Illuminated signs, backlit channel letters & lighted business signs in Charlotte, NC. Custom fabrication & professional installation by ProVizion LED."
         path="/lighted-signs"
       />
 

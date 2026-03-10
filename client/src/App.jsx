@@ -49,7 +49,6 @@ function App() {
             <Route path="/led-signs" element={<LEDSignsPage />} />
             <Route path="/lighted-signs" element={<LightedSignsPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
-            <Route path="/contact-us-cm" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

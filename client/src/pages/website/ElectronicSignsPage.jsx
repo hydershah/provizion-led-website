@@ -25,7 +25,7 @@ export default function ElectronicSignsPage() {
     <>
       <SEO
         title="Electronic Signs & Message Centers"
-        description="ProVizion LED delivers high-impact electronic signs and message centers that capture attention, engage audiences, and drive results for businesses of all sizes."
+        description="Electronic message centers & electronic signs for schools, churches & businesses in Charlotte, NC. Programmable, easy to update, built to last."
         path="/electronic-signs"
       />
 

@@ -13,7 +13,7 @@ export default function ContactPage() {
     <>
       <SEO
         title="Contact Us"
-        description="Contact ProVizion LED for custom LED signs, digital displays, and expert consultation in Charlotte, NC. Get a complimentary same-day quote. Call (984) 217-6527."
+        description="Contact ProVizion LED for a free quote on LED signs, digital displays & custom signage in Charlotte, NC. Call (984) 217-6527 or fill out our form."
         path="/contact-us"
       />
 

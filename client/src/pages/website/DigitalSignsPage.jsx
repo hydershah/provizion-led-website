@@ -33,7 +33,7 @@ export default function DigitalSignsPage() {
     <>
       <SEO
         title="Digital Signs and Displays"
-        description="ProVizion LED delivers cutting-edge digital signs and displays that revolutionize business communication with dynamic content, interactive experiences, and versatile applications."
+        description="Digital sign displays & programmable digital signage for businesses in Charlotte, NC. Indoor & outdoor digital displays with remote content management. Free quotes."
         path="/digital-signs"
       />
 

@@ -16,7 +16,7 @@ export default function BlogPage() {
     <>
       <SEO
         title="Blog | LED Signage Insights & News"
-        description="LED signage tips, digital display insights, and industry news from ProVizion LED."
+        description="LED signage tips, industry news & sign buying guides from ProVizion LED — Charlotte NC's trusted LED sign manufacturer."
         path="/blog"
       />
 

@@ -549,7 +549,14 @@
   gap: 24px;
 }
 
+.vc-features-grid > * {
+  display: flex;
+}
+
 .vc-feature-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 32px;
   background: var(--vc-card-bg);
   border: 1px solid var(--vc-border);
@@ -601,7 +608,14 @@
   gap: 20px;
 }
 
+.vc-products-grid > * {
+  display: flex;
+}
+
 .vc-product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   background: var(--vc-card-bg);
   border: 1px solid var(--vc-border);

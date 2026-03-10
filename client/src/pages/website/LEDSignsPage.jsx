@@ -30,7 +30,7 @@ export default function LEDSignsPage() {
     <>
       <SEO
         title="LED Signs & Displays"
-        description="ProVizion LED manufactures premium LED signs and displays with vibrant colors, energy-efficient technology, and unmatched clarity for indoor and outdoor use."
+        description="Custom LED signs built in Charlotte, NC. Energy-efficient outdoor LED signage, full-color LED displays & programmable LED signs. In-house manufacturing & installation."
         path="/led-signs"
       />
 
