@@ -156,16 +156,16 @@ export default function BlogPostPage() {
       {/* ── Article Body ── */}
       <section className="vc-section">
         <div className="vc-container">
-          <FadeUp>
-            <article className="vc-blog-article">
-              {post.body && (
-                <PortableText
-                  value={post.body}
-                  components={portableTextComponents}
-                />
-              )}
-            </article>
-          </FadeUp>
+          <article className="vc-blog-article">
+            {post.body && post.body.length > 0 ? (
+              <PortableText
+                value={post.body}
+                components={portableTextComponents}
+              />
+            ) : (
+              <p>No content available.</p>
+            )}
+          </article>
         </div>
       </section>
     </>
