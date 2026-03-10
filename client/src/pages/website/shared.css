@@ -141,6 +141,7 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
+  padding-bottom: 15vh;
   overflow: hidden;
 }
 
@@ -160,13 +161,14 @@
 .vc-hero__bg-overlay {
   position: absolute;
   inset: 0;
+  /* Heavy on left for text readability, fades to reveal billboards on right */
   background:
     linear-gradient(
-      135deg,
-      rgba(8, 16, 30, 0.95) 0%,
-      rgba(8, 16, 30, 0.88) 30%,
-      rgba(8, 16, 30, 0.72) 55%,
-      rgba(8, 16, 30, 0.45) 100%
+      to right,
+      rgba(8, 16, 30, 0.93) 0%,
+      rgba(8, 16, 30, 0.80) 30%,
+      rgba(8, 16, 30, 0.40) 55%,
+      rgba(8, 16, 30, 0.15) 100%
     ),
     linear-gradient(
       to bottom,
@@ -177,17 +179,50 @@
     );
 }
 
-.vc-hero__content {
+/* ── Hero Grid (Text Left | Billboards Right) ── */
+.vc-hero__grid {
   position: relative;
   z-index: 1;
-  max-width: 820px;
-  padding: 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 32px 80px;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  align-items: center;
+}
+
+.vc-hero__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100svh;
-  padding-top: 100px;
-  padding-bottom: 120px;
+}
+
+/* ── Hero Grid — Mobile ── */
+@media (max-width: 768px) {
+  .vc-hero__grid {
+    grid-template-columns: 1fr;
+    padding: 100px 16px 48px;
+    min-height: auto;
+  }
+  /* Restore heavier overlay on mobile since layout stacks */
+  .vc-hero__bg-overlay {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(8, 16, 30, 0.92) 0%,
+        rgba(8, 16, 30, 0.85) 40%,
+        rgba(8, 16, 30, 0.7) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(8, 16, 30, 0.3) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(8, 16, 30, 0.5) 100%
+      );
+  }
 }
 
 /* Hero Eyebrow */
@@ -1002,7 +1037,7 @@
 .vc-b2b-quote__author strong {
   font-family: var(--vc-font-heading);
   font-size: 0.875rem;
-  color: var(--vc-white);
+  color: #ffffff;
   display: block;
 }
 

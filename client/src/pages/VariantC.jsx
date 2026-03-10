@@ -319,13 +319,13 @@ export default function VariantC() {
 
             <FadeUp delay={0.15} className="vc-b2b-quote">
               <blockquote>
-                &ldquo;ProVizion LED has been our go-to manufacturing partner for three years. Their consistency, quality, and reliability are unmatched in the Southeast region.&rdquo;
+                &ldquo;Amazing product! The LED technology from ProVizion is unmatched and the quality shows. Great people to work with and excellent support for local partners.&rdquo;
               </blockquote>
               <div className="vc-b2b-quote__author">
-                <div className="vc-b2b-quote__avatar">R</div>
+                <div className="vc-b2b-quote__avatar">S</div>
                 <div>
-                  <strong>Regional Director</strong>
-                  <span>National Sign Company</span>
+                  <strong>Savannah Schexnayder</strong>
+                  <span>Google Review</span>
                 </div>
               </div>
             </FadeUp>

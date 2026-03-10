@@ -151,7 +151,7 @@ export default function HomePage() {
         path="/"
       />
 
-      {/* -- HERO (Full-Screen Image) -- */}
+      {/* -- HERO (Text Left | Billboards Right) -- */}
       <section className="vc-hero" id="hero">
         <div className="vc-hero__bg">
           <img
@@ -164,64 +164,67 @@ export default function HomePage() {
           <div className="vc-hero__bg-overlay" />
         </div>
 
-        <div className="vc-container vc-hero__content">
-          <FadeUp>
-            <span className="vc-hero__eyebrow">Charlotte, NC &mdash; LED Sign Manufacturer</span>
-          </FadeUp>
+        <div className="vc-hero__grid">
+          <div className="vc-hero__text">
+            <FadeUp>
+              <span className="vc-hero__eyebrow">Charlotte, NC &mdash; LED Sign Manufacturer</span>
+            </FadeUp>
 
-          <FadeUp delay={0.1}>
-            <h1 className="vc-hero__heading">
-              Custom LED &amp; Digital Signs
-              <span className="vc-hero__heading-accent">Built in Charlotte, NC</span>
-            </h1>
-          </FadeUp>
+            <FadeUp delay={0.1}>
+              <h1 className="vc-hero__heading">
+                Custom LED &amp; Digital Signs
+                <span className="vc-hero__heading-accent">Built in Charlotte, NC</span>
+              </h1>
+            </FadeUp>
 
-          <FadeUp delay={0.15}>
-            <div className="vc-hero__line" />
-          </FadeUp>
+            <FadeUp delay={0.15}>
+              <div className="vc-hero__line" />
+            </FadeUp>
 
-          <FadeUp delay={0.2}>
-            <div className="vc-hero__services-row">
-              <span>Design</span>
-              <span>Fabrication</span>
-              <span>Installation</span>
-            </div>
-          </FadeUp>
-
-          <FadeUp delay={0.25}>
-            <p className="vc-hero__subhead">
-              Leading LED sign manufacturer &mdash; specializing in custom LED signage, commercial lighted signs, programmable digital displays, and electronic message centers.
-            </p>
-          </FadeUp>
-
-          <FadeUp delay={0.3}>
-            <div className="vc-hero__actions">
-              <Link to="/contact-us" className="vc-btn vc-btn--accent">
-                Get A Free Quote <HiArrowRight />
-              </Link>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline-light" onClick={() => trackPhoneClick('home-hero')}>
-                <HiPhone /> {COMPANY.phone}
-              </a>
-            </div>
-          </FadeUp>
-
-          <FadeUp delay={0.4}>
-            <div className="vc-hero__trust-bar">
-              <div className="vc-hero__trust-pill">
-                <span className="vc-hero__stars-static">
-                  <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
-                </span>
-                {COMPANY.reviewCount}+ Reviews
+            <FadeUp delay={0.2}>
+              <div className="vc-hero__services-row">
+                <span>Design</span>
+                <span>Fabrication</span>
+                <span>Installation</span>
               </div>
-              <div className="vc-hero__trust-pill">
-                <HiShieldCheck /> BBB Accredited
-              </div>
-              <div className="vc-hero__trust-pill">
-                <HiShieldCheck /> Licensed &amp; Insured
-              </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
 
+            <FadeUp delay={0.25}>
+              <p className="vc-hero__subhead">
+                Leading LED sign manufacturer &mdash; specializing in custom LED signage, commercial lighted signs, programmable digital displays, and electronic message centers.
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.3}>
+              <div className="vc-hero__actions">
+                <Link to="/contact-us" className="vc-btn vc-btn--accent">
+                  Get A Free Quote <HiArrowRight />
+                </Link>
+                <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline-light" onClick={() => trackPhoneClick('home-hero')}>
+                  <HiPhone /> {COMPANY.phone}
+                </a>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.4}>
+              <div className="vc-hero__trust-bar">
+                <div className="vc-hero__trust-pill">
+                  <span className="vc-hero__stars-static">
+                    <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
+                  </span>
+                  {COMPANY.reviewCount}+ Reviews
+                </div>
+                <div className="vc-hero__trust-pill">
+                  <HiShieldCheck /> BBB Accredited
+                </div>
+                <div className="vc-hero__trust-pill">
+                  <HiShieldCheck /> Licensed &amp; Insured
+                </div>
+              </div>
+            </FadeUp>
+          </div>
+
+          {/* RIGHT — empty: billboards show through the lighter overlay */}
         </div>
       </section>
 
@@ -418,13 +421,13 @@ export default function HomePage() {
 
             <FadeUp delay={0.15} className="vc-b2b-quote">
               <NeonBorder><blockquote>
-                &ldquo;ProVizion LED has been our go-to manufacturing partner for three years. Their consistency, quality, and reliability are unmatched in the Southeast region.&rdquo;
+                &ldquo;Amazing product! The LED technology from ProVizion is unmatched and the quality shows. Great people to work with and excellent support for local partners.&rdquo;
               </blockquote>
               <div className="vc-b2b-quote__author">
-                <div className="vc-b2b-quote__avatar">R</div>
+                <div className="vc-b2b-quote__avatar">S</div>
                 <div>
-                  <strong>Regional Director</strong>
-                  <span>National Sign Company</span>
+                  <strong>Savannah Schexnayder</strong>
+                  <span>Google Review</span>
                 </div>
               </div>
               </NeonBorder>
