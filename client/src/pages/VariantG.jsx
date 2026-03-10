@@ -83,9 +83,9 @@ const portfolio = [
 ];
 
 const testimonials = [
-  { name: 'James Mitchell', business: 'Mitchell Auto Group', rating: 5, text: 'ProVizion LED transformed our dealership presence. The LED monument sign draws customers from the highway — foot traffic increased 40% in the first month.' },
-  { name: 'Sarah Chen', business: 'Brightside Medical Center', rating: 5, text: 'Professional from start to finish. They handled all permits and installed our channel letters in one day. Illumination quality is exceptional.' },
-  { name: 'David Ramirez', business: 'Ramirez Restaurant Group', rating: 5, text: 'Digital menu boards and exterior signage for three locations. On time, on budget, stunning results.' },
+  { name: 'Kamel Lamraoui', business: 'Google Review', rating: 5, text: 'We couldn\'t be happier with our new ProVizion LED sign! The image quality is incredible and the installation team was on point. They paid attention to every little detail and made sure we were completely satisfied. Great warranty and even better service!' },
+  { name: 'JNK Productionz', business: 'Google Review', rating: 5, text: 'If you want high-quality digital signage, go with ProVizion LED. The process was easy, communication was great, and their installers were some of the best I\'ve ever worked with. The attention to detail and excellent warranty make them stand out above the rest!' },
+  { name: 'Tory Thorpe', business: 'Google Review', rating: 5, text: 'Fantastic experience! ProVizion LED delivers premium digital signs that perform flawlessly. Great company to work with and excellent collaboration with locals.' },
 ];
 
 /* ──── Component ──── */
