@@ -247,7 +247,7 @@ export default function LEDSigns() {
         <div className="container service-quote-inner">
           <AnimateOnScroll>
             <div className="service-quote-text">
-              <span className="section-label">Free Consultation</span>
+              <span className="section-label">Get A Free Quote</span>
               <h2 className="section-title">Quick & Same-Day Quotes</h2>
               <p className="section-subtitle">
                 Call ProVizion LED at{' '}

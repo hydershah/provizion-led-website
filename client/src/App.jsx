@@ -10,6 +10,10 @@ const LEDSignsPage = lazy(() => import('./pages/website/LEDSignsPage'));
 const DigitalSignsPage = lazy(() => import('./pages/website/DigitalSignsPage'));
 const ElectronicSignsPage = lazy(() => import('./pages/website/ElectronicSignsPage'));
 const LightedSignsPage = lazy(() => import('./pages/website/LightedSignsPage'));
+const VideoWallPage = lazy(() => import('./pages/website/VideoWallPage'));
+const PylonSignsPage = lazy(() => import('./pages/website/PylonSignsPage'));
+const ChannelLettersPage = lazy(() => import('./pages/website/ChannelLettersPage'));
+const MonumentSignsPage = lazy(() => import('./pages/website/MonumentSignsPage'));
 const ContactPage = lazy(() => import('./pages/website/ContactPage'));
 const BlogPage = lazy(() => import('./pages/website/BlogPage'));
 const BlogPostPage = lazy(() => import('./pages/website/BlogPostPage'));
@@ -48,6 +52,10 @@ function App() {
             <Route path="/electronic-signs" element={<ElectronicSignsPage />} />
             <Route path="/led-signs" element={<LEDSignsPage />} />
             <Route path="/lighted-signs" element={<LightedSignsPage />} />
+            <Route path="/video-wall" element={<VideoWallPage />} />
+            <Route path="/pylon-signs" element={<PylonSignsPage />} />
+            <Route path="/channel-letters" element={<ChannelLettersPage />} />
+            <Route path="/monument-signs" element={<MonumentSignsPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />

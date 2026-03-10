@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa';
 import { useSanityContext } from '../context/SanityContext';
 import { urlFor } from '../lib/sanity';
 import QuoteForm from './QuoteForm';
+import { trackPhoneClick } from '../utils/analytics';
 import './Footer.css';
 
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
         <div className="container footer-cta__inner">
           <div className="footer-cta__text">
             <h3>Ready to get started?</h3>
-            <a href={COMPANY.phoneTel} className="footer-cta__phone">
+            <a href={COMPANY.phoneTel} className="footer-cta__phone" onClick={() => trackPhoneClick('footer-cta')}>
               <HiPhone /> {COMPANY.phone}
             </a>
           </div>
@@ -94,7 +95,7 @@ export default function Footer() {
               </li>
               <li>
                 <HiPhone className="footer-contact__icon" />
-                <a href={COMPANY.phoneTel}>{COMPANY.phone}</a>
+                <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('footer-contact')}>{COMPANY.phone}</a>
               </li>
             </ul>
           </div>

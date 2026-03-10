@@ -12,6 +12,7 @@ import {
   HiBadgeCheck,
 } from 'react-icons/hi';
 import SEO from '../../components/SEO';
+
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
 import useSanityQuery from '../../hooks/useSanityQuery';
@@ -19,6 +20,7 @@ import { homePageQuery } from '../../lib/queries';
 import { urlFor } from '../../lib/sanity';
 import { getIcon } from '../../lib/iconMap';
 import { FadeUp, StaggerWrap, StaggerChild, NeonText, ScanLine, FloatingParticles, NeonBorder } from './animations';
+import { trackPhoneClick } from '../../utils/analytics';
 import './shared.css';
 
 /* ──── Fallback Data ──── */
@@ -197,7 +199,7 @@ export default function HomePage() {
               <Link to="/contact-us" className="vc-btn vc-btn--accent">
                 Get A Free Quote <HiArrowRight />
               </Link>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline-light">
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline-light" onClick={() => trackPhoneClick('home-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
             </div>
@@ -219,6 +221,7 @@ export default function HomePage() {
               </div>
             </div>
           </FadeUp>
+
         </div>
       </section>
 
@@ -309,7 +312,7 @@ export default function HomePage() {
           </div>
 
           <FadeUp className="vc-phone-cta" style={{ marginTop: '40px' }}>
-            <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> for your free talk with an LED &amp; Digital Sign Expert!</p>
+            <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('home-phone-cta')}>{COMPANY.phone}</a> for your free talk with an LED &amp; Digital Sign Expert!</p>
             <a href="#contact" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
@@ -406,7 +409,7 @@ export default function HomePage() {
               </div>
 
               <div className="vc-phone-cta" style={{ textAlign: 'left' }}>
-                <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> for your free talk with a sign installation Expert!</p>
+                <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('home-installation-cta')}>{COMPANY.phone}</a> for your free talk with a sign installation Expert!</p>
                 <a href="#contact" className="vc-btn vc-btn--accent">
                   Get A Free Quote <HiArrowRight />
                 </a>

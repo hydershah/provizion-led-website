@@ -17,7 +17,12 @@ import useSanityQuery from '../../hooks/useSanityQuery';
 import { pageBySlugQuery } from '../../lib/queries';
 import { urlFor } from '../../lib/sanity';
 import { getIcon } from '../../lib/iconMap';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import FAQSection from '../../components/FAQSection';
+import { getServiceSchema } from '../../utils/schemas';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
+import { trackPhoneClick } from '../../utils/analytics';
 import './shared.css';
 
 export default function LEDSignsPage() {
@@ -25,6 +30,31 @@ export default function LEDSignsPage() {
   const { company: COMPANY } = useSanityContext();
   const { data: page } = useSanityQuery(pageBySlugQuery, { slug: 'led-signs' }, null);
   const logoSrc = COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(400).url() : (COMPANY.logo || '/images/provizion-logo-white.webp');
+
+  const serviceSchema = getServiceSchema(
+    'Custom LED Signs & Displays',
+    'Custom LED signs built in Charlotte, NC. Energy-efficient outdoor LED signage, full-color LED displays & programmable LED signs.',
+    '/led-signs'
+  );
+
+  const faqs = [
+    {
+      question: 'How much do custom LED signs cost?',
+      answer: 'Custom LED sign costs vary based on size, type, and features. Small LED channel letters start around $2,000\u2013$5,000, while large full-color LED displays can range from $10,000 to $100,000+. ProVizion LED provides free, detailed quotes tailored to your specific requirements. We work with businesses of all sizes across Charlotte, NC and North Carolina to find solutions that fit their budget.',
+    },
+    {
+      question: 'How long do LED signs last?',
+      answer: 'LED signs typically last 50,000 to 100,000 hours \u2014 that\'s 8 to 15+ years of continuous operation. LED technology is significantly more durable than traditional neon or fluorescent signage. Our LED signs use premium components with advanced heat management to ensure maximum lifespan and consistent brightness throughout their life.',
+    },
+    {
+      question: 'Do I need a permit for an LED sign in Charlotte, NC?',
+      answer: 'Yes, most LED signs require permits in Charlotte and across North Carolina. Regulations cover sign size, placement, brightness, and animation. ProVizion LED handles the entire permitting process for you \u2014 from site surveys and engineering drawings to city submissions and inspections. We know Charlotte\'s sign codes inside and out.',
+    },
+    {
+      question: 'What\'s the difference between LED and neon signs?',
+      answer: 'LED signs are more energy-efficient (using 50-75% less power), last 5-10x longer, offer full-color programmable content, and require virtually no maintenance. Neon signs provide a classic warm glow and retro aesthetic but are fragile, expensive to repair, and limited to static designs. For most businesses, LED is the superior long-term investment.',
+    },
+  ];
 
   return (
     <>
@@ -51,13 +81,16 @@ export default function LEDSignsPage() {
             </div>
             <div className="vc-page-hero__actions">
               <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }}>
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('led-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
             </div>
           </FadeUp>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Home', path: '/' }, { label: 'LED Signs' }]} />
+      <SchemaMarkup schema={serviceSchema} />
 
       {/* ── Intro: LED Signs & Displays ── */}
       <section className="vc-section">
@@ -72,8 +105,8 @@ export default function LEDSignsPage() {
               <p>
                 LED technology not only brings messages to life but also infuses a modern and sophisticated touch into any setting. Whether it&apos;s a bustling urban landscape or a peaceful indoor space, LED signage offers limitless possibilities for brands to engage, inform, and entertain their audiences.
               </p>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm">
-                <HiPhone /> Free Consultation
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm" onClick={() => trackPhoneClick('led-signs-intro')}>
+                <HiPhone /> Get A Free Quote
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
@@ -122,7 +155,7 @@ export default function LEDSignsPage() {
           </StaggerWrap>
 
           <FadeUp className="vc-phone-cta">
-            <p>Call ProVizion LED at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> For Your Free Consultation With An LED Signs Expert!</p>
+            <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('led-signs-phone-cta')}>{COMPANY.phone}</a> For A Free Quote With An LED Signs Expert!</p>
             <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
@@ -239,6 +272,82 @@ export default function LEDSignsPage() {
           </FadeUp>
         </div>
       </section>
+
+      {/* ── Industry Applications ── */}
+      <section className="vc-section">
+        <div className="vc-container">
+          <FadeUp>
+            <span className="vc-section-label">Applications</span>
+            <h2 className="vc-section-title">LED Signs for Every Industry</h2>
+          </FadeUp>
+          <StaggerWrap className="vc-features-grid">
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Restaurants &amp; Retail</h3>
+                <p>Drive foot traffic with eye-catching LED storefront signs and digital menu boards. Programmable LED signs let you promote daily specials, seasonal offers, and happy hour deals in vibrant full color — attracting customers from the road and sidewalk.</p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Churches &amp; Schools</h3>
+                <p>Keep your congregation and community informed with LED message boards displaying service times, event announcements, and inspirational messages. Our outdoor LED signs for churches and schools are designed for easy remote updates and maximum visibility.</p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Auto Dealerships</h3>
+                <p>Large-format LED displays and digital billboards showcase inventory, promotions, and financing offers to passing traffic. Our high-brightness LED signs are visible day and night, helping dealerships across Charlotte and North Carolina stand out on busy corridors.</p>
+              </div>
+            </StaggerChild>
+          </StaggerWrap>
+        </div>
+      </section>
+
+      {/* ── LED vs Neon Comparison ── */}
+      <section className="vc-section vc-section--alt">
+        <div className="vc-container">
+          <FadeUp>
+            <span className="vc-section-label">Comparison</span>
+            <h2 className="vc-section-title">LED Signs vs. Neon Signs</h2>
+            <div className="vc-content-block">
+              <p>Choosing between LED and neon? Here&apos;s how they compare for businesses in Charlotte, NC and beyond:</p>
+              <table className="vc-comparison-table">
+                <thead>
+                  <tr><th>Feature</th><th>LED Signs</th><th>Neon Signs</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Lifespan</td><td>50,000–100,000 hours</td><td>8,000–15,000 hours</td></tr>
+                  <tr><td>Energy Use</td><td>Low (50-75% less)</td><td>High</td></tr>
+                  <tr><td>Content</td><td>Programmable, full-color</td><td>Static, limited colors</td></tr>
+                  <tr><td>Maintenance</td><td>Minimal</td><td>Frequent (gas refill, tube replacement)</td></tr>
+                  <tr><td>Durability</td><td>Impact-resistant, weatherproof</td><td>Fragile glass tubes</td></tr>
+                  <tr><td>Cost (Long-term)</td><td>Lower total cost of ownership</td><td>Higher ongoing costs</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── Our Process ── */}
+      <section className="vc-section">
+        <div className="vc-container">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">Process</span>
+              <h2 className="vc-section-title">From Design to Installation</h2>
+              <p>Every ProVizion LED sign begins with a free consultation where we assess your location, goals, and budget. Our designers create custom mockups showing exactly how your LED sign will look installed.</p>
+              <p>Once approved, our in-house fabrication team builds your sign using premium LED components and commercial-grade housings. Professional installation by our licensed crews includes all electrical work, permitting, and final adjustments — typically completed within 4–8 weeks from approval.</p>
+              <p>After installation, we offer ongoing maintenance plans to keep your LED sign performing at peak brightness for years to come. Serving businesses across Charlotte, Raleigh, Durham, Greensboro, and all of North Carolina.</p>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img src="/images/full-service-electronic-sign-company-6.jpg" alt="LED sign installation process" loading="lazy" decoding="async" />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={faqs} title="LED Signs — Frequently Asked Questions" />
 
     </>
   );

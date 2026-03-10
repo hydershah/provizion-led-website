@@ -1,16 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX, HiPhone } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiPhone, HiChevronDown } from 'react-icons/hi';
 import { useSanityContext } from '../context/SanityContext';
 import { urlFor } from '../lib/sanity';
+import { trackPhoneClick } from '../utils/analytics';
 import './Navbar.css';
+
+const SERVICE_PATHS = new Set([
+  '/digital-signs', '/electronic-signs', '/led-signs', '/lighted-signs',
+  '/video-wall', '/channel-letters', '/monument-signs', '/pylon-signs',
+]);
 
 export default function Navbar() {
   const { company: COMPANY, navLinks: NAV_LINKS } = useSanityContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
   const location = useLocation();
+
+  const topLinks = NAV_LINKS.filter((l) => !SERVICE_PATHS.has(l.path));
+  const serviceLinks = NAV_LINKS.filter((l) => SERVICE_PATHS.has(l.path));
+  const isServiceActive = SERVICE_PATHS.has(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -20,7 +32,18 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMobileOpen(false);
+    setIsServicesOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : '';
@@ -33,7 +56,7 @@ export default function Navbar() {
       <div className="top-bar">
         <div className="container top-bar__inner">
           <span className="top-bar__text">LED & Digital Sign Manufacturer — Charlotte, NC</span>
-          <a href={COMPANY.phoneTel} className="top-bar__phone">
+          <a href={COMPANY.phoneTel} className="top-bar__phone" onClick={() => trackPhoneClick('navbar-topbar')}>
             <HiPhone /> {COMPANY.phone}
           </a>
         </div>
@@ -55,18 +78,52 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="navbar__nav" aria-label="Main navigation">
-            {NAV_LINKS.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `navbar__link ${isActive ? 'navbar__link--active' : ''}`
-                }
-                end={link.path === '/'}
+            {/* Home */}
+            <NavLink to="/" className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`} end>
+              Sign Manufacturer
+            </NavLink>
+
+            {/* Services Dropdown */}
+            {serviceLinks.length > 0 && (
+              <div
+                className={`navbar__dropdown ${isServicesOpen ? 'navbar__dropdown--open' : ''}`}
+                ref={servicesRef}
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
               >
-                {link.label}
-              </NavLink>
-            ))}
+                <button
+                  className={`navbar__link navbar__dropdown-trigger ${isServiceActive ? 'navbar__link--active' : ''}`}
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                >
+                  Sign Types <HiChevronDown className="navbar__chevron" />
+                </button>
+                {isServicesOpen && (
+                  <div className="navbar__dropdown-menu">
+                    {serviceLinks.map((link) => (
+                      <NavLink
+                        key={link.path}
+                        to={link.path}
+                        className={({ isActive }) =>
+                          `navbar__dropdown-item ${isActive ? 'navbar__dropdown-item--active' : ''}`
+                        }
+                      >
+                        {link.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Blog & Contact */}
+            <NavLink to="/blog" className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}>
+              Blog
+            </NavLink>
+            <NavLink to="/contact-us" className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}>
+              Contact Us
+            </NavLink>
           </nav>
 
           {/* CTA + Mobile Toggle */}
@@ -122,7 +179,7 @@ export default function Navbar() {
                 <Link to="/contact-us" className="btn btn--primary btn--lg" style={{ width: '100%' }}>
                   Get A Free Quote
                 </Link>
-                <a href={COMPANY.phoneTel} className="mobile-menu__phone">
+                <a href={COMPANY.phoneTel} className="mobile-menu__phone" onClick={() => trackPhoneClick('navbar-mobile-menu')}>
                   <HiPhone /> {COMPANY.phone}
                 </a>
               </div>

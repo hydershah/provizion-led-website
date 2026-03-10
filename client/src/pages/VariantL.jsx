@@ -383,7 +383,7 @@ export default function VariantL() {
         <div className="vl-container">
           <FadeUp>
             <span className="vl-kicker">Contact Us</span>
-            <h2 className="vl-heading">Request a Free Consultation</h2>
+            <h2 className="vl-heading">Request a Free Quote</h2>
             <p className="vl-subtitle">
               Fill out the form below and a signage specialist will follow up within 24 hours.
             </p>

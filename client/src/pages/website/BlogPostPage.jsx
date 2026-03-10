@@ -7,6 +7,9 @@ import useSanityQuery from '../../hooks/useSanityQuery';
 import { blogPostBySlugQuery } from '../../lib/queries';
 import { urlFor } from '../../lib/sanity';
 import { FadeUp } from './animations';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import { getBlogPostSchema } from '../../utils/schemas';
 import './shared.css';
 
 const portableTextComponents = {
@@ -84,6 +87,15 @@ export default function BlogPostPage() {
       })
     : null;
 
+  const blogSchema = getBlogPostSchema({
+    title: post.title,
+    excerpt: post.excerpt || post.metaDescription || '',
+    slug: post.slug.current,
+    publishedAt: post.publishedAt,
+    author: post.author,
+    featuredImageUrl: post.featuredImage ? urlFor(post.featuredImage).width(1200).url() : null,
+  });
+
   return (
     <>
       <SEO
@@ -91,6 +103,12 @@ export default function BlogPostPage() {
         description={post.metaDescription || post.excerpt || ''}
         path={`/blog/${post.slug.current}`}
       />
+      <SchemaMarkup schema={blogSchema} />
+      <Breadcrumbs items={[
+        { label: 'Home', path: '/' },
+        { label: 'Blog', path: '/blog' },
+        { label: post.title },
+      ]} />
 
       {/* ── Article Hero ── */}
       <section

@@ -26,6 +26,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.provizionledsigns.com/video-wall</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/pylon-signs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/channel-letters</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/monument-signs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.provizionledsigns.com/contact-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,6 +54,31 @@
     <loc>https://www.provizionledsigns.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/blog/the-difference-between-channel-letters-lightboxes-and-monument-signs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/blog/how-to-choose-the-right-font-and-colors-for-your-business-sign</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/blog/from-banners-to-monuments-sign-styles-that-drive-foot-traffic-in-columbia-sc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/blog/the-ultimate-guide-to-eye-catching-storefront-signs-in-columbia-sc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.provizionledsigns.com/blog/must-have-signage-types-every-columbia-sc-business-should-know</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.provizionledsigns.com/privacy-policy</loc>

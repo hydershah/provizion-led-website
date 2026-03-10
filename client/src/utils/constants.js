@@ -23,6 +23,11 @@ export const COMPANY = {
   logoSquareDark: '/images/provizion-logo-dark-square.jpg',
   logoSquareBlue: '/images/provizion-logo-blue-square.jpg',
   ogImage: '/images/provizion-og-image.jpg',
+  hours: {
+    weekdays: '8:00 AM - 6:00 PM',
+    saturday: 'By Appointment',
+    sunday: 'Closed',
+  },
 };
 
 /* Brand Guideline Colors */
@@ -47,6 +52,10 @@ export const NAV_LINKS = [
   { label: 'Electronic Signs', path: '/electronic-signs' },
   { label: 'LED Signs', path: '/led-signs' },
   { label: 'Lighted Signs', path: '/lighted-signs' },
+  { label: 'Video Walls', path: '/video-wall' },
+  { label: 'Channel Letters', path: '/channel-letters' },
+  { label: 'Monument Signs', path: '/monument-signs' },
+  { label: 'Pylon Signs', path: '/pylon-signs' },
   { label: 'Blog', path: '/blog' },
   { label: 'Contact Us', path: '/contact-us' },
 ];

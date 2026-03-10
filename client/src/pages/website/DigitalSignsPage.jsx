@@ -20,7 +20,12 @@ import { useSanityContext } from '../../context/SanityContext';
 import useSanityQuery from '../../hooks/useSanityQuery';
 import { pageBySlugQuery } from '../../lib/queries';
 import { urlFor } from '../../lib/sanity';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import FAQSection from '../../components/FAQSection';
+import { getServiceSchema } from '../../utils/schemas';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
+import { trackPhoneClick } from '../../utils/analytics';
 import './shared.css';
 
 export default function DigitalSignsPage() {
@@ -28,6 +33,31 @@ export default function DigitalSignsPage() {
   const { company: COMPANY } = useSanityContext();
   const { data: page } = useSanityQuery(pageBySlugQuery, { slug: 'digital-signs' }, null);
   const logoSrc = COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(400).url() : (COMPANY.logo || '/images/provizion-logo-white.webp');
+
+  const serviceSchema = getServiceSchema(
+    'Digital Signs & Displays',
+    'Digital sign displays & programmable digital signage for businesses in Charlotte, NC.',
+    '/digital-signs'
+  );
+
+  const faqs = [
+    {
+      question: 'Can I update my digital sign remotely?',
+      answer: 'Yes! All ProVizion LED digital signs come with cloud-based content management software. Update your messages, images, and videos from any computer, tablet, or smartphone \u2014 anywhere with an internet connection. Schedule content changes in advance or push updates instantly.',
+    },
+    {
+      question: "What's the difference between LED and LCD digital signs?",
+      answer: 'LED digital signs use light-emitting diodes for bright, seamless displays visible in direct sunlight \u2014 ideal for outdoor use. LCD signs use liquid crystal panels (like TVs) for sharp close-up viewing \u2014 better for indoor environments. LED signs are more durable and weather-resistant, while LCD signs offer higher pixel density at shorter distances.',
+    },
+    {
+      question: 'How much does a digital sign display cost?',
+      answer: 'Digital sign costs range from $3,000 for a basic indoor display to $50,000+ for large outdoor LED digital signs. Factors include screen size, resolution (pixel pitch), indoor vs. outdoor rating, and content management features. ProVizion LED provides free consultations and detailed quotes for businesses across Charlotte and North Carolina.',
+    },
+    {
+      question: 'Are digital signs weatherproof?',
+      answer: 'Our outdoor digital signs are built to withstand rain, heat, cold, and UV exposure with IP65-rated enclosures. Operating temperature ranges from -22\u00B0F to 122\u00B0F. Each outdoor digital display includes ventilation/cooling systems, anti-glare coatings, and corrosion-resistant housings designed for North Carolina\'s variable climate.',
+    },
+  ];
 
   return (
     <>
@@ -54,13 +84,16 @@ export default function DigitalSignsPage() {
             </div>
             <div className="vc-page-hero__actions">
               <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }}>
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('digital-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
             </div>
           </FadeUp>
         </div>
       </section>
+
+      <Breadcrumbs items={[{ label: 'Home', path: '/' }, { label: 'Digital Signs' }]} />
+      <SchemaMarkup schema={serviceSchema} />
 
       {/* ── Intro: Digital Signs and Displays ── */}
       <section className="vc-section">
@@ -75,8 +108,8 @@ export default function DigitalSignsPage() {
               <p>
                 Corporate environments, museums, hospitals, and retail spaces all benefit from interactive digital displays that inform, engage, and inspire — shaping the future of visual communication.
               </p>
-              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm">
-                <HiPhone /> Free Consultation
+              <a href={COMPANY.phoneTel} className="vc-btn vc-btn--accent vc-btn--sm" onClick={() => trackPhoneClick('digital-signs-intro')}>
+                <HiPhone /> Get A Free Quote
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
@@ -126,7 +159,7 @@ export default function DigitalSignsPage() {
           </StaggerWrap>
 
           <FadeUp className="vc-phone-cta">
-            <p>Call ProVizion LED at <a href={COMPANY.phoneTel}>{COMPANY.phone}</a> For Your Free Consultation With A Custom Digital Signage Expert!</p>
+            <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('digital-signs-phone-cta')}>{COMPANY.phone}</a> For A Free Quote With A Custom Digital Signage Expert!</p>
             <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
@@ -249,7 +282,7 @@ export default function DigitalSignsPage() {
         </div>
       </section>
 
-      {/* ── Free Consultation CTA ── */}
+      {/* ── Free Quote CTA ── */}
       <section className="vc-section vc-section--alt vc-section--centered">
         <div className="vc-container">
           <FadeUp>
@@ -276,6 +309,56 @@ export default function DigitalSignsPage() {
           </FadeUp>
         </div>
       </section>
+
+      {/* ── Industry Applications ── */}
+      <section className="vc-section vc-section--alt">
+        <div className="vc-container">
+          <FadeUp>
+            <span className="vc-section-label">Industries</span>
+            <h2 className="vc-section-title">Digital Signage Solutions by Industry</h2>
+          </FadeUp>
+          <StaggerWrap className="vc-features-grid">
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Quick-Service Restaurants</h3>
+                <p>Digital menu boards let you update pricing, promotions, and seasonal items instantly. Drive-through digital displays increase order accuracy and speed. Many Charlotte restaurants have seen a 15-30% sales lift on promoted items after switching to digital menus.</p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Healthcare &amp; Corporate</h3>
+                <p>Digital wayfinding displays guide patients and visitors through complex facilities. Lobby digital signs communicate announcements, directories, and branding. Conference room scheduling displays streamline meeting management across multiple locations.</p>
+              </div>
+            </StaggerChild>
+            <StaggerChild>
+              <div className="vc-feature-card">
+                <h3>Retail &amp; Shopping Centers</h3>
+                <p>Promotional digital displays boost in-store engagement and highlight new arrivals. Window-facing digital signs attract passersby even after hours. Multi-tenant shopping centers use digital directories to guide shoppers to individual stores.</p>
+              </div>
+            </StaggerChild>
+          </StaggerWrap>
+        </div>
+      </section>
+
+      {/* ── Digital Sign ROI ── */}
+      <section className="vc-section">
+        <div className="vc-container">
+          <div className="vc-split-layout">
+            <FadeUp className="vc-split-layout__text">
+              <span className="vc-section-label">ROI</span>
+              <h2 className="vc-section-title">The ROI of Digital Signage</h2>
+              <p>Digital signs consistently outperform traditional static signage. Studies show digital displays capture 400% more views than static signs and increase brand awareness by up to 47%. For businesses in Charlotte and across North Carolina, digital signage is an investment that pays for itself.</p>
+              <p>Beyond advertising, digital signs reduce long-term printing costs. Instead of reprinting banners and posters for every promotion, update your content instantly at zero marginal cost. Businesses with frequent promotions — restaurants, retailers, event venues — typically see full ROI within 12–18 months.</p>
+              <p>ProVizion LED helps businesses across Charlotte, Raleigh, and all of North Carolina maximize their digital signage investment with expert design, installation, and ongoing content management support.</p>
+            </FadeUp>
+            <FadeUp delay={0.15} className="vc-split-layout__img">
+              <img src="/images/digital-signage-urban.jpg" alt="Digital signage ROI for businesses" loading="lazy" decoding="async" />
+            </FadeUp>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={faqs} title="Digital Signs — Frequently Asked Questions" />
 
     </>
   );

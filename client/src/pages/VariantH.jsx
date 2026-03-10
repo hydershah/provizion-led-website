@@ -78,7 +78,7 @@ const SERVICES = [
 ];
 
 const PROCESS = [
-  { num: '1', title: 'Free Consultation', desc: 'We listen to your goals, assess site conditions, and define scope.' },
+  { num: '1', title: 'Get A Free Quote', desc: 'We listen to your goals, assess site conditions, and define scope.' },
   { num: '2', title: 'Design & Permit', desc: 'Custom design mockups created. We handle all permitting paperwork.' },
   { num: '3', title: 'Fabrication', desc: 'Precision manufacturing in our facility with rigorous quality checks.' },
   { num: '4', title: 'Install & Support', desc: 'Professional install crew. Backed by ongoing maintenance plans.' },

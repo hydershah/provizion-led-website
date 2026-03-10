@@ -232,7 +232,7 @@ export default function DigitalSigns() {
       <section className="section section--lg">
         <div className="container container--narrow text-center">
           <AnimateOnScroll>
-            <span className="section-label" style={{ justifyContent: 'center' }}>Free Consultation</span>
+            <span className="section-label" style={{ justifyContent: 'center' }}>Get A Free Quote</span>
             <h2 className="section-title">Free Digital Sign Consultation</h2>
             <div className="service-text-block" style={{ textAlign: 'center' }}>
               <p>
