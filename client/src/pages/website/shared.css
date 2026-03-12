@@ -779,6 +779,7 @@
 
 .vc-service-editorial__img {
   overflow: hidden;
+  max-height: 420px;
 }
 
 .vc-service-img {
