@@ -116,7 +116,7 @@ export default function ElectronicSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/programmable-led-message-centers-3.jpg" alt="Electronic message center display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-tall.jpg" alt="Commercial pylon sign with electronic message center" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Benefits</span>
@@ -272,7 +272,7 @@ export default function ElectronicSignsPage() {
               <p>Our electronic signs are built for North Carolina weather with operating temperatures from -22°F to 122°F, IP65 weatherproofing, and surge protection. Every installation includes a comprehensive warranty and optional maintenance plans to keep your investment performing at its best.</p>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/electronic-message-centers-digital-signage-display-1.jpg" alt="Electronic message center technology" loading="lazy" decoding="async" />
+              <img src="/images/showcase/school-emc-display.jpg" alt="School electronic message center display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>

@@ -137,7 +137,7 @@ export default function HomeVariantRetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <img src="/images/digital-signage-urban.jpg" alt="Retail streetscape digital signage" />
+              <img src="/images/showcase/outdoor-led-sports-display.jpg" alt="Outdoor LED display for retail advertising" />
               <img src="/images/led-signs-closeup.jpg" alt="LED sign creative detail" />
               <div>
                 <HiPlay />

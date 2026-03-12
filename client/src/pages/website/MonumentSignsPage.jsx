@@ -72,7 +72,7 @@ export default function MonumentSignsPage() {
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
           <img
-            src="/images/programmable-led-message-centers-3.jpg"
+            src="/images/showcase/church-monument-emc.jpg"
             alt="Monument Signs"
             loading="eager"
             decoding="async"
@@ -143,8 +143,8 @@ export default function MonumentSignsPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/programmable-led-message-centers-3.jpg"
-                alt="Custom monument sign with LED display"
+                src="/images/showcase/school-monument-purple.jpg"
+                alt="School monument sign with LED display"
                 loading="lazy"
                 decoding="async"
               />
@@ -307,8 +307,8 @@ export default function MonumentSignsPage() {
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
               <img
-                src="/images/full-service-electronic-sign-company-6.jpg"
-                alt="Monument sign materials and construction"
+                src="/images/showcase/college-arch-monument.jpg"
+                alt="College monument sign with LED display"
                 loading="lazy"
                 decoding="async"
               />
@@ -379,8 +379,8 @@ export default function MonumentSignsPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/custom-electronic-sign-company-4.jpeg"
-                alt="ProVizion LED monument sign project"
+                src="/images/showcase/police-monument-led.jpg"
+                alt="Government monument sign with LED message center"
                 loading="lazy"
                 decoding="async"
               />

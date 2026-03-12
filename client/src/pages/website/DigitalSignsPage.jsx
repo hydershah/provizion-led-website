@@ -276,7 +276,7 @@ export default function DigitalSignsPage() {
               <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Journey <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/custom-electronic-sign-company-4.jpeg" alt="Custom digital signage solution" loading="lazy" decoding="async" />
+              <img src="/images/showcase/highrise-digital-display.jpg" alt="High-rise building digital LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -352,7 +352,7 @@ export default function DigitalSignsPage() {
               <p>ProVizion LED helps businesses across Charlotte, Raleigh, and all of North Carolina maximize their digital signage investment with expert design, installation, and ongoing content management support.</p>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/digital-signage-urban.jpg" alt="Digital signage ROI for businesses" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-pylon-led.jpg" alt="LED pylon sign for digital messaging" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>

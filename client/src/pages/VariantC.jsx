@@ -102,9 +102,9 @@ const services = [
   { title: 'LED Signs', desc: 'State-of-the-art LED technology with advanced heat management systems. Custom-designed to maximize visibility and brand impact day and night.', img: '/images/electronic-signs-1.jpg' },
   { title: 'Digital Sign Displays', desc: 'Cutting-edge digital displays for dynamic content delivery. Update messaging remotely with vibrant, high-resolution screens.', img: '/images/electronic-digital-message-displays-signs-3.jpg' },
   { title: 'Lighted Signs', desc: 'Precision-crafted illuminated signage that combines artistry with engineering. Channel letters, cabinet signs, and more.', img: '/images/lighted-and-illuminated-signs-2.jpeg' },
-  { title: 'LED Monument Signs', desc: 'Grand, landmark-style signage that establishes a commanding presence for entrances and high-visibility locations.', img: '/images/programmable-led-message-centers-3.jpg' },
+  { title: 'LED Monument Signs', desc: 'Grand, landmark-style signage that establishes a commanding presence for entrances and high-visibility locations.', img: '/images/showcase/school-monument-led-blue.jpg' },
   { title: 'LED Message Boards', desc: 'Dynamic, programmable messaging solutions for real-time communication. Perfect for promotions, events, and community updates.', img: '/images/indoor-led-message-board-sign-2.jpg' },
-  { title: 'Electronic Message Centers', desc: 'Sophisticated electronic displays with full-color capabilities. Enterprise-grade digital signage for maximum audience engagement.', img: '/images/electronic-message-centers-digital-signage-display-1.jpg' },
+  { title: 'Electronic Message Centers', desc: 'Sophisticated electronic displays with full-color capabilities. Enterprise-grade digital signage for maximum audience engagement.', img: '/images/showcase/community-center-monument.jpg' },
 ];
 
 const processSteps = [
@@ -143,10 +143,10 @@ const certifications = [
 ];
 
 const portfolio = [
-  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/led-signs-channel-letters-lit-at-night-1.jpg' },
-  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-color-led-electronic-sign-4.jpg' },
+  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/showcase/church-monument-worship.jpg' },
+  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-service-electronic-sign-company-6.jpg' },
   { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.jpeg' },
-  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/michaels-raw-bar.jpg' },
+  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/showcase/church-pylon-led.jpg' },
   { title: 'EMC — Corporate Headquarters', category: 'Message Centers', img: '/images/pexels-photo-1058275.jpeg' },
   { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs', img: '/images/traditional-led-signs-2.png' },
 ];

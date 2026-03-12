@@ -73,7 +73,7 @@ export default function VideoWallPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/full-color-led-electronic-sign-4.jpg" alt="Video Wall Displays and LED Video Walls" loading="eager" decoding="async" />
+          <img src="/images/showcase/building-digital-display.jpg" alt="Video Wall Displays and LED Video Walls" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -122,7 +122,7 @@ export default function VideoWallPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/electronic-digital-message-displays-signs-3.jpg" alt="Large-format video wall display in a commercial setting" loading="lazy" decoding="async" />
+              <img src="/images/showcase/highrise-digital-display.jpg" alt="Large-format digital display on high-rise building" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function VideoWallPage() {
               <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/full-service-electronic-sign-company-6.jpg" alt="ProVizion LED video wall installation team" loading="lazy" decoding="async" />
+              <img src="/images/showcase/video-wall-installation.jpg" alt="ProVizion LED video wall installation in progress" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>

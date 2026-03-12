@@ -67,7 +67,7 @@ export default function PylonSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/traditional-led-signs-2.png" alt="Pylon Signs and Pole Signs" loading="eager" decoding="async" />
+          <img src="/images/showcase/carwash-pylon-sign.jpg" alt="Pylon Signs and Pole Signs" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -116,7 +116,7 @@ export default function PylonSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/electronic-signs-1.jpg" alt="Tall pylon sign visible from the road" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-day.jpg" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -239,7 +239,7 @@ export default function PylonSignsPage() {
               <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/custom-electronic-sign-company-4.jpeg" alt="ProVizion LED pylon sign installation" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-sign.jpg" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>

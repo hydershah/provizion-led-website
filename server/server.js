@@ -51,6 +51,7 @@ app.use(compression());
 // API routes
 app.use('/api', apiLimiter);
 app.use('/api/contact', contactLimiter, require('./routes/contact'));
+app.use('/api/callrail', require('./routes/callrail'));
 
 // Health check
 app.get('/api/health', (req, res) => {

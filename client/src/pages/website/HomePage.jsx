@@ -28,9 +28,9 @@ const defaultServices = [
   { title: 'Custom LED Signs', desc: 'Our custom LED signs deliver vibrant colors, unmatched clarity, and energy-efficient performance for businesses across Charlotte, NC and North Carolina. Our advanced heat management process ensures your LED signage stays bright and lasts longer — no dimming, no downtime.', img: '/images/electronic-signs-1.jpg', link: '/led-signs' },
   { title: 'Digital Sign Displays', desc: 'Elevate your storefront or facility with our digital sign displays. Perfect for showcasing promotions, real-time updates, or branded content, our digital signage solutions offer unmatched versatility for businesses in Charlotte and beyond.', img: '/images/electronic-digital-message-displays-signs-3.jpg', link: '/digital-signs' },
   { title: 'Illuminated & Lighted Signs', desc: 'Make your brand visible around the clock with our illuminated signs and lighted channel letters. Manufactured in-house and built for durability, our lighted signs deliver consistent brightness and a commanding outdoor presence.', img: '/images/lighted-and-illuminated-signs-2.jpeg', link: '/lighted-signs' },
-  { title: 'LED Monument Signs', desc: 'Our LED monument signs combine architectural presence with cutting-edge LED technology. Ideal for corporate campuses, churches, and retail centers, these custom monument signs serve as permanent landmarks for your brand in the Charlotte, NC area.', img: '/images/programmable-led-message-centers-3.jpg', link: '/contact-us' },
+  { title: 'LED Monument Signs', desc: 'Our LED monument signs combine architectural presence with cutting-edge LED technology. Ideal for corporate campuses, churches, and retail centers, these custom monument signs serve as permanent landmarks for your brand in the Charlotte, NC area.', img: '/images/showcase/school-monument-led-blue.jpg', link: '/contact-us' },
   { title: 'LED Message Boards', desc: 'Keep your audience engaged with programmable LED message boards. Easy to update remotely, our outdoor LED message boards are ideal for schools, churches, and businesses that need to communicate changing promotions, events, and announcements.', img: '/images/indoor-led-message-board-sign-2.jpg', link: '/contact-us' },
-  { title: 'Electronic Message Centers', desc: 'Our electronic message centers (EMCs) combine reliable digital signage technology with intuitive content management. Built for schools, government buildings, and commercial properties across North Carolina, they keep your audience informed 24/7.', img: '/images/electronic-message-centers-digital-signage-display-1.jpg', link: '/electronic-signs' },
+  { title: 'Electronic Message Centers', desc: 'Our electronic message centers (EMCs) combine reliable digital signage technology with intuitive content management. Built for schools, government buildings, and commercial properties across North Carolina, they keep your audience informed 24/7.', img: '/images/showcase/community-center-monument.jpg', link: '/electronic-signs' },
 ];
 
 const defaultProcessSteps = [
@@ -73,10 +73,10 @@ const defaultCertifications = [
 ];
 
 const defaultPortfolio = [
-  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/led-signs-channel-letters-lit-at-night-1.jpg' },
-  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-color-led-electronic-sign-4.jpg' },
+  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/showcase/church-monument-worship.jpg' },
+  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-service-electronic-sign-company-6.jpg' },
   { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.jpeg' },
-  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/michaels-raw-bar.jpg' },
+  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/showcase/indoor-digital-poster.jpg' },
   { title: 'EMC — Corporate Headquarters', category: 'Message Centers', img: '/images/pexels-photo-1058275.jpeg' },
   { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs', img: '/images/traditional-led-signs-2.png' },
 ];
@@ -366,8 +366,8 @@ export default function HomePage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/electronic-digital-message-displays-signs-3.jpg"
-                alt="Custom digital display by ProVizion LED"
+                src="/images/showcase/curved-commercial-led.jpg"
+                alt="Custom curved LED display by ProVizion LED"
                 loading="lazy"
                 decoding="async"
               />

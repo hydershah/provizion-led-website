@@ -143,8 +143,8 @@ export default function ChannelLettersPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/led-signs-channel-letters-lit-at-night-1.jpg"
-                alt="Custom channel letter sign illuminated at night"
+                src="/images/showcase/school-monument-teal.jpg"
+                alt="Custom monument sign with branded lettering"
                 loading="lazy"
                 decoding="async"
               />
@@ -316,8 +316,8 @@ export default function ChannelLettersPage() {
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
               <img
-                src="/images/full-service-electronic-sign-company-6.jpg"
-                alt="Channel letter fabrication process"
+                src="/images/showcase/church-monument-day.jpg"
+                alt="LED monument sign installation for church"
                 loading="lazy"
                 decoding="async"
               />
@@ -386,8 +386,8 @@ export default function ChannelLettersPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/custom-electronic-sign-company-4.jpeg"
-                alt="ProVizion LED channel letter installation"
+                src="/images/showcase/church-monument-stone.jpg"
+                alt="Monument sign with LED display for church"
                 loading="lazy"
                 decoding="async"
               />

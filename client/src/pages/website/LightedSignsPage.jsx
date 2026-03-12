@@ -105,7 +105,7 @@ export default function LightedSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/led-signs-channel-letters-lit-at-night-1.jpg" alt="Lighted channel letter signs at night" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-monument-wide.jpg" alt="Illuminated church monument sign at night" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/lighted-and-illuminated-signs-2.jpeg" alt="Illuminated business sign at night" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-monument-night.jpg" alt="Illuminated monument sign glowing at night" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Brilliance</span>
@@ -205,7 +205,7 @@ export default function LightedSignsPage() {
               <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/custom-electronic-sign-company-4.jpeg" alt="Custom sign fabrication" loading="lazy" decoding="async" />
+              <img src="/images/showcase/curved-commercial-led.jpg" alt="Curved commercial LED display sign" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/michaels-raw-bar.jpg" alt="Illuminated business storefront sign" loading="lazy" decoding="async" />
+              <img src="/images/showcase/school-led-monument.jpg" alt="LED monument sign for school" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Near You</span>
@@ -298,7 +298,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/full-service-electronic-sign-company-6.jpg" alt="Lighted sign fabrication materials" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-outdoor-led-display.jpg" alt="Outdoor LED display on church building" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Materials</span>
