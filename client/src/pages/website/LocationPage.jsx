@@ -16,6 +16,10 @@ import {
   HiViewGrid,
   HiCog,
   HiShieldCheck,
+  HiCheckCircle,
+  HiBadgeCheck,
+  HiClock,
+  HiTruck,
 } from 'react-icons/hi';
 import SEO from '../../components/SEO';
 import useThemeClass from '../../hooks/useThemeClass';
@@ -166,26 +170,39 @@ export default function LocationPage() {
 
       <Breadcrumbs items={breadcrumbs} />
 
-      {/* ── Location Badge ── */}
-      <section className="vc-loc-badge">
+      {/* ── Stats Row ── */}
+      <section className="vc-loc-stats">
         <div className="vc-container">
-          <FadeUp className="vc-loc-badge__inner">
-            <HiLocationMarker className="vc-loc-badge__icon" />
-            <div>
-              <p className="vc-loc-badge__text">
-                Proudly serving <strong>{cityState}</strong> and surrounding areas
-              </p>
-              <p className="vc-loc-badge__sub">
-                Charlotte-based manufacturing &bull; Local installation teams
-              </p>
+          <FadeUp>
+            <div className="vc-loc-stats__grid">
+              <div className="vc-loc-stats__item">
+                <HiLocationMarker className="vc-loc-stats__icon" />
+                <span className="vc-loc-stats__value">Charlotte-Based</span>
+                <span className="vc-loc-stats__label">Manufacturing Facility</span>
+              </div>
+              <div className="vc-loc-stats__item">
+                <HiBadgeCheck className="vc-loc-stats__icon" />
+                <span className="vc-loc-stats__value">15+ Years</span>
+                <span className="vc-loc-stats__label">Industry Experience</span>
+              </div>
+              <div className="vc-loc-stats__item">
+                <HiCheckCircle className="vc-loc-stats__icon" />
+                <span className="vc-loc-stats__value">500+</span>
+                <span className="vc-loc-stats__label">Signs Installed</span>
+              </div>
+              <div className="vc-loc-stats__item">
+                <HiTruck className="vc-loc-stats__icon" />
+                <span className="vc-loc-stats__value">Free</span>
+                <span className="vc-loc-stats__label">On-Site Consultation</span>
+              </div>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* ── Dynamic Sections ── */}
+      {/* ── Dynamic Sections with mid-CTAs ── */}
       {loc.sections?.map((section, i) => (
-        <LocationSection key={section._key || i} section={section} company={COMPANY} slug={slug} />
+        <LocationSection key={section._key || i} section={section} sectionIndex={i} totalSections={loc.sections.length} company={COMPANY} slug={slug} cityState={cityState} />
       ))}
 
       {/* ── Industries Served ── */}
@@ -314,110 +331,172 @@ export default function LocationPage() {
   );
 }
 
+/* ── Mid-section CTA ── */
+function MidSectionCTA({ company, slug, cityState }) {
+  return (
+    <section className="vc-section vc-section--alt">
+      <div className="vc-container">
+        <FadeUp className="vc-phone-cta">
+          <p>
+            Call ProVizion LED at{' '}
+            <a href={company.phoneTel} onClick={() => trackPhoneClick(`location-${slug}-mid-cta`)}>
+              {company.phone}
+            </a>{' '}
+            for a free LED sign consultation in {cityState}!
+          </p>
+          <a href="#contact" className="vc-btn vc-btn--accent">
+            Get A Free Quote <HiArrowRight />
+          </a>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}
+
 /* ── Dynamic Section Renderer ── */
-function LocationSection({ section, company, slug }) {
+function LocationSection({ section, sectionIndex, totalSections, company, slug, cityState }) {
   const isAlt = section.altBackground;
+  const showMidCTA = sectionIndex === 1; // show CTA after second section (sign types grid)
 
-  if (section.sectionType === 'split') {
-    const imgSrc = section.image ? urlFor(section.image).width(800).url() : null;
-    const isLeft = section.imagePosition === 'left';
+  const sectionContent = (() => {
+    if (section.sectionType === 'split') {
+      const imgSrc = section.image ? urlFor(section.image).width(800).url() : null;
+      const isLeft = section.imagePosition === 'left';
 
-    return (
-      <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
-        <div className="vc-container">
-          <div className={`vc-split-layout ${isLeft ? 'vc-split-layout--reverse' : ''}`}>
-            <FadeUp className="vc-split-layout__text">
+      // When no image, render as a full-width intro section instead of broken 2-col
+      if (!imgSrc) {
+        return (
+          <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
+            <div className="vc-container">
+              <FadeUp>
+                {section.label && <span className="vc-section-label">{section.label}</span>}
+                {section.title && <h2 className="vc-section-title">{section.title}</h2>}
+              </FadeUp>
+              {section.body && (
+                <FadeUp>
+                  <div className="vc-loc-intro">
+                    <PortableText value={section.body} components={portableTextComponents} />
+                  </div>
+                </FadeUp>
+              )}
+              {section.buttonText && (
+                <FadeUp>
+                  <div style={{ marginTop: 24 }}>
+                    <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent vc-btn--sm">
+                      {section.buttonText} <HiArrowRight />
+                    </a>
+                  </div>
+                </FadeUp>
+              )}
+            </div>
+          </section>
+        );
+      }
+
+      return (
+        <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
+          <div className="vc-container">
+            <div className={`vc-split-layout ${isLeft ? 'vc-split-layout--reverse' : ''}`}>
+              <FadeUp className="vc-split-layout__text">
+                {section.label && <span className="vc-section-label">{section.label}</span>}
+                {section.title && <h2 className="vc-section-title">{section.title}</h2>}
+                {section.body && (
+                  <div className="vc-content-block">
+                    <PortableText value={section.body} components={portableTextComponents} />
+                  </div>
+                )}
+                {section.buttonText && (
+                  <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent vc-btn--sm">
+                    {section.buttonText} <HiArrowRight />
+                  </a>
+                )}
+              </FadeUp>
+              <FadeUp delay={0.15} className="vc-split-layout__img">
+                <img src={imgSrc} alt={section.title || ''} loading="lazy" decoding="async" />
+              </FadeUp>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.sectionType === 'featureGrid') {
+      return (
+        <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
+          <div className="vc-container">
+            <FadeUp>
               {section.label && <span className="vc-section-label">{section.label}</span>}
+              {section.title && <h2 className="vc-section-title">{section.title}</h2>}
+            </FadeUp>
+            <StaggerWrap className="vc-features-grid">
+              {section.features?.map((feat, j) => {
+                const Icon = getIconComponent(feat.iconName);
+                return (
+                  <StaggerChild key={j}>
+                    <div className="vc-feature-card">
+                      <div className="vc-feature-card__icon"><Icon /></div>
+                      <h3>{feat.title}</h3>
+                      <p>{feat.description}</p>
+                    </div>
+                  </StaggerChild>
+                );
+              })}
+            </StaggerWrap>
+          </div>
+        </section>
+      );
+    }
+
+    if (section.sectionType === 'cta') {
+      return (
+        <section className="vc-section vc-section--alt">
+          <div className="vc-container">
+            <FadeUp className="vc-phone-cta">
               {section.title && <h2 className="vc-section-title">{section.title}</h2>}
               {section.body && (
                 <div className="vc-content-block">
                   <PortableText value={section.body} components={portableTextComponents} />
                 </div>
               )}
-              {section.buttonText && (
-                <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent vc-btn--sm">
-                  {section.buttonText} <HiArrowRight />
-                </a>
-              )}
+              <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent">
+                {section.buttonText || 'Get A Free Quote'} <HiArrowRight />
+              </a>
             </FadeUp>
-            {imgSrc && (
-              <FadeUp delay={0.15} className="vc-split-layout__img">
-                <img src={imgSrc} alt={section.title || ''} loading="lazy" decoding="async" />
-              </FadeUp>
-            )}
           </div>
-        </div>
-      </section>
-    );
-  }
+        </section>
+      );
+    }
 
-  if (section.sectionType === 'featureGrid') {
+    // Default: text block with enhanced styling
     return (
       <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
         <div className="vc-container">
           <FadeUp>
             {section.label && <span className="vc-section-label">{section.label}</span>}
             {section.title && <h2 className="vc-section-title">{section.title}</h2>}
-          </FadeUp>
-          <StaggerWrap className="vc-features-grid">
-            {section.features?.map((feat, j) => {
-              const Icon = getIconComponent(feat.iconName);
-              return (
-                <StaggerChild key={j}>
-                  <div className="vc-feature-card">
-                    <div className="vc-feature-card__icon"><Icon /></div>
-                    <h3>{feat.title}</h3>
-                    <p>{feat.description}</p>
-                  </div>
-                </StaggerChild>
-              );
-            })}
-          </StaggerWrap>
-        </div>
-      </section>
-    );
-  }
-
-  if (section.sectionType === 'cta') {
-    return (
-      <section className="vc-section vc-section--alt">
-        <div className="vc-container">
-          <FadeUp className="vc-phone-cta">
-            {section.title && <h2 className="vc-section-title">{section.title}</h2>}
             {section.body && (
-              <div className="vc-content-block">
+              <div className="vc-loc-text-section">
                 <PortableText value={section.body} components={portableTextComponents} />
               </div>
             )}
-            <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent">
-              {section.buttonText || 'Get A Free Quote'} <HiArrowRight />
-            </a>
+            {section.buttonText && (
+              <div style={{ marginTop: 24 }}>
+                <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent vc-btn--sm">
+                  {section.buttonText} <HiArrowRight />
+                </a>
+              </div>
+            )}
           </FadeUp>
         </div>
       </section>
     );
-  }
+  })();
 
-  // Default: text block
   return (
-    <section className={`vc-section ${isAlt ? 'vc-section--alt' : ''}`}>
-      <div className="vc-container">
-        <FadeUp>
-          {section.label && <span className="vc-section-label">{section.label}</span>}
-          {section.title && <h2 className="vc-section-title">{section.title}</h2>}
-          {section.body && (
-            <div className="vc-content-block">
-              <PortableText value={section.body} components={portableTextComponents} />
-            </div>
-          )}
-          {section.buttonText && (
-            <a href={section.buttonLink || '#contact'} className="vc-btn vc-btn--accent vc-btn--sm">
-              {section.buttonText} <HiArrowRight />
-            </a>
-          )}
-        </FadeUp>
-      </div>
-    </section>
+    <>
+      {sectionContent}
+      {showMidCTA && <MidSectionCTA company={company} slug={slug} cityState={cityState} />}
+    </>
   );
 }
 
