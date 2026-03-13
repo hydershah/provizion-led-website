@@ -85,3 +85,39 @@ export const pageBySlugQuery = `*[_type == "page" && slug.current == $slug][0]{
     showLogo
   }
 }`;
+
+/* ─── Location Pages ─── */
+
+export const locationPageBySlugQuery = `*[_type == "locationPage" && slug.current == $slug][0]{
+  _id, title, slug, tier, city, state, stateFullName,
+  metroArea, subCities, priority, estimatedVolume,
+  hero { label, headline, subheadline, backgroundImage, serviceTags },
+  sections[] {
+    _key, sectionType, label, title, body, image, imagePosition,
+    features[] { title, description, iconName },
+    altBackground, buttonText, buttonLink
+  },
+  industries[] { name, description, iconName },
+  faqs[] { question, answer },
+  nearbyLocations[]-> { _id, title, slug, city, state, tier },
+  parentHub-> { _id, title, slug },
+  metaTitle, metaDescription, keywords, order
+}`;
+
+export const allLocationPagesQuery = `*[_type == "locationPage"] | order(tier asc, state asc, order asc){
+  _id, title, slug, tier, city, state, stateFullName,
+  metroArea, subCities, priority, estimatedVolume, order,
+  hero { headline }
+}`;
+
+export const locationPagesByStateQuery = `*[_type == "locationPage" && state == $state] | order(tier asc, order asc){
+  _id, title, slug, tier, city, state, stateFullName,
+  metroArea, subCities, priority, estimatedVolume, order,
+  hero { headline }
+}`;
+
+export const locationPagesByTierQuery = `*[_type == "locationPage" && tier == $tier] | order(state asc, order asc){
+  _id, title, slug, tier, city, state, stateFullName,
+  metroArea, subCities, priority, estimatedVolume, order,
+  hero { headline }
+}`;

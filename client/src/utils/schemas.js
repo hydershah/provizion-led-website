@@ -100,3 +100,67 @@ export function getWebSiteSchema() {
     },
   };
 }
+
+export function getLocationSchema({ city, state, stateFullName, title, description, url, faqs }) {
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': `${BASE_URL}${url}#business`,
+      name: `${COMPANY.name} — ${city || stateFullName || state}`,
+      description,
+      url: `${BASE_URL}${url}`,
+      telephone: COMPANY.phoneTel.replace('tel:', ''),
+      email: COMPANY.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: COMPANY.address.street,
+        addressLocality: COMPANY.address.city,
+        addressRegion: COMPANY.address.state,
+        postalCode: COMPANY.address.zip,
+        addressCountry: 'US',
+      },
+      areaServed: city
+        ? { '@type': 'City', name: `${city}, ${state}` }
+        : { '@type': 'State', name: stateFullName || state },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: COMPANY.rating,
+        reviewCount: COMPANY.reviewCount,
+      },
+      image: `${BASE_URL}${COMPANY.ogImage}`,
+      priceRange: '$$',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: title,
+      description,
+      url: `${BASE_URL}${url}`,
+      provider: {
+        '@type': 'LocalBusiness',
+        '@id': `${BASE_URL}${url}#business`,
+      },
+      areaServed: city
+        ? { '@type': 'City', name: `${city}, ${state}` }
+        : { '@type': 'State', name: stateFullName || state },
+    },
+  ];
+
+  if (faqs && faqs.length > 0) {
+    schema.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  return schema;
+}

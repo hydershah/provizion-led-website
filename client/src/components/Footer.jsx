@@ -107,6 +107,7 @@ export default function Footer() {
               <li><Link to="/">Sign Manufacturer</Link></li>
               <li><Link to="/led-signs">Led Signs</Link></li>
               <li><Link to="/digital-signs">Digital Signs</Link></li>
+              <li><Link to="/locations">Locations</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service">Terms Of Service</Link></li>
               <li><Link to="/contact-us">Contact Us</Link></li>

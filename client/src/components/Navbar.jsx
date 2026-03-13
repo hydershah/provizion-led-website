@@ -117,7 +117,10 @@ export default function Navbar() {
               </div>
             )}
 
-            {/* Blog & Contact */}
+            {/* Locations, Blog & Contact */}
+            <NavLink to="/locations" className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}>
+              Locations
+            </NavLink>
             <NavLink to="/blog" className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}>
               Blog
             </NavLink>

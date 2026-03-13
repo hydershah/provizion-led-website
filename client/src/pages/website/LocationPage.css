@@ -1,0 +1,253 @@
+/* ─── Location Page Styles ─── */
+
+/* Location Badge */
+.vc-loc-badge {
+  padding: 24px 0;
+  background: rgba(101, 174, 216, 0.06);
+  border-bottom: 1px solid var(--vc-border);
+}
+
+.vc-loc-badge__inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vc-loc-badge__icon {
+  font-size: 2rem;
+  color: var(--vc-accent);
+  flex-shrink: 0;
+}
+
+.vc-loc-badge__text {
+  font-size: 1.05rem;
+  color: var(--vc-text-light);
+  margin: 0;
+}
+
+.vc-loc-badge__sub {
+  font-size: 0.875rem;
+  color: rgba(180, 205, 228, 0.6);
+  margin: 4px 0 0;
+}
+
+/* Sub-Cities Tags */
+.vc-loc-subcities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.vc-loc-subcities__tag {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(101, 174, 216, 0.08);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  font-size: 0.9rem;
+  color: var(--vc-text-light);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.vc-loc-subcities__tag:hover {
+  background: rgba(101, 174, 216, 0.16);
+  border-color: var(--vc-accent);
+}
+
+/* Nearby Locations Grid */
+.vc-loc-nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.vc-loc-nearby-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(101, 174, 216, 0.06);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.vc-loc-nearby-card:hover {
+  background: rgba(101, 174, 216, 0.12);
+  border-color: var(--vc-accent);
+  transform: translateY(-2px);
+}
+
+.vc-loc-nearby-card__icon {
+  font-size: 1.5rem;
+  color: var(--vc-accent);
+  flex-shrink: 0;
+}
+
+.vc-loc-nearby-card h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.vc-loc-nearby-card span {
+  font-size: 0.8rem;
+  color: rgba(180, 205, 228, 0.6);
+}
+
+.vc-loc-nearby-card__arrow {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: var(--vc-accent);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.vc-loc-nearby-card:hover .vc-loc-nearby-card__arrow {
+  opacity: 1;
+}
+
+/* Location Figure (inline images from portable text) */
+.vc-loc__figure {
+  margin: 24px 0;
+  border-radius: var(--vc-radius-lg);
+  overflow: hidden;
+}
+
+.vc-loc__figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Locations Index Styles ── */
+
+.vc-loc-index__intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.vc-loc-index__intro p {
+  color: var(--vc-text-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.vc-loc-state-section {
+  margin-bottom: 56px;
+}
+
+.vc-loc-state-section__title {
+  font-family: var(--vc-font-heading);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.vc-loc-tier-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vc-accent);
+  margin: 32px 0 16px;
+}
+
+.vc-loc-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.vc-loc-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: rgba(101, 174, 216, 0.06);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.vc-loc-card:hover {
+  background: rgba(101, 174, 216, 0.12);
+  border-color: var(--vc-accent);
+  transform: translateY(-3px);
+}
+
+.vc-loc-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.vc-loc-card__icon {
+  font-size: 1.4rem;
+  color: var(--vc-accent);
+}
+
+.vc-loc-card__title {
+  font-family: var(--vc-font-heading);
+  font-size: 1.05rem;
+  color: #fff;
+  margin: 0;
+}
+
+.vc-loc-card__meta {
+  font-size: 0.8rem;
+  color: rgba(180, 205, 228, 0.6);
+  margin-bottom: 12px;
+}
+
+.vc-loc-card__subcities {
+  font-size: 0.85rem;
+  color: var(--vc-text-light);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.vc-loc-card__arrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--vc-accent);
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* State CTA section */
+.vc-loc-state-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .vc-loc-badge__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vc-loc-nearby-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vc-loc-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vc-loc-subcities {
+    justify-content: center;
+  }
+}

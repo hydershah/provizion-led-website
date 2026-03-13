@@ -56,6 +56,7 @@ export const NAV_LINKS = [
   { label: 'Channel Letters', path: '/channel-letters' },
   { label: 'Monument Signs', path: '/monument-signs' },
   { label: 'Pylon Signs', path: '/pylon-signs' },
+  { label: 'Locations', path: '/locations' },
   { label: 'Blog', path: '/blog' },
   { label: 'Contact Us', path: '/contact-us' },
 ];

@@ -10,10 +10,12 @@ import certification from './certification';
 import blogCategory from './blogCategory';
 import blogPost from './blogPost';
 import page from './page';
+import locationPage from './locationPage';
 import featureCard from './objects/featureCard';
 import productCard from './objects/productCard';
 import splitLayout from './objects/splitLayout';
 import ctaSection from './objects/ctaSection';
+import locationSection from './objects/locationSection';
 
 export const schemaTypes = [
   // Singletons
@@ -21,6 +23,7 @@ export const schemaTypes = [
   siteSettings,
   // Documents
   page,
+  locationPage,
   blogCategory,
   blogPost,
   service,
@@ -35,4 +38,5 @@ export const schemaTypes = [
   productCard,
   splitLayout,
   ctaSection,
+  locationSection,
 ];

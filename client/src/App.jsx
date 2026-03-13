@@ -17,6 +17,8 @@ const MonumentSignsPage = lazy(() => import('./pages/website/MonumentSignsPage')
 const ContactPage = lazy(() => import('./pages/website/ContactPage'));
 const BlogPage = lazy(() => import('./pages/website/BlogPage'));
 const BlogPostPage = lazy(() => import('./pages/website/BlogPostPage'));
+const LocationPage = lazy(() => import('./pages/website/LocationPage'));
+const LocationsIndex = lazy(() => import('./pages/website/LocationsIndex'));
 
 // Lazy load utility pages
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
@@ -59,6 +61,10 @@ function App() {
             <Route path="/contact-us" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/locations" element={<LocationsIndex />} />
+            <Route path="/locations/north-carolina" element={<LocationsIndex />} />
+            <Route path="/locations/south-carolina" element={<LocationsIndex />} />
+            <Route path="/locations/:slug" element={<LocationPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
 

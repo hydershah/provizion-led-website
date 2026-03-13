@@ -15,6 +15,43 @@ export const deskStructure = (S) =>
         .title('Pages')
         .child(S.documentTypeList('page').title('Pages')),
       S.divider(),
+      // Locations
+      S.listItem()
+        .title('Locations')
+        .child(
+          S.list()
+            .title('Location Pages')
+            .items([
+              S.listItem()
+                .title('Tier 1 — City Pages')
+                .child(
+                  S.documentList()
+                    .title('Tier 1 — City Pages')
+                    .filter('_type == "locationPage" && tier == 1')
+                    .defaultOrdering([{ field: 'state', direction: 'asc' }, { field: 'order', direction: 'asc' }])
+                ),
+              S.listItem()
+                .title('Tier 2 — Regional Hubs')
+                .child(
+                  S.documentList()
+                    .title('Tier 2 — Regional Hubs')
+                    .filter('_type == "locationPage" && tier == 2')
+                    .defaultOrdering([{ field: 'state', direction: 'asc' }, { field: 'order', direction: 'asc' }])
+                ),
+              S.listItem()
+                .title('Tier 3 — Service Areas')
+                .child(
+                  S.documentList()
+                    .title('Tier 3 — Service Areas')
+                    .filter('_type == "locationPage" && tier == 3')
+                    .defaultOrdering([{ field: 'state', direction: 'asc' }])
+                ),
+              S.listItem()
+                .title('All Locations')
+                .child(S.documentTypeList('locationPage').title('All Location Pages')),
+            ])
+        ),
+      S.divider(),
       // Blog
       S.listItem()
         .title('Blog')
