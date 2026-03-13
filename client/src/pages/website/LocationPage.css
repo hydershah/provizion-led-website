@@ -1,114 +1,5 @@
 /* ─── Location Page Styles ─── */
 
-/* =============================================
-   STATS ROW (below breadcrumbs)
-   ============================================= */
-.vc-loc-stats {
-  padding: 32px 0;
-  background: rgba(101, 174, 216, 0.04);
-  border-bottom: 1px solid var(--vc-border);
-}
-
-.vc-loc-stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.vc-loc-stats__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 4px;
-}
-
-.vc-loc-stats__icon {
-  font-size: 1.5rem;
-  color: var(--vc-accent);
-  margin-bottom: 4px;
-}
-
-.vc-loc-stats__value {
-  font-family: var(--vc-font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.vc-loc-stats__label {
-  font-family: var(--vc-font-body);
-  font-size: 0.8rem;
-  color: var(--vc-slate);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* =============================================
-   INTRO SECTION (full-width, no split when no image)
-   ============================================= */
-.vc-loc-intro {
-  max-width: 900px;
-  column-count: 2;
-  column-gap: 48px;
-}
-
-.vc-loc-intro p {
-  font-family: var(--vc-font-body);
-  font-size: 1rem;
-  color: var(--vc-slate);
-  line-height: 1.85;
-  margin-bottom: 20px;
-  break-inside: avoid;
-}
-
-.vc-loc-intro p:first-child::first-letter {
-  font-family: var(--vc-font-serif);
-  font-size: 3rem;
-  font-weight: 700;
-  float: left;
-  line-height: 1;
-  padding-right: 8px;
-  color: var(--vc-accent);
-}
-
-/* =============================================
-   TEXT SECTION (enhanced full-width text blocks)
-   ============================================= */
-.vc-loc-text-section {
-  max-width: 860px;
-}
-
-.vc-loc-text-section p {
-  font-family: var(--vc-font-body);
-  font-size: 1rem;
-  color: var(--vc-slate);
-  line-height: 1.85;
-  margin-bottom: 20px;
-}
-
-.vc-loc-text-section p:last-child {
-  margin-bottom: 0;
-}
-
-.vc-loc-text-section h3 {
-  font-family: var(--vc-font-serif);
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 12px;
-  margin-top: 28px;
-}
-
-.vc-loc-text-section h3:first-child {
-  margin-top: 0;
-}
-
-.vc-loc-text-section strong {
-  color: #FFFFFF;
-  font-weight: 600;
-}
-
 /* Sub-Cities Tags */
 .vc-loc-subcities {
   display: flex;
@@ -312,19 +203,6 @@
 /* ── Responsive ── */
 
 @media (max-width: 768px) {
-  .vc-loc-stats__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .vc-loc-intro {
-    column-count: 1;
-  }
-
-  .vc-loc-intro p:first-child::first-letter {
-    font-size: 2.5rem;
-  }
-
   .vc-loc-nearby-grid {
     grid-template-columns: 1fr;
   }
@@ -335,20 +213,5 @@
 
   .vc-loc-subcities {
     justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .vc-loc-stats__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .vc-loc-stats__value {
-    font-size: 1rem;
-  }
-
-  .vc-loc-stats__label {
-    font-size: 0.7rem;
   }
 }
