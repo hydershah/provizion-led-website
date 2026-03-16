@@ -100,17 +100,31 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Our Signs */}
+          <div className="footer-col">
+            <h4 className="footer-col__title">Our Signs</h4>
+            <ul className="footer-links">
+              <li><Link to="/led-signs">LED Signs</Link></li>
+              <li><Link to="/digital-signs">Digital Signs</Link></li>
+              <li><Link to="/electronic-signs">Electronic Signs</Link></li>
+              <li><Link to="/lighted-signs">Lighted Signs</Link></li>
+              <li><Link to="/video-wall">Video Wall</Link></li>
+              <li><Link to="/pylon-signs">Pylon Signs</Link></li>
+              <li><Link to="/channel-letters">Channel Letters</Link></li>
+              <li><Link to="/monument-signs">Monument Signs</Link></li>
+            </ul>
+          </div>
+
           {/* Quick Links */}
           <div className="footer-col">
             <h4 className="footer-col__title">Quick Links</h4>
             <ul className="footer-links">
-              <li><Link to="/">Sign Manufacturer</Link></li>
-              <li><Link to="/led-signs">Led Signs</Link></li>
-              <li><Link to="/digital-signs">Digital Signs</Link></li>
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/locations">Locations</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/contact-us">Contact Us</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms-of-service">Terms Of Service</Link></li>
-              <li><Link to="/contact-us">Contact Us</Link></li>
             </ul>
           </div>
         </div>

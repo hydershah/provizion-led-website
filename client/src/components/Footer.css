@@ -150,7 +150,7 @@
 
 .footer-main__grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr;
   gap: var(--space-10);
 }
 
@@ -257,7 +257,7 @@
    RESPONSIVE
    ======================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .footer-main__grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-10);

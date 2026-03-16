@@ -13,6 +13,6 @@
   ],
   "rewrites": [
     { "source": "/studio/(.*)", "destination": "/studio/index.html" },
-    { "source": "/((?!studio).*)", "destination": "/index.html" }
+    { "source": "/((?!studio|api).*)", "destination": "/index.html" }
   ]
 }

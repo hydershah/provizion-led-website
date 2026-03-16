@@ -34,7 +34,9 @@ const contactValidation = [
     .escape(),
   body('source')
     .optional()
-    .isIn(['contact-page', 'quick-quote', 'footer']),
+    .isString()
+    .trim()
+    .isLength({ max: 100 }),
 ];
 
 // @route   POST /api/contact
