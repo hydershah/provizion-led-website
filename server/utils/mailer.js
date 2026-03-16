@@ -1,26 +1,7 @@
-const nodemailer = require('nodemailer');
-
-const createTransporter = () => {
-  if (process.env.NODE_ENV === 'development') {
-    // In development, log emails to console
-    return null;
-  }
-
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
-    secure: process.env.SMTP_PORT === '465',
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-};
+const { Resend } = require('resend');
 
 const sendContactEmail = async ({ fullName, email, phone, message }) => {
-  const transporter = createTransporter();
-
-  if (!transporter) {
+  if (process.env.NODE_ENV === 'development') {
     console.log('--- DEV EMAIL LOG ---');
     console.log(`From: ${fullName} <${email}>`);
     console.log(`Phone: ${phone}`);
@@ -28,6 +9,8 @@ const sendContactEmail = async ({ fullName, email, phone, message }) => {
     console.log('--- END EMAIL LOG ---');
     return;
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -60,10 +43,10 @@ const sendContactEmail = async ({ fullName, email, phone, message }) => {
     </div>
   `;
 
-  await transporter.sendMail({
-    from: `"ProVizion LED Website" <${process.env.SMTP_USER}>`,
+  await resend.emails.send({
+    from: 'ProVizion LED <contact@provizionledsigns.com>',
     to: process.env.CONTACT_EMAIL,
-    replyTo: email,
+    reply_to: email,
     subject: `New Contact: ${fullName} - ProVizion LED`,
     html: htmlContent,
   });
