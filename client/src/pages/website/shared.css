@@ -2461,6 +2461,19 @@ a.vc-contact-detail:hover {
   margin: 1.5em 0 0.5em;
 }
 
+/* FAQ-style bold questions in blog articles */
+.vc-blog-article p > strong:only-child,
+.vc-blog-article p > strong:first-child:last-of-type {
+  display: block;
+  font-family: var(--vc-font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 1em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--vc-accent, #65AED8);
+}
+
 .vc-blog-article__quote {
   border-left: 3px solid var(--vc-accent);
   padding: 16px 24px;
