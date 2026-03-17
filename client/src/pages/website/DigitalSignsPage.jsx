@@ -83,7 +83,7 @@ export default function DigitalSignsPage() {
               <span>Install</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('digital-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -160,7 +160,7 @@ export default function DigitalSignsPage() {
 
           <FadeUp className="vc-phone-cta">
             <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('digital-signs-phone-cta')}>{COMPANY.phone}</a> For A Free Quote With A Custom Digital Signage Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
+            <a href="/contact-us" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
       </section>
@@ -273,7 +273,7 @@ export default function DigitalSignsPage() {
               <p>
                 With our expertise and commitment to innovation, we ensure your digital signage strategy evolves with the times. Your success is our goal.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Journey <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Journey <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img src="/images/showcase/highrise-digital-display.jpg" alt="High-rise building digital LED display" loading="lazy" decoding="async" />
@@ -303,7 +303,7 @@ export default function DigitalSignsPage() {
                 Contact us today and take the first step toward a brighter, more engaging future!
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Digital Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

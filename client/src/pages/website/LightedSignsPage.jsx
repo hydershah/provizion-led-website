@@ -75,7 +75,7 @@ export default function LightedSignsPage() {
               <span>Install</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('lighted-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -127,7 +127,7 @@ export default function LightedSignsPage() {
               <p>
                 Whether it&apos;s sleek channel letters that spell sophistication or a backlit sign that radiates allure, lighted signs are beacons guiding customers to your doorstep — ensuring your business stands out day or night.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function LightedSignsPage() {
               <p>
                 Whether it&apos;s exterior signs that demand attention or indoor backlit signs that speak volumes in hushed tones, we craft enduring beacons that represent your brand with brilliance.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img src="/images/showcase/curved-commercial-led.jpg" alt="Curved commercial LED display sign" loading="lazy" decoding="async" />
@@ -256,7 +256,7 @@ export default function LightedSignsPage() {
                 We pay attention to every detail, from design to installation, to ensure that your lighted sign reflects the essence of your business.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Lighted Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

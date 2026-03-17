@@ -86,7 +86,7 @@ export default function VideoWallPage() {
               <span>Install</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('video-wall-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -171,7 +171,7 @@ export default function VideoWallPage() {
 
           <FadeUp className="vc-phone-cta">
             <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('video-wall-phone-cta')}>{COMPANY.phone}</a> to discuss your video wall project with a display specialist!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
+            <a href="/contact-us" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
       </section>
@@ -251,7 +251,7 @@ export default function VideoWallPage() {
               <p>
                 After installation, we offer comprehensive maintenance plans, remote monitoring, and content update services to keep your video wall performing at its best. Whether you need a single wall for a lobby or a multi-zone deployment across an entire campus, ProVizion LED delivers turnkey solutions backed by industry-leading warranties and dedicated local service.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img src="/images/showcase/video-wall-installation.jpg" alt="ProVizion LED video wall installation in progress" loading="lazy" decoding="async" />
@@ -284,7 +284,7 @@ export default function VideoWallPage() {
                 Contact ProVizion LED today and discover how a professionally designed video wall can elevate your brand, engage your audience, and set your space apart from the competition.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Video Wall Consultation <HiArrowRight />
             </a>
           </FadeUp>

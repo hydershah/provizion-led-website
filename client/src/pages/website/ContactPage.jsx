@@ -6,6 +6,7 @@ import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
 import { FadeUp, AnimatedStars } from './animations';
 import { trackPhoneClick } from '../../utils/analytics';
+import QuoteForm from '../../components/QuoteForm';
 import './shared.css';
 
 const MAPS_EMBED_URL =
@@ -139,13 +140,21 @@ export default function ContactPage() {
               </div>
             </FadeUp>
 
-            {/* RIGHT COLUMN: Rating + Contact Details */}
+            {/* RIGHT COLUMN: Quote Form + Rating + Contact Details */}
             <FadeUp delay={0.2} className="vc-contact-map-side">
               {/* Rating Card */}
               <div className="vc-hero__trust-row" style={{ marginBottom: '24px' }}>
                 <AnimatedStars count={5} />
                 <span className="vc-hero__review-count">{COMPANY.reviewCount} Reviews</span>
                 <span className="vc-hero__badge">5 STAR RATING</span>
+              </div>
+
+              {/* Quote Request Form */}
+              <div className="vc-contact-info-card" style={{ marginBottom: '24px' }}>
+                <h3 style={{ color: '#FFFFFF', marginBottom: '16px', fontFamily: 'var(--vc-font-serif)' }}>
+                  Get A Free Quote
+                </h3>
+                <QuoteForm source="contact-page" />
               </div>
 
               {/* Contact Info Card */}

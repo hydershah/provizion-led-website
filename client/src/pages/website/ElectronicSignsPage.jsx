@@ -75,7 +75,7 @@ export default function ElectronicSignsPage() {
               <span>Install</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('electronic-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -127,7 +127,7 @@ export default function ElectronicSignsPage() {
               <p>
                 Customizable to match your brand&apos;s identity, electronic signage reigns supreme in personalization. Indoors or outdoors, they offer unparalleled versatility, effortlessly adapting to your space, needs, and message.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function ElectronicSignsPage() {
                 Whether you&apos;re upgrading your storefront with a stunning LED display or engaging your audience with interactive digital signage, we deliver cutting-edge solutions that leave a lasting impact.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Electronic Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

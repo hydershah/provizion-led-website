@@ -89,7 +89,7 @@ export default function MonumentSignsPage() {
               <span>Installation</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">
+              <a href="/contact-us" className="vc-btn vc-btn--accent">
                 Get Free Quote <HiArrowRight />
               </a>
               <a
@@ -214,7 +214,7 @@ export default function MonumentSignsPage() {
               Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('monument-signs-phone-cta')}>{COMPANY.phone}</a> For Your Free
               Consultation With A Monument Sign Expert!
             </p>
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
           </FadeUp>
@@ -337,7 +337,7 @@ export default function MonumentSignsPage() {
                 build is engineered to meet local wind-load requirements and backed by a structural
                 warranty.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">
                 Discuss Materials <HiArrowRight />
               </a>
             </FadeUp>
@@ -418,7 +418,7 @@ export default function MonumentSignsPage() {
                 powerful first impression.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Monument Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

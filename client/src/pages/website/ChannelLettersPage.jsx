@@ -89,7 +89,7 @@ export default function ChannelLettersPage() {
               <span>Installation</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">
+              <a href="/contact-us" className="vc-btn vc-btn--accent">
                 Get Free Quote <HiArrowRight />
               </a>
               <a
@@ -213,7 +213,7 @@ export default function ChannelLettersPage() {
               Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('channel-letters-phone-cta')}>{COMPANY.phone}</a> For Your Free
               Consultation With A Channel Letter Expert!
             </p>
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
           </FadeUp>
@@ -345,7 +345,7 @@ export default function ChannelLettersPage() {
                 level alignment, secure fastening, and clean wiring. The result is a channel letter sign
                 that looks stunning from day one and performs reliably for years to come.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">
                 Start Your Project <HiArrowRight />
               </a>
             </FadeUp>
@@ -424,7 +424,7 @@ export default function ChannelLettersPage() {
                 show you why Charlotte businesses trust us for their most important branding investment.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Channel Letter Consultation <HiArrowRight />
             </a>
           </FadeUp>

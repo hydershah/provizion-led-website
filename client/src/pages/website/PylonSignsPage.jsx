@@ -80,7 +80,7 @@ export default function PylonSignsPage() {
               <span>Install</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('pylon-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -165,7 +165,7 @@ export default function PylonSignsPage() {
 
           <FadeUp className="vc-phone-cta">
             <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('pylon-signs-phone-cta')}>{COMPANY.phone}</a> for a free pylon sign consultation and site assessment!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
+            <a href="/contact-us" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
       </section>
@@ -236,7 +236,7 @@ export default function PylonSignsPage() {
               <p>
                 We also handle all permit applications, variance requests, and city inspections so you never have to navigate municipal bureaucracy on your own. For businesses that want LED integration, we build message centers directly into the pylon structure with seamless cabinetry and weatherproof wiring. And because we are based in Charlotte, we are always nearby for maintenance, panel replacements, and future upgrades whenever you need us.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img src="/images/showcase/carwash-pylon-sign.jpg" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
@@ -269,7 +269,7 @@ export default function PylonSignsPage() {
                 Get in touch today to schedule your free on-site assessment and take the first step toward a pylon sign that puts your business on the map for every driver on the road.
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free Pylon Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

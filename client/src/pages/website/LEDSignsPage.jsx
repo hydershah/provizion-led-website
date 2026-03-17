@@ -80,7 +80,7 @@ export default function LEDSignsPage() {
               <span>Installation</span>
             </div>
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent">Get Free Quote <HiArrowRight /></a>
               <a href={COMPANY.phoneTel} className="vc-btn vc-btn--outline" style={{ borderColor: '#fff', color: '#fff' }} onClick={() => trackPhoneClick('led-signs-hero')}>
                 <HiPhone /> {COMPANY.phone}
               </a>
@@ -156,7 +156,7 @@ export default function LEDSignsPage() {
 
           <FadeUp className="vc-phone-cta">
             <p>Call ProVizion LED at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('led-signs-phone-cta')}>{COMPANY.phone}</a> For A Free Quote With An LED Signs Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
+            <a href="/contact-us" className="vc-btn vc-btn--accent">Get A Free Quote <HiArrowRight /></a>
           </FadeUp>
         </div>
       </section>
@@ -236,7 +236,7 @@ export default function LEDSignsPage() {
               <p>
                 With years of industry experience, our team remains at the forefront of LED technology trends. When you partner with us, you&apos;re getting a comprehensive signage solution tailored to your unique needs, backed by our unwavering commitment to excellence.
               </p>
-              <a href="#contact" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
+              <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
           </div>
         </div>
@@ -266,7 +266,7 @@ export default function LEDSignsPage() {
                 Don&apos;t miss the opportunity to elevate your brand with the power of LED technology — contact ProVizion LED now for a brighter future!
               </p>
             </div>
-            <a href="#contact" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+            <a href="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
               Free LED Sign Consultation <HiArrowRight />
             </a>
           </FadeUp>

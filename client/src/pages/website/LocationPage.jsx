@@ -162,7 +162,7 @@ export default function LocationPage() {
               </div>
             )}
             <div className="vc-page-hero__actions">
-              <a href="#contact" className="vc-btn vc-btn--accent">
+              <a href="/contact-us" className="vc-btn vc-btn--accent">
                 Get Free Quote <HiArrowRight />
               </a>
               <a
@@ -231,7 +231,7 @@ export default function LocationPage() {
               </a>{' '}
               for a free LED sign consultation in {cityState}!
             </p>
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
           </FadeUp>

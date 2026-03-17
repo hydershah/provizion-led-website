@@ -316,7 +316,7 @@ export default function HomePage() {
 
           <FadeUp className="vc-phone-cta" style={{ marginTop: '40px' }}>
             <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('home-phone-cta')}>{COMPANY.phone}</a> for your free talk with an LED &amp; Digital Sign Expert!</p>
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
           </FadeUp>
@@ -413,7 +413,7 @@ export default function HomePage() {
 
               <div className="vc-phone-cta" style={{ textAlign: 'left' }}>
                 <p>Reach out to ProVizion LED today at <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('home-installation-cta')}>{COMPANY.phone}</a> for your free talk with a sign installation Expert!</p>
-                <a href="#contact" className="vc-btn vc-btn--accent">
+                <a href="/contact-us" className="vc-btn vc-btn--accent">
                   Get A Free Quote <HiArrowRight />
                 </a>
               </div>
@@ -457,7 +457,7 @@ export default function HomePage() {
           </StaggerWrap>
 
           <FadeUp className="vc-services-cta">
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Get A Free Quote <HiArrowRight />
             </a>
           </FadeUp>
@@ -522,7 +522,7 @@ export default function HomePage() {
           </StaggerWrap>
 
           <FadeUp className="vc-testimonials-cta">
-            <a href="#contact" className="vc-btn vc-btn--accent">
+            <a href="/contact-us" className="vc-btn vc-btn--accent">
               Start Your Project <HiArrowRight />
             </a>
           </FadeUp>
