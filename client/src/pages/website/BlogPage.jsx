@@ -44,7 +44,7 @@ export default function BlogPage() {
             <StaggerWrap className="vc-blog-grid">
               {posts.map((post) => (
                 <StaggerChild key={post._id}>
-                  <Link to={`/blog/${post.slug.current}`} className="vc-blog-card">
+                  <Link to={`/blog/${typeof post.slug === 'string' ? post.slug : post.slug?.current}`} className="vc-blog-card">
                     {post.featuredImage && (
                       <div className="vc-blog-card__img">
                         <img

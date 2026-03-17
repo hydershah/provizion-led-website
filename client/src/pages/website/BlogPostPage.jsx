@@ -90,7 +90,7 @@ export default function BlogPostPage() {
   const blogSchema = getBlogPostSchema({
     title: post.title,
     excerpt: post.excerpt || post.metaDescription || '',
-    slug: post.slug.current,
+    slug: typeof post.slug === 'string' ? post.slug : post.slug?.current,
     publishedAt: post.publishedAt,
     author: post.author,
     featuredImageUrl: post.featuredImage ? urlFor(post.featuredImage).width(1200).url() : null,
@@ -101,7 +101,7 @@ export default function BlogPostPage() {
       <SEO
         title={post.metaTitle || post.title}
         description={post.metaDescription || post.excerpt || ''}
-        path={`/blog/${post.slug.current}`}
+        path={`/blog/${typeof post.slug === 'string' ? post.slug : post.slug?.current}`}
       />
       <SchemaMarkup schema={blogSchema} />
       <Breadcrumbs items={[

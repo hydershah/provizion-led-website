@@ -55,7 +55,7 @@ export const blogPostsQuery = `*[_type == "blogPost"] | order(publishedAt desc){
   category->{ title, slug }
 }`;
 
-export const blogPostBySlugQuery = `*[_type == "blogPost" && slug.current == $slug][0]{
+export const blogPostBySlugQuery = `*[_type == "blogPost" && (slug.current == $slug || slug == $slug)][0]{
   _id, title, slug, author, excerpt, featuredImage, publishedAt,
   body[]{ ..., _type == "image" => { ..., asset-> } },
   category->{ title, slug },
