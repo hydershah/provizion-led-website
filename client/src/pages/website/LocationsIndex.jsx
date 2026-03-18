@@ -181,11 +181,7 @@ export default function LocationsIndex() {
                               {loc.city}, {loc.state}
                             </h3>
                           </div>
-                          {loc.estimatedVolume && (
-                            <p className="vc-loc-card__meta">
-                              Est. {loc.estimatedVolume} searches/mo
-                            </p>
-                          )}
+
                           <span className="vc-loc-card__arrow">
                             View Details <HiArrowRight />
                           </span>

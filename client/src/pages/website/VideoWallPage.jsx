@@ -30,7 +30,7 @@ const VIDEO_WALL_FAQS = [
   {
     question: 'How much does a video wall cost?',
     answer:
-      'Video wall pricing ranges from $5,000 to $100,000 or more depending on display size, technology type, pixel pitch, and installation complexity. A direct-view LED video wall for a corporate lobby typically starts around $15,000 to $25,000, while large-format installations for stadiums or event venues can exceed six figures. We provide free on-site assessments and detailed proposals so you know exactly what to expect before committing.',
+      'Video wall pricing starts at $20,000 and can range up to $100,000 or more depending on display size, technology type, pixel pitch, and installation complexity. A direct-view LED video wall for a corporate lobby typically starts around $20,000 to $35,000, while large-format installations for stadiums or event venues can exceed six figures. We provide free on-site assessments and detailed proposals so you know exactly what to expect before committing.',
   },
   {
     question: "What's the difference between LED and LCD video walls?",
