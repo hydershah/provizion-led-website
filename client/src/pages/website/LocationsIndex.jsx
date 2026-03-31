@@ -84,7 +84,7 @@ export default function LocationsIndex() {
       {/* ── Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/electronic-signs-1.jpg" alt={pageTitle} loading="eager" decoding="async" />
+          <img src="/images/electronic-signs-1.webp" alt={pageTitle} loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">

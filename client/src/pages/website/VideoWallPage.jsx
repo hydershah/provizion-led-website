@@ -18,6 +18,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
 import { urlFor } from '../../lib/sanity';
@@ -73,7 +74,7 @@ export default function VideoWallPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/showcase/building-digital-display.jpg" alt="Video Wall Displays and LED Video Walls" loading="eager" decoding="async" />
+          <img src="/images/showcase/building-digital-display.webp" alt="Video Wall Displays and LED Video Walls" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -122,7 +123,7 @@ export default function VideoWallPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/highrise-digital-display.jpg" alt="Large-format digital display on high-rise building" loading="lazy" decoding="async" />
+              <img src="/images/showcase/highrise-digital-display.webp" alt="Large-format digital display on high-rise building" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -254,7 +255,7 @@ export default function VideoWallPage() {
               <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/video-wall-installation.jpg" alt="ProVizion LED video wall installation in progress" loading="lazy" decoding="async" />
+              <img src="/images/showcase/video-wall-installation.webp" alt="ProVizion LED video wall installation in progress" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -290,6 +291,8 @@ export default function VideoWallPage() {
           </FadeUp>
         </div>
       </section>
+
+      <RelatedServices currentPath="/video-wall" />
 
     </>
   );

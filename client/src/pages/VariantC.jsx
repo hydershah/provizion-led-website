@@ -160,6 +160,7 @@ export default function VariantC() {
   return (
     <>
       <SEO
+        noindex
         title="Custom LED Signs & Digital Signage Manufacturer"
         description="ProVizion LED — full-service LED sign manufacturer in North Carolina. Custom LED signs, digital displays, channel letters & monument signs. Same-day quotes. Call (984) 217-6527."
         keywords="LED signs, custom LED signage, digital signs, sign manufacturer, North Carolina, Charlotte NC, LED installation, channel letters, monument signs, electronic message centers"

@@ -142,6 +142,7 @@ export default function VariantA() {
   return (
     <>
       <SEO
+        noindex
         title="Luminous Minimalism | Design Variant A"
         description="Premium LED sign manufacturer offering design, fabrication & installation. Same-day quotes available. Serving North Carolina businesses."
         keywords="LED signs, custom signage, sign manufacturer, Charlotte NC, LED installation"

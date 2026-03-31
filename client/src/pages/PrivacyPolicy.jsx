@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     <>
       <SEO
         title="Privacy Policy"
-        description="ProVizion LED privacy policy. Learn how we collect, use, and protect your personal information."
+        description="Read ProVizion LED's privacy policy to learn how we collect, use, and protect your personal information when you visit our website or request a quote."
         path="/privacy-policy"
       />
 

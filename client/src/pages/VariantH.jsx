@@ -123,6 +123,7 @@ export default function VariantH() {
   return (
     <div className="vh-page">
       <SEO
+        noindex
         title={`Custom LED Signs Charlotte NC | ${COMPANY.name}`}
         description="Charlotte's trusted LED sign company. Channel letters, monument signs, digital displays & more. Free consultation — call today."
         keywords="LED signs Charlotte, custom business signs, monument signs NC, channel letters, ProVizion LED"

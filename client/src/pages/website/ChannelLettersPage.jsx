@@ -14,6 +14,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
 import { urlFor } from '../../lib/sanity';
@@ -72,7 +73,7 @@ export default function ChannelLettersPage() {
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
           <img
-            src="/images/led-signs-channel-letters-lit-at-night-1.jpg"
+            src="/images/led-signs-channel-letters-lit-at-night-1.webp"
             alt="Channel Letter Signs"
             loading="eager"
             decoding="async"
@@ -143,7 +144,7 @@ export default function ChannelLettersPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/showcase/school-monument-teal.jpg"
+                src="/images/showcase/school-monument-teal.webp"
                 alt="Custom monument sign with branded lettering"
                 loading="lazy"
                 decoding="async"
@@ -316,7 +317,7 @@ export default function ChannelLettersPage() {
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
               <img
-                src="/images/showcase/church-monument-day.jpg"
+                src="/images/showcase/church-monument-day.webp"
                 alt="LED monument sign installation for church"
                 loading="lazy"
                 decoding="async"
@@ -386,7 +387,7 @@ export default function ChannelLettersPage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/showcase/church-monument-stone.jpg"
+                src="/images/showcase/church-monument-stone.webp"
                 alt="Monument sign with LED display for church"
                 loading="lazy"
                 decoding="async"
@@ -430,6 +431,7 @@ export default function ChannelLettersPage() {
           </FadeUp>
         </div>
       </section>
+      <RelatedServices currentPath="/channel-letters" />
     </>
   );
 }

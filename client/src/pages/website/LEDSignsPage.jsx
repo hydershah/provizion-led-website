@@ -20,6 +20,7 @@ import { getIcon } from '../../lib/iconMap';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import { getServiceSchema } from '../../utils/schemas';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
 import { trackPhoneClick } from '../../utils/analytics';
@@ -67,7 +68,7 @@ export default function LEDSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/electronic-signs-1.jpg" alt="LED Signs and Displays" loading="eager" decoding="async" />
+          <img src="/images/electronic-signs-1.webp" alt="LED Signs and Displays" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -110,7 +111,7 @@ export default function LEDSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/outdoor-digital-billboard.jpg" alt="LED sign display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/outdoor-digital-billboard.webp" alt="LED sign display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -225,7 +226,7 @@ export default function LEDSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/showcase/outdoor-led-sports-display.jpg" alt="Outdoor LED sign display installation" loading="lazy" decoding="async" />
+              <img src="/images/showcase/outdoor-led-sports-display.webp" alt="Outdoor LED sign display installation" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Why Us</span>
@@ -341,13 +342,14 @@ export default function LEDSignsPage() {
               <p>After installation, we offer ongoing maintenance plans to keep your LED sign performing at peak brightness for years to come. Serving businesses across Charlotte, Raleigh, Durham, Greensboro, and all of North Carolina.</p>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/school-monument-sign.jpg" alt="School LED monument sign by ProVizion" loading="lazy" decoding="async" />
+              <img src="/images/showcase/school-monument-sign.webp" alt="School LED monument sign by ProVizion" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
       </section>
 
       <FAQSection faqs={faqs} title="LED Signs — Frequently Asked Questions" />
+      <RelatedServices currentPath="/led-signs" />
 
     </>
   );

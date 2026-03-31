@@ -65,6 +65,7 @@ export function getBlogPostSchema(post) {
     description: post.excerpt || '',
     url: `${BASE_URL}/blog/${post.slug}`,
     datePublished: post.publishedAt,
+    dateModified: post._updatedAt || post.publishedAt,
     author: {
       '@type': 'Person',
       name: post.author || 'ProVizion LED',
@@ -92,11 +93,6 @@ export function getWebSiteSchema() {
     publisher: {
       '@type': 'Organization',
       name: COMPANY.name,
-    },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://www.provizionledsigns.com/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
     },
   };
 }

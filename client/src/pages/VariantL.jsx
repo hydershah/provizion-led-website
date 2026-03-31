@@ -165,6 +165,7 @@ export default function VariantL() {
   return (
     <div className="vl-page">
       <SEO
+        noindex
         title={`Sign Showroom | ${COMPANY.name}`}
         description="Browse our complete LED sign collection. Channel letters, monument signs, digital displays, and more — designed, fabricated, and installed by Charlotte's trusted sign experts."
         keywords="LED signs Charlotte, sign showroom, business signs NC, channel letters, monument signs, digital displays, ProVizion LED"

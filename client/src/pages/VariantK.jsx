@@ -123,6 +123,7 @@ export default function VariantK() {
   return (
     <div className="vk-page">
       <SEO
+        noindex
         title={`Artisan LED Signs Charlotte NC | ${COMPANY.name}`}
         description="Handcrafted LED signs by Charlotte's master fabricators. Channel letters, monument signs, digital displays & more. Free consultation — call today."
         keywords="LED signs Charlotte, handcrafted signs, custom business signs, monument signs NC, channel letters, artisan signage, ProVizion LED"

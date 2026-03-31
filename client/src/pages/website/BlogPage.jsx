@@ -1,12 +1,28 @@
 import { Link } from 'react-router-dom';
-import { HiArrowRight, HiCalendar, HiTag } from 'react-icons/hi';
+import { HiArrowRight, HiCalendar, HiTag, HiPhone } from 'react-icons/hi';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import { COMPANY } from '../../utils/constants';
+import { trackPhoneClick } from '../../utils/analytics';
 import useThemeClass from '../../hooks/useThemeClass';
 import useSanityQuery from '../../hooks/useSanityQuery';
 import { blogPostsQuery } from '../../lib/queries';
 import { urlFor } from '../../lib/sanity';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
 import './shared.css';
+
+const blogCollectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'ProVizion LED Blog — LED Signage Insights & News',
+  description: 'LED signage tips, digital display buying guides, and industry news from ProVizion LED in Charlotte, NC.',
+  url: 'https://www.provizionledsigns.com/blog',
+  publisher: {
+    '@type': 'Organization',
+    name: 'ProVizion LED',
+    url: 'https://www.provizionledsigns.com',
+  },
+};
 
 export default function BlogPage() {
   useThemeClass('theme-site');
@@ -16,9 +32,10 @@ export default function BlogPage() {
     <>
       <SEO
         title="Blog | LED Signage Insights & News"
-        description="LED signage tips, industry news & sign buying guides from ProVizion LED — Charlotte NC's trusted LED sign manufacturer."
+        description="LED signage tips, digital display buying guides, and industry news from ProVizion LED — Charlotte NC's trusted sign manufacturer. Expert advice on choosing the right signs."
         path="/blog"
       />
+      <SchemaMarkup schema={blogCollectionSchema} />
 
       {/* ── Hero ── */}
       <section className="vc-blog-listing-hero">
@@ -85,6 +102,21 @@ export default function BlogPage() {
               ))}
             </StaggerWrap>
           )}
+
+          {/* ── CTA ── */}
+          <FadeUp className="vc-phone-cta" style={{ marginTop: '48px' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--color-white)', marginBottom: '12px' }}>
+              Ready for a Custom LED Sign?
+            </h2>
+            <p>Call ProVizion LED today at{' '}
+              <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('blog-listing-cta')}>
+                {COMPANY.phone}
+              </a>{' '}or request a free quote online.
+            </p>
+            <Link to="/contact-us" className="vc-btn vc-btn--accent" style={{ marginTop: '16px' }}>
+              Get A Free Quote <HiArrowRight />
+            </Link>
+          </FadeUp>
         </div>
       </section>
     </>

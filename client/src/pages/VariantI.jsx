@@ -138,6 +138,7 @@ export default function VariantI() {
   return (
     <div className="vi-page">
       <SEO
+        noindex
         title="Cinematic Noir | ProVizion LED"
         description="Dramatic, cinematic LED signage solutions from ProVizion LED. Custom LED signs, digital displays, and electronic message centers — designed to shine at night. Charlotte, NC."
         keywords="LED signs, cinematic signage, Charlotte NC, night signs, dramatic LED, digital displays"

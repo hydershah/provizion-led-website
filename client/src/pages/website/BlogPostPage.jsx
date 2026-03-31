@@ -1,7 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { PortableText } from '@portabletext/react';
-import { HiArrowLeft, HiCalendar, HiUser, HiTag } from 'react-icons/hi';
+import { HiArrowLeft, HiArrowRight, HiCalendar, HiUser, HiTag, HiPhone } from 'react-icons/hi';
 import SEO from '../../components/SEO';
+import { COMPANY } from '../../utils/constants';
+import { trackPhoneClick } from '../../utils/analytics';
 import useThemeClass from '../../hooks/useThemeClass';
 import useSanityQuery from '../../hooks/useSanityQuery';
 import { blogPostBySlugQuery } from '../../lib/queries';
@@ -93,6 +95,7 @@ export default function BlogPostPage() {
     slug: typeof post.slug === 'string' ? post.slug : post.slug?.current,
     publishedAt: post.publishedAt,
     author: post.author,
+    _updatedAt: post._updatedAt,
     featuredImageUrl: post.featuredImage ? urlFor(post.featuredImage).width(1200).url() : null,
   });
 
@@ -166,6 +169,26 @@ export default function BlogPostPage() {
               <p>No content available.</p>
             )}
           </article>
+
+          {/* ── CTA ── */}
+          <FadeUp className="vc-phone-cta" style={{ marginTop: '48px' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--color-white)', marginBottom: '12px' }}>
+              Need a Custom LED Sign?
+            </h2>
+            <p>Call ProVizion LED today at{' '}
+              <a href={COMPANY.phoneTel} onClick={() => trackPhoneClick('blog-post-cta')}>
+                {COMPANY.phone}
+              </a>{' '}for a free consultation with an LED signage expert.
+            </p>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px' }}>
+              <Link to="/contact-us" className="vc-btn vc-btn--accent">
+                Get A Free Quote <HiArrowRight />
+              </Link>
+              <Link to="/led-signs" className="vc-btn vc-btn--outline-light">
+                Explore Our Signs
+              </Link>
+            </div>
+          </FadeUp>
         </div>
       </section>
     </>

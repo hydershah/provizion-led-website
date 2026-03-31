@@ -123,6 +123,7 @@ export default function VariantM() {
   return (
     <div className="vm-page">
       <SEO
+        noindex
         title={`Charlotte's Local Sign Shop | ${COMPANY.name}`}
         description="Charlotte's trusted neighborhood LED sign company. Locally owned, community rooted. Channel letters, monument signs, digital displays and more. Free consultation."
         keywords="LED signs Charlotte, local sign company, Charlotte NC signs, channel letters, monument signs, ProVizion LED, neighborhood sign shop"

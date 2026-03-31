@@ -17,6 +17,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
 import { urlFor } from '../../lib/sanity';
@@ -67,7 +68,7 @@ export default function PylonSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/showcase/carwash-pylon-sign.jpg" alt="Pylon Signs and Pole Signs" loading="eager" decoding="async" />
+          <img src="/images/showcase/carwash-pylon-sign.webp" alt="Pylon Signs and Pole Signs" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -116,7 +117,7 @@ export default function PylonSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/carwash-pylon-day.jpg" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-day.webp" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -239,7 +240,7 @@ export default function PylonSignsPage() {
               <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Project <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/carwash-pylon-sign.jpg" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-sign.webp" alt="Commercial pylon sign with LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -275,6 +276,8 @@ export default function PylonSignsPage() {
           </FadeUp>
         </div>
       </section>
+
+      <RelatedServices currentPath="/pylon-signs" />
 
     </>
   );

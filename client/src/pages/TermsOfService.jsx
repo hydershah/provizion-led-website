@@ -6,7 +6,7 @@ export default function TermsOfService() {
     <>
       <SEO
         title="Terms Of Service"
-        description="ProVizion LED terms of service. Terms and conditions for using our website and services."
+        description="Review ProVizion LED's terms of service covering website usage, quote estimates, intellectual property, and limitations of liability for our LED sign services."
         path="/terms-of-service"
       />
 

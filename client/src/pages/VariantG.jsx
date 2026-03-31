@@ -95,6 +95,7 @@ export default function VariantG() {
   return (
     <div className="vg-page">
       <SEO
+        noindex
         title="Bold Contrast | ProVizion LED"
         description="High-impact, brutalist-inspired LED signage solutions from ProVizion LED. Custom LED signs, digital displays, and electronic message centers in Charlotte, NC."
         keywords="LED signs, digital signage, Charlotte NC, bold design, brutalist"

@@ -95,6 +95,7 @@ export default function VariantF() {
   return (
     <div className="vf-page">
       <SEO
+        noindex
         title="Blueprint Technical | ProVizion LED"
         description="Engineering-precision LED signage solutions from ProVizion LED. Custom LED signs, digital displays, and electronic message centers in Charlotte, NC."
         keywords="LED signs, digital signage, Charlotte NC, technical design, blueprint"

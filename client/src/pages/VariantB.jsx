@@ -145,6 +145,7 @@ export default function VariantB() {
   return (
     <>
       <SEO
+        noindex
         title="Urban Industrial Tech | Design Variant B"
         description="Premium LED sign manufacturer offering design, fabrication & installation. Same-day quotes available. Serving North Carolina businesses."
         keywords="LED signs, custom signage, sign manufacturer, Charlotte NC, LED installation, dark mode"

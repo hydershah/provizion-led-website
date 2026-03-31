@@ -12,6 +12,8 @@ import {
   HiBadgeCheck,
 } from 'react-icons/hi';
 import SEO from '../../components/SEO';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import { getServiceSchema, getBreadcrumbSchema } from '../../utils/schemas';
 
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
@@ -25,12 +27,12 @@ import './shared.css';
 
 /* ──── Fallback Data ──── */
 const defaultServices = [
-  { title: 'Custom LED Signs', desc: 'Our custom LED signs deliver vibrant colors, unmatched clarity, and energy-efficient performance for businesses across Charlotte, NC and North Carolina. Our advanced heat management process ensures your LED signage stays bright and lasts longer — no dimming, no downtime.', img: '/images/electronic-signs-1.jpg', link: '/led-signs' },
-  { title: 'Digital Sign Displays', desc: 'Elevate your storefront or facility with our digital sign displays. Perfect for showcasing promotions, real-time updates, or branded content, our digital signage solutions offer unmatched versatility for businesses in Charlotte and beyond.', img: '/images/electronic-digital-message-displays-signs-3.jpg', link: '/digital-signs' },
-  { title: 'Illuminated & Lighted Signs', desc: 'Make your brand visible around the clock with our illuminated signs and lighted channel letters. Manufactured in-house and built for durability, our lighted signs deliver consistent brightness and a commanding outdoor presence.', img: '/images/lighted-and-illuminated-signs-2.jpeg', link: '/lighted-signs' },
-  { title: 'LED Monument Signs', desc: 'Our LED monument signs combine architectural presence with cutting-edge LED technology. Ideal for corporate campuses, churches, and retail centers, these custom monument signs serve as permanent landmarks for your brand in the Charlotte, NC area.', img: '/images/showcase/school-monument-led-blue.jpg', link: '/contact-us' },
-  { title: 'LED Message Boards', desc: 'Keep your audience engaged with programmable LED message boards. Easy to update remotely, our outdoor LED message boards are ideal for schools, churches, and businesses that need to communicate changing promotions, events, and announcements.', img: '/images/indoor-led-message-board-sign-2.jpg', link: '/contact-us' },
-  { title: 'Electronic Message Centers', desc: 'Our electronic message centers (EMCs) combine reliable digital signage technology with intuitive content management. Built for schools, government buildings, and commercial properties across North Carolina, they keep your audience informed 24/7.', img: '/images/showcase/community-center-monument.jpg', link: '/electronic-signs' },
+  { title: 'Custom LED Signs', desc: 'Our custom LED signs deliver vibrant colors, unmatched clarity, and energy-efficient performance for businesses across Charlotte, NC and North Carolina. Our advanced heat management process ensures your LED signage stays bright and lasts longer — no dimming, no downtime.', img: '/images/electronic-signs-1.webp', link: '/led-signs' },
+  { title: 'Digital Sign Displays', desc: 'Elevate your storefront or facility with our digital sign displays. Perfect for showcasing promotions, real-time updates, or branded content, our digital signage solutions offer unmatched versatility for businesses in Charlotte and beyond.', img: '/images/electronic-digital-message-displays-signs-3.webp', link: '/digital-signs' },
+  { title: 'Illuminated & Lighted Signs', desc: 'Make your brand visible around the clock with our illuminated signs and lighted channel letters. Manufactured in-house and built for durability, our lighted signs deliver consistent brightness and a commanding outdoor presence.', img: '/images/lighted-and-illuminated-signs-2.webp', link: '/lighted-signs' },
+  { title: 'LED Monument Signs', desc: 'Our LED monument signs combine architectural presence with cutting-edge LED technology. Ideal for corporate campuses, churches, and retail centers, these custom monument signs serve as permanent landmarks for your brand in the Charlotte, NC area.', img: '/images/showcase/school-monument-led-blue.webp', link: '/contact-us' },
+  { title: 'LED Message Boards', desc: 'Keep your audience engaged with programmable LED message boards. Easy to update remotely, our outdoor LED message boards are ideal for schools, churches, and businesses that need to communicate changing promotions, events, and announcements.', img: '/images/indoor-led-message-board-sign-2.webp', link: '/contact-us' },
+  { title: 'Electronic Message Centers', desc: 'Our electronic message centers (EMCs) combine reliable digital signage technology with intuitive content management. Built for schools, government buildings, and commercial properties across North Carolina, they keep your audience informed 24/7.', img: '/images/showcase/community-center-monument.webp', link: '/electronic-signs' },
 ];
 
 const defaultProcessSteps = [
@@ -73,12 +75,12 @@ const defaultCertifications = [
 ];
 
 const defaultPortfolio = [
-  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/showcase/church-monument-worship.jpg' },
-  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-service-electronic-sign-company-6.jpg' },
-  { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.jpeg' },
-  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/showcase/indoor-digital-poster.jpg' },
-  { title: 'EMC — Corporate Headquarters', category: 'Message Centers', img: '/images/pexels-photo-1058275.jpeg' },
-  { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs', img: '/images/traditional-led-signs-2.png' },
+  { title: 'Channel Letters — Luxury Hotel', category: 'Channel Letters', img: '/images/showcase/church-monument-worship.webp' },
+  { title: 'LED Monument — Financial District', category: 'Monument Signs', img: '/images/full-service-electronic-sign-company-6.webp' },
+  { title: 'Digital Display — Convention Center', category: 'Digital Displays', img: '/images/custom-electronic-sign-company-4.webp' },
+  { title: 'Illuminated Cabinet — Fine Dining', category: 'Cabinet Signs', img: '/images/showcase/indoor-digital-poster.webp' },
+  { title: 'EMC — Corporate Headquarters', category: 'Message Centers', img: '/images/pexels-photo-1058275.webp' },
+  { title: 'Pylon Sign — Medical Campus', category: 'Pylon Signs', img: '/images/traditional-led-signs-2.webp' },
 ];
 
 /* ====================================
@@ -145,11 +147,40 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="LED & Digital Sign Manufacturer | Charlotte, NC"
-        description="ProVizion LED is Charlotte NC's leading LED sign manufacturer. Custom LED signs, digital displays, channel letters & monument signs. Call (984) 217-6527 for a free quote."
+        title="LED & Digital Sign Manufacturer"
+        description="ProVizion LED is Charlotte NC's leading LED sign manufacturer. Custom LED signs, digital displays, channel letters & monument signs. Call (984) 217-6527."
         keywords="LED signs, digital signs, sign manufacturer, Charlotte NC, LED sign company, custom LED signage, channel letters, monument signs, electronic message centers, North Carolina"
         path="/"
       />
+      <SchemaMarkup schema={{
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'ProVizion LED',
+        description: 'LED & Digital Sign Manufacturer specializing in custom LED signs, digital displays, lighted signs, and electronic message boards.',
+        url: 'https://www.provizionledsigns.com',
+        telephone: '+19842176527',
+        email: 'info@provizionledsigns.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '1700 University Commercial Pl',
+          addressLocality: 'Charlotte',
+          addressRegion: 'NC',
+          postalCode: '28213',
+          addressCountry: 'US',
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '5',
+          reviewCount: '62',
+        },
+        priceRange: '$$',
+        openingHours: 'Mo-Fr 08:00-18:00',
+        sameAs: [
+          'https://www.facebook.com/provizionled',
+          'https://www.google.com/maps/place/ProVizion+LED+Signs/@35.2635447,-80.7438306,17z/data=!4m2!3m1!1s0x0:0xfbe5566da43fa07a',
+          'https://www.linkedin.com/company/provizionled',
+        ],
+      }} />
 
       {/* -- HERO (Text Left | Billboards Right) -- */}
       <section className="vc-hero" id="hero">
@@ -249,7 +280,7 @@ export default function HomePage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/full-color-led-electronic-sign-4.jpg"
+                src="/images/full-color-led-electronic-sign-4.webp"
                 alt="Custom LED sign by ProVizion LED"
                 loading="lazy"
                 decoding="async"
@@ -366,7 +397,7 @@ export default function HomePage() {
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
               <img
-                src="/images/showcase/curved-commercial-led.jpg"
+                src="/images/showcase/curved-commercial-led.webp"
                 alt="Custom curved LED display by ProVizion LED"
                 loading="lazy"
                 decoding="async"

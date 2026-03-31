@@ -10,6 +10,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import { getServiceSchema } from '../../utils/schemas';
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
@@ -62,7 +63,7 @@ export default function LightedSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/lighted-and-illuminated-signs-2.jpeg" alt="Lighted and Illuminated Signs" loading="eager" decoding="async" />
+          <img src="/images/lighted-and-illuminated-signs-2.webp" alt="Lighted and Illuminated Signs" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -105,7 +106,7 @@ export default function LightedSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/church-monument-wide.jpg" alt="Illuminated church monument sign at night" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-monument-wide.webp" alt="Illuminated church monument sign at night" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -116,7 +117,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/showcase/church-monument-night.jpg" alt="Illuminated monument sign glowing at night" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-monument-night.webp" alt="Illuminated monument sign glowing at night" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Brilliance</span>
@@ -205,7 +206,7 @@ export default function LightedSignsPage() {
               <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Get A Free Quote <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/curved-commercial-led.jpg" alt="Curved commercial LED display sign" loading="lazy" decoding="async" />
+              <img src="/images/showcase/curved-commercial-led.webp" alt="Curved commercial LED display sign" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -216,7 +217,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/showcase/school-led-monument.jpg" alt="LED monument sign for school" loading="lazy" decoding="async" />
+              <img src="/images/showcase/school-led-monument.webp" alt="LED monument sign for school" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Near You</span>
@@ -298,7 +299,7 @@ export default function LightedSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/showcase/church-outdoor-led-display.jpg" alt="Outdoor LED display on church building" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-outdoor-led-display.webp" alt="Outdoor LED display on church building" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Materials</span>
@@ -312,6 +313,7 @@ export default function LightedSignsPage() {
       </section>
 
       <FAQSection faqs={faqs} title="Lighted Signs — Frequently Asked Questions" />
+      <RelatedServices currentPath="/lighted-signs" />
 
     </>
   );

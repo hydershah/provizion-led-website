@@ -10,6 +10,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import { getServiceSchema } from '../../utils/schemas';
 import useThemeClass from '../../hooks/useThemeClass';
 import { useSanityContext } from '../../context/SanityContext';
@@ -62,7 +63,7 @@ export default function ElectronicSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/electronic-message-centers-digital-signage-display-1.jpg" alt="Electronic Signs and Message Centers" loading="eager" decoding="async" />
+          <img src="/images/electronic-message-centers-digital-signage-display-1.webp" alt="Electronic Signs and Message Centers" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -105,7 +106,7 @@ export default function ElectronicSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/electronic-message-centers-digital-signage-display-1.jpg" alt="Electronic sign display" loading="lazy" decoding="async" />
+              <img src="/images/electronic-message-centers-digital-signage-display-1.webp" alt="Electronic sign display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -116,7 +117,7 @@ export default function ElectronicSignsPage() {
         <div className="vc-container">
           <div className="vc-split-layout">
             <FadeUp delay={0.1} className="vc-split-layout__img">
-              <img src="/images/showcase/carwash-pylon-tall.jpg" alt="Commercial pylon sign with electronic message center" loading="lazy" decoding="async" />
+              <img src="/images/showcase/carwash-pylon-tall.webp" alt="Commercial pylon sign with electronic message center" loading="lazy" decoding="async" />
             </FadeUp>
             <FadeUp className="vc-split-layout__text">
               <span className="vc-section-label">Benefits</span>
@@ -196,7 +197,7 @@ export default function ElectronicSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/indoor-led-message-board-sign-2.jpg" alt="Indoor electronic message board" loading="lazy" decoding="async" />
+              <img src="/images/indoor-led-message-board-sign-2.webp" alt="Indoor electronic message board" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -272,13 +273,14 @@ export default function ElectronicSignsPage() {
               <p>Our electronic signs are built for North Carolina weather with operating temperatures from -22°F to 122°F, IP65 weatherproofing, and surge protection. Every installation includes a comprehensive warranty and optional maintenance plans to keep your investment performing at its best.</p>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/school-emc-display.jpg" alt="School electronic message center display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/school-emc-display.webp" alt="School electronic message center display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
       </section>
 
       <FAQSection faqs={faqs} title="Electronic Signs — Frequently Asked Questions" />
+      <RelatedServices currentPath="/electronic-signs" />
 
     </>
   );

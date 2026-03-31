@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /design-variants
+Disallow: /variant-a
+Disallow: /variant-b
+Disallow: /variant-c
+Disallow: /variant-d
+Disallow: /variant-e
+Disallow: /variant-f
+Disallow: /variant-g
+Disallow: /variant-h
+Disallow: /variant-i
+Disallow: /variant-j
+Disallow: /variant-k
+Disallow: /variant-l
+Disallow: /variant-m
 
 Sitemap: https://www.provizionledsigns.com/sitemap.xml

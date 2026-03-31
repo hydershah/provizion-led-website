@@ -10,6 +10,7 @@ export default function SEO({
   keywords,
   type = 'website',
   image = '/images/provizion-og-image.jpg',
+  noindex = false,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | LED & Digital Sign Manufacturer - Charlotte, NC`;
   const url = `${BASE_URL}${path}`;
@@ -19,7 +20,7 @@ export default function SEO({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
@@ -29,6 +30,7 @@ export default function SEO({
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />

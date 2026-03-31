@@ -146,6 +146,7 @@ export default function DesignVariants() {
   return (
     <>
       <SEO
+        noindex
         title="Website Variant Studio"
         description="Explore industry-specific UI/UX homepage directions for ProVizion LED."
         keywords="website variants, UI UX redesign, signage website concepts"

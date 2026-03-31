@@ -23,6 +23,7 @@ import { urlFor } from '../../lib/sanity';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import FAQSection from '../../components/FAQSection';
+import RelatedServices from '../../components/RelatedServices';
 import { getServiceSchema } from '../../utils/schemas';
 import { FadeUp, StaggerWrap, StaggerChild } from './animations';
 import { trackPhoneClick } from '../../utils/analytics';
@@ -70,7 +71,7 @@ export default function DigitalSignsPage() {
       {/* ── Page Hero ── */}
       <section className="vc-page-hero">
         <div className="vc-page-hero__bg">
-          <img src="/images/showcase/building-digital-display.jpg" alt="Digital Signs and Displays" loading="eager" decoding="async" />
+          <img src="/images/showcase/building-digital-display.webp" alt="Digital Signs and Displays" loading="eager" decoding="async" />
           <div className="vc-page-hero__overlay" />
         </div>
         <div className="vc-page-hero__content">
@@ -113,7 +114,7 @@ export default function DigitalSignsPage() {
               </a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/electronic-digital-message-displays-signs-3.jpg" alt="Digital sign display" loading="lazy" decoding="async" />
+              <img src="/images/electronic-digital-message-displays-signs-3.webp" alt="Digital sign display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -276,7 +277,7 @@ export default function DigitalSignsPage() {
               <a href="/contact-us" className="vc-btn vc-btn--accent vc-btn--sm">Start Your Journey <HiArrowRight /></a>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/highrise-digital-display.jpg" alt="High-rise building digital LED display" loading="lazy" decoding="async" />
+              <img src="/images/showcase/highrise-digital-display.webp" alt="High-rise building digital LED display" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
@@ -352,13 +353,14 @@ export default function DigitalSignsPage() {
               <p>ProVizion LED helps businesses across Charlotte, Raleigh, and all of North Carolina maximize their digital signage investment with expert design, installation, and ongoing content management support.</p>
             </FadeUp>
             <FadeUp delay={0.15} className="vc-split-layout__img">
-              <img src="/images/showcase/church-pylon-led.jpg" alt="LED pylon sign for digital messaging" loading="lazy" decoding="async" />
+              <img src="/images/showcase/church-pylon-led.webp" alt="LED pylon sign for digital messaging" loading="lazy" decoding="async" />
             </FadeUp>
           </div>
         </div>
       </section>
 
       <FAQSection faqs={faqs} title="Digital Signs — Frequently Asked Questions" />
+      <RelatedServices currentPath="/digital-signs" />
 
     </>
   );

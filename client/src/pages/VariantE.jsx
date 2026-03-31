@@ -96,6 +96,7 @@ export default function VariantE() {
   return (
     <div className="ve-page">
       <SEO
+        noindex
         title="Organic Flow | ProVizion LED"
         description="Nature-inspired LED signage solutions from ProVizion LED. Custom LED signs, digital displays, and electronic message centers in Charlotte, NC."
         keywords="LED signs, digital signage, Charlotte NC, organic design, eco signage"

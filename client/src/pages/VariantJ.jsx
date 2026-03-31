@@ -105,6 +105,7 @@ export default function VariantJ() {
   return (
     <div className="vj-page">
       <SEO
+        noindex
         title="Glass Luxe | ProVizion LED"
         description="Premium LED signage solutions for property managers and corporate buyers. Custom LED signs, digital displays, and monument signs in Charlotte, NC."
         keywords="LED signs, corporate signage, Charlotte NC, property management signs, monument signs"

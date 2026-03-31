@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import SEO from '../components/SEO';
 
 export default function NotFound() {
   return (
     <>
-      <SEO
-        title="Page Not Found"
-        description="The page you're looking for doesn't exist. Return to ProVizion LED homepage."
-        path="/404"
-      />
+      <Helmet>
+        <title>Page Not Found | ProVizion LED</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
 
       <section style={{
         display: 'flex',
