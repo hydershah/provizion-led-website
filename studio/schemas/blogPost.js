@@ -11,8 +11,22 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       options: { source: 'title', maxLength: 96 },
-      validation: (r) => r.required(),
+      validation: (r) =>
+        r.custom((value) => {
+          if (!value) return 'Slug is required';
+          if (typeof value === 'string') {
+            return 'Slug is stored as a plain string. Click "Reset value" on this field, then "Generate" to rebuild it from the title.';
+          }
+          if (typeof value === 'object' && !value.current) return 'Slug is required';
+          return true;
+        }),
     }),
+    // Legacy fields from a previously-installed i18n plugin. Kept hidden so
+    // Sanity Studio does not flag them as "Unknown field found" on existing
+    // documents. Safe to drop once the fields have been unset from all
+    // blogPost documents in the dataset.
+    defineField({ name: 'language', title: 'Language (legacy)', type: 'string', hidden: true, readOnly: true }),
+    defineField({ name: 'en', title: 'English (legacy)', type: 'string', hidden: true, readOnly: true }),
     defineField({ name: 'author', title: 'Author', type: 'string' }),
     defineField({ name: 'excerpt', title: 'Excerpt', type: 'text', rows: 3, validation: (r) => r.max(200) }),
     defineField({
