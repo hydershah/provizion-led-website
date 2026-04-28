@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiCheckCircle, HiExclamationCircle } from 'react-icons/hi';
 import { submitContact } from '../utils/api';
+import {
+  generateMathChallenge,
+  HONEYPOT_FIELD,
+  honeypotStyle,
+  buildAntiSpamPayload,
+} from '../utils/antiSpam';
 import './QuoteForm.css';
 
 const initialState = {
@@ -15,20 +21,52 @@ export default function QuoteForm({ source = 'contact-page', compact = false }) 
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [mathAnswer, setMathAnswer] = useState('');
+  const [challenge, setChallenge] = useState(() => generateMathChallenge());
+  const formStartedAt = useRef(Date.now());
+
+  useEffect(() => {
+    formStartedAt.current = Date.now();
+  }, []);
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const resetSpamGuards = () => {
+    setHoneypot('');
+    setMathAnswer('');
+    setChallenge(generateMathChallenge());
+    formStartedAt.current = Date.now();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('loading');
     setErrorMsg('');
 
+    // Quick client check on the math answer so the user gets instant feedback.
+    if (Number(mathAnswer) !== challenge.answer) {
+      setStatus('error');
+      setErrorMsg('Please answer the verification question correctly.');
+      return;
+    }
+
+    setStatus('loading');
+
+    const antiSpam = buildAntiSpamPayload({
+      formStartedAt: formStartedAt.current,
+      honeypotValue: honeypot,
+      mathAnswer: Number(mathAnswer),
+      mathA: challenge.a,
+      mathB: challenge.b,
+    });
+
     try {
-      await submitContact({ ...form, source });
+      await submitContact({ ...form, source, ...antiSpam });
       setStatus('success');
       setForm(initialState);
+      resetSpamGuards();
     } catch (err) {
       setStatus('error');
       const msg =
@@ -36,6 +74,9 @@ export default function QuoteForm({ source = 'contact-page', compact = false }) 
         err.response?.data?.message ||
         'Something went wrong. Please call us at (984) 217-6527.';
       setErrorMsg(msg);
+      // Rotate the challenge after a failed attempt to break replay attempts.
+      setChallenge(generateMathChallenge());
+      setMathAnswer('');
     }
   };
 
@@ -69,6 +110,7 @@ export default function QuoteForm({ source = 'contact-page', compact = false }) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            noValidate
           >
             <div className="quote-form__field">
               <label htmlFor={`fullName-${source}`}>Full Name</label>
@@ -123,6 +165,36 @@ export default function QuoteForm({ source = 'contact-page', compact = false }) 
                 value={form.message}
                 onChange={handleChange}
                 required
+              />
+            </div>
+
+            <div className="quote-form__field">
+              <label htmlFor={`math-${source}`}>{challenge.question}</label>
+              <input
+                id={`math-${source}`}
+                name="mathAnswer"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                placeholder="Your answer"
+                value={mathAnswer}
+                onChange={(e) => setMathAnswer(e.target.value.replace(/[^0-9]/g, ''))}
+                required
+                autoComplete="off"
+              />
+            </div>
+
+            {/* Honeypot — hidden from real users, bots auto-fill it */}
+            <div style={honeypotStyle} aria-hidden="true">
+              <label htmlFor={`${HONEYPOT_FIELD}-${source}`}>Website (leave blank)</label>
+              <input
+                id={`${HONEYPOT_FIELD}-${source}`}
+                name={HONEYPOT_FIELD}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
               />
             </div>
 

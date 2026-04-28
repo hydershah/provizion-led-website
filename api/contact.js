@@ -1,4 +1,5 @@
 const { Resend } = require('resend');
+const { checkAntiSpam } = require('../server/utils/antiSpam');
 
 function validate(body) {
   const errors = [];
@@ -32,6 +33,20 @@ module.exports = async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ success: false, message: 'Method not allowed' });
+
+  // Anti-spam guard runs first so bots never reach the email send.
+  const spamCheck = checkAntiSpam(req.body || {});
+  if (!spamCheck.ok) {
+    // Return a generic success-shaped 400 so bots don't learn what tripped them.
+    // Real users won't hit this path because all 4 layers tolerate human behavior.
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('[contact] spam blocked:', spamCheck.reason);
+    }
+    return res.status(400).json({
+      success: false,
+      message: 'Unable to verify your submission. Please refresh and try again, or call (984) 217-6527.',
+    });
+  }
 
   const errors = validate(req.body);
   if (errors.length > 0) {

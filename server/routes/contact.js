@@ -2,6 +2,7 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const Contact = require('../models/Contact');
 const { sendContactEmail } = require('../utils/mailer');
+const { checkAntiSpam } = require('../utils/antiSpam');
 
 const router = express.Router();
 
@@ -44,6 +45,18 @@ const contactValidation = [
 // @access  Public
 router.post('/', contactValidation, async (req, res) => {
   try {
+    // Anti-spam guard runs first so bots never reach DB or email send.
+    const spamCheck = checkAntiSpam(req.body || {});
+    if (!spamCheck.ok) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('[contact] spam blocked:', spamCheck.reason);
+      }
+      return res.status(400).json({
+        success: false,
+        message: 'Unable to verify your submission. Please refresh and try again, or call (984) 217-6527.',
+      });
+    }
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({
