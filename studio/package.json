@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build",
-    "deploy": "sanity deploy"
+    "deploy": "sanity deploy",
+    "fix:slugs": "sanity exec migrations/fix-blog-slugs.js --with-user-token",
+    "fix:unknown-fields": "sanity exec migrations/fix-blog-unknown-fields.js --with-user-token",
+    "fix:all": "npm run fix:slugs && npm run fix:unknown-fields"
   },
   "dependencies": {
     "@sanity/client": "^6.27.2",

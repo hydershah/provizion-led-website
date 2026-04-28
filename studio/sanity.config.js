@@ -3,6 +3,7 @@ import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { deskStructure } from './deskStructure';
+import { fixLegacyDataAction } from './actions/fixLegacyDataAction';
 
 export default defineConfig({
   name: 'provizion-led',
@@ -16,5 +17,11 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
+  },
+  document: {
+    actions: (prev, context) =>
+      context.schemaType === 'blogPost'
+        ? [...prev, fixLegacyDataAction]
+        : prev,
   },
 });
