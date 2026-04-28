@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HiPhone, HiLocationMarker } from 'react-icons/hi';
 import { FaStar } from 'react-icons/fa';
 import { useSanityContext } from '../context/SanityContext';
@@ -7,10 +7,16 @@ import QuoteForm from './QuoteForm';
 import { trackPhoneClick } from '../utils/analytics';
 import './Footer.css';
 
+// Routes that already display a full QuoteForm in their main content.
+// Showing the footer form on these would render two identical forms stacked.
+const ROUTES_WITH_OWN_FORM = ['/contact-us'];
+
 export default function Footer() {
   const { company: COMPANY } = useSanityContext();
+  const { pathname } = useLocation();
   const currentYear = new Date().getFullYear();
   const logoSrc = COMPANY.logo?.asset ? urlFor(COMPANY.logo).width(400).url() : (COMPANY.logo || '/images/provizion-logo-white.webp');
+  const showFooterForm = !ROUTES_WITH_OWN_FORM.includes(pathname);
 
   return (
     <section className="footer" aria-labelledby="footer-heading">
@@ -28,42 +34,44 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Quote Form Section */}
-      <div className="footer-form-section">
-        <div className="container footer-form__inner">
-          <Link to="/" aria-label="ProVizion LED Home">
-            <img
-              src={logoSrc}
-              alt="ProVizion LED Logo"
-              width="200"
-              height="50"
-              loading="lazy"
-              className="footer-logo"
-            />
-          </Link>
-          <p className="footer-form__heading">Quick &amp; Same-Day Quotes</p>
-          <QuoteForm source="footer" />
-          <div className="footer-rating">
-            <p className="footer-rating__brand">{COMPANY.name}</p>
-            <p className="footer-rating__label">5 STAR RATING</p>
-            <div className="footer-rating__stars">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
+      {/* Quote Form Section — hidden on routes that already render their own form */}
+      {showFooterForm && (
+        <div className="footer-form-section">
+          <div className="container footer-form__inner">
+            <Link to="/" aria-label="ProVizion LED Home">
+              <img
+                src={logoSrc}
+                alt="ProVizion LED Logo"
+                width="200"
+                height="50"
+                loading="lazy"
+                className="footer-logo"
+              />
+            </Link>
+            <p className="footer-form__heading">Quick &amp; Same-Day Quotes</p>
+            <QuoteForm source="footer" />
+            <div className="footer-rating">
+              <p className="footer-rating__brand">{COMPANY.name}</p>
+              <p className="footer-rating__label">5 STAR RATING</p>
+              <div className="footer-rating__stars">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <span className="footer-rating__text">
+                (Based on {COMPANY.reviewCount} Reviews)
+              </span>
             </div>
-            <span className="footer-rating__text">
-              (Based on {COMPANY.reviewCount} Reviews)
-            </span>
+            <p className="footer-tcpa">
+              By providing my phone number to {COMPANY.name}, I agree and acknowledge that {COMPANY.name} may
+              send text messages to my wireless phone number for any purpose. Message frequency will vary, and
+              Message and data rates may apply. If you need further assistance, please reply &quot;HELP&quot;.
+              You can also opt out by replying &quot;STOP.&quot; For more information on how your data will be
+              handled, please visit our <Link to="/privacy-policy">privacy policy</Link>.
+            </p>
           </div>
-          <p className="footer-tcpa">
-            By providing my phone number to {COMPANY.name}, I agree and acknowledge that {COMPANY.name} may
-            send text messages to my wireless phone number for any purpose. Message frequency will vary, and
-            Message and data rates may apply. If you need further assistance, please reply &quot;HELP&quot;.
-            You can also opt out by replying &quot;STOP.&quot; For more information on how your data will be
-            handled, please visit our <Link to="/privacy-policy">privacy policy</Link>.
-          </p>
         </div>
-      </div>
+      )}
 
       {/* Main Footer */}
       <div className="footer-main">
